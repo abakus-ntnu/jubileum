@@ -4,10 +4,15 @@ Generally speaking, you should strive to keep different parts of your code nice 
 This folder is where you are to put all your components
 */
 
+import Button from '@mui/material/Button';
+
 const testComponent = () => {
     // Do some cool stuff here
     return (
-        <p>Dette er en komponent:)</p>
+        <div>
+            <p>Dette er en komponent:)</p>
+            <Button variant="contained">Dette er et eksempel på en material ui komponent</Button>;
+        </div>
     );
 }
 
