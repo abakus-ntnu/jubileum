@@ -8,6 +8,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import TestComponent from '../components/TestComponent'
 import styles from '../styles/Home.module.css'
+import Countdown from '../components/Countdown'
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <Countdown countDownDate={new Date("Mar 13, 2022 02:00:00")}/>
         <h1 className={styles.title}>
           Abakus 45års jubileumsside!:)
         </h1>
