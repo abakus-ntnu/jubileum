@@ -1,4 +1,5 @@
 This is a the site for the Abakus 45 years jubliee.
+
 ## Running the project
 
 To run the development server run the command below:
