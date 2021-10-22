@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier '**/*.{js,css,md}' --write"
+    "prettier": "prettier '**/*.{js,ts,tsx,css,md}' --write"
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",
