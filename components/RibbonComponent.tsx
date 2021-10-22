@@ -1,0 +1,43 @@
+/*
+This is a component used on the index.tsx page
+Generally speaking, you should strive to keep different parts of your code nice and separated, so components is the way to go
+This folder is where you are to put all your components
+*/
+
+import React from 'react';
+import {Box} from "@mui/material";
+import Image from 'next/image'
+import { medalDescriptions } from '../pages/ribbons/utils';
+
+
+
+const ribbonComponent = ({ribbonType}: {ribbonType:string}) => {
+    // Take in dalje enum as param and render picture + context accordingly.
+    const theObjectIWant = medalDescriptions[ribbonType];
+
+
+    const description = theObjectIWant != null ? theObjectIWant.medalDesign : "MedalDesign"
+    const info = theObjectIWant != null ? theObjectIWant.medalInformation : "MedalInformation"
+    const imgSrc = theObjectIWant != null ? theObjectIWant.imageLink : "/SampleDalje.png"
+
+    return (
+        <div>
+            <Box sx={{ textAlign: 'center',width: '240px',height: "360px" }}>
+                    <Box sx={{ textAlign: 'center',width: '200px',height: "20px" }}> 
+                        <p style={{fontSize: "20px"}}>
+                            {ribbonType.toString()}
+                        </p>
+                    </Box>
+                    <Image  
+                        src={imgSrc}
+                        width={240}
+                        height={240}
+                        />
+                    <p>{description}</p>
+                    <p>{info}</p>
+            </Box>
+        </div>
+    );
+}
+
+export default ribbonComponent
