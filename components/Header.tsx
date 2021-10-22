@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 
 interface IHeaderProps {
-  title: String;
+  title: string;
 }
 
 const Header = (props: IHeaderProps) => {

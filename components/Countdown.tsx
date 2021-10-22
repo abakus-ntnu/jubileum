@@ -28,7 +28,7 @@ const Countdown = ({ countDownDate }: CountdownProps) => {
     updateTime();
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [countDownDate]);
 
   const drawerWidth = {
     width: {

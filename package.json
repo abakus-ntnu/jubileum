@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier '**/*.{js,ts,tsx,css,md}' --write",
-    "lint:prettier": "prettier '**/*.{js,css,md}' --check"
+    "lint:prettier": "prettier '**/*.{js,css,md,ts,tsx}' --check"
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",
@@ -25,9 +25,10 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "^11.1.2",
     "@types/react": "17.0.29",
+    "@types/react-vertical-timeline-component": "^3.3.1",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
-    "eslint": "7",
+    "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "prettier": "^2.4.1",
     "typescript": "4.4.3"

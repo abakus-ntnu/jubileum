@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import Image from "next/image";
-import { medalDescriptions } from "../pages/ribbons/utils";
+import { medalDescriptions } from "../data/ribbonUtils";
 
 const ribbonComponent = ({ ribbonType }: { ribbonType: string }) => {
   // Take in dalje enum as param and render picture + context accordingly.
@@ -22,7 +22,7 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: string }) => {
         <Box sx={{ textAlign: "center", width: "200px", height: "20px" }}>
           <p style={{ fontSize: "20px" }}>{ribbonType.toString()}</p>
         </Box>
-        <Image src={imgSrc} width={240} height={240} />
+        <Image src={imgSrc} width={240} height={240} alt="" />
         <p>{description}</p>
         <p>{info}</p>
       </Box>

@@ -6,24 +6,23 @@ steps:
   - name: setup
     image: node:14-alpine
     when:
-      event: [pull_request]
+      event: pull_request
     commands:
       - yarn install
 
   - name: build
     image: node:14-alpine
     when:
-      event: [pull_request]
+      event: pull_request
     depends_on:
       - setup
     commands:
       - yarn build
 
-
   - name: prettier
     image: node:14-alpine
     when:
-      event: [pull_request]
+      event: pull_request
     depends_on:
       - setup
     commands:
@@ -32,7 +31,7 @@ steps:
   - name: lint
     image: node:14-alpine
     when:
-      event: [pull_request]
+      event: pull_request
     depends_on:
       - setup
     commands:

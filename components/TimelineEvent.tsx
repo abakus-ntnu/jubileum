@@ -1,4 +1,5 @@
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import Image from "next/image";
 import React, { useState } from "react";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import styles from "../styles/TimelineEvent.module.css";
@@ -23,7 +24,15 @@ const TimelineEvent = (event: TimelineEventProps) => {
       contentArrowStyle={{ borderRight: "7px solid  #E20F13" }}
       date={event.date}
       iconStyle={{ background: "#E20F13", color: "#fff" }}
-      icon={<img src="/abakule.png" className={styles.timelineIcon} />}
+      icon={
+        <Image
+          src="/abakule.png"
+          className={styles.timelineIcon}
+          alt=""
+          height="100px"
+          width="100px"
+        />
+      }
     >
       <Accordion className={styles.accordion} style={{ margin: 0 }}>
         <AccordionSummary
