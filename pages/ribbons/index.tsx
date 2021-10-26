@@ -4,11 +4,14 @@ import styles from "../../styles/RibbonsPage.module.css";
 import { Stack } from "@mui/material";
 import { medalTypes } from "../../data/ribbonUtils";
 import Header from "../../components/Header";
+import NavBar from "../../components/NavBar";
 
 const RibbonsPage: NextPage = () => {
   return (
     <div className={styles.content}>
       <Header title="Daljer, Pins og Bånd" />
+
+      <NavBar />
 
       <main className={styles.main}>
         <h1 className={styles.title}>Daljer, Pins og Bånd</h1>
