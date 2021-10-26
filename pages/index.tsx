@@ -5,7 +5,6 @@ links to all the other pages you want to include in the project
 */
 
 import type { NextPage } from "next";
-import Head from "next/head";
 import TestComponent from "../components/TestComponent";
 import styles from "../styles/Home.module.css";
 import Countdown from "../components/Countdown";
