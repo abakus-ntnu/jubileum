@@ -1,9 +1,3 @@
-/*
-This is a component used on the index.tsx page
-Generally speaking, you should strive to keep different parts of your code nice and separated, so components is the way to go
-This folder is where you are to put all your components
-*/
-
 import React from 'react';
 import {Box} from "@mui/material";
 import Image from 'next/image'
