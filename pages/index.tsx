@@ -9,15 +9,12 @@ import Head from "next/head";
 import TestComponent from "../components/TestComponent";
 import styles from "../styles/Home.module.css";
 import Countdown from "../components/Countdown";
+import Header from "../components/Header";
 
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Abkus 45års jubilieum</title>
-        <meta name="description" content="" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Header title="Hjem" />
 
       <main className={styles.main}>
         <Countdown countDownDate={new Date("Mar 13, 2022 02:00:00")} />
