@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Opprettelse av Kompjutern",
+    "description": "Omega, eller rettere sagt, Omega II, er linjeforeningen for siving elektro og kybernetikk, og er blant de eldste linjeforeningene på Gløs. Datateknikk hørte en gang til Omega, men studentene tilhørende denne linja brøt ut og opprettet Kompjutern i november 1977.\n\nEn kommentar fra forrige side sa at kompjutern aldri var noen utbrytergruppe fra Omega. Snarere et naturlig supplement til Nabla. Institutt for databehandling (IDB) var under Almenavdelingen, ikke Elektroavdelingen. Kompjutern ble opprettet av studenter ved Institutt for Databehandling som lå på Almenavdelingen. Omega var aldri noe alternativ for tidlige studenter i databehandling. Først i 1984 ble instituttet overført til den nye avdeling for Elektro- og Datateknikk. Da var allerede Kompjutern vel etablert. Omega ønsket å være linjeforening for hele ED-avdelingen, og dermed oppsluke Kompjutern, men det skjedde ikke.",
+    "date": "1977"
+  },
+  {
+    "title": "Listingløpets opprinnelse",
+    "description": "1984 var første gang Kompjuterns opptaksprøve, listingløpet, ble gjennomført. Ideen ble unnfanget av IDIs egen Guttorm Sindre. Vi vet ikke så mye om akkurat hvordan det første listingløpet ble gjennomført, men fra 1985 finnes det mye spennende bildemateriale. Det er lett å kjenne igjen vår «kjære» opptaksprøve, ved at de ferske studentene måtte løpe gjennom sentrum ikledd listingpapir. Men forskjellene er store. Det merkes spesielt på listingpapirkreasjonene studentene hadde på seg. Mange hadde laget fabelaktige papirhatter, -kapper og -togaer. Så selv omde ikke hadde meget under papiret, var de likevel påkledde. Noe som overrasker mer er at man ikke kan se antydninger til verken sirup, maling eller verre ting på deltakerne. Og hva med smokk, sløyfe og paraplyer? Det fantes ikke. Bildene kan tyde på at postene gikk ut på blant annet synging, diktlesning i Nordre gate, litt sit-ups, lek med rockering og posering med tilfeldige forbipasserende.",
+    "date": "1984"
+  },
+  {
+    "title": "LaBamba åpner",
+    "description": "Festene ble flere, og i 1985 fikk foreningen endelig tilslag på søknaden om egen kjeller på Moholt. Allerede 1. november åpnet den for gjestene. For å bygge lokalet samlet Kompjutern sammen 126 488 kroner, hvorav 76 000 kroner gikk til oppussingen frem til åpningen, og de resterende til videre utsmykning i etterkant. Blant ivrige bidragsytere til pengepotten finner vi Arthur Andersen & Co som gav 15 000 kroner. Pengene kunne eventuelt brukes til «faglig formål» – styret brukte dem riktig.Ved åpningen 1. november holdt kjelleren åpent både fredag og lørdag. Fredag kveld annonserte de navnet: «LaBamba». Lørdag spilte bandet, «Compiler Crew». Lokalene ble blant annet også brukt til vorspiel for immatrikuleringsfesten dette året. Deltakerne ble i kjent stil busset fra vorspiel til fest, som fant sted på Møllerhotellet på Heimdal.",
+    "date": "1985"
+  },
+  {
+    "title": "LEGO går live",
+    "description": "Det ble mot slutten av 2014 bestemt at Abakus.no skulle skrives på nytt, fra bunnen av. Da dette er et krevende prosjekt kommer det til å være Webkoms hovedmål for 2015/2016. Prosjektet skal ha som mål å definere en oppdelt struktur mellom serverssiden og klientsiden, med et API tilgjengeliggjort for Abakus’ medlemmer. Dette skal gjøre det enklere å lage eksterne applikasjoner opp mot Abakus.no, samtidig som det skal gjøre videre utvikling og vedlikehold av siden enklere internt i Webkom. LEGO står derfor for «LEGO Er Ganske Oppdelt».\n\nI 2017 etter flere år med arbeid går LEGO live den <DATO> kl 06:43. Resultatet var som visjonen i 2014, en oppdelt nettside hvor backend (REST API) og frontend (React Webapp) var helt adskilt. Dette gjorde at API'et også kunne brukes av andre applikasjoner i årene som kom.",
+    "date": "2017"
+  },
+  {
+    "title": "Netcompany som ny HSP",
+    "description": "November 2018 ferdigstilte Hovedstyret prosessen med å velge HSP for 2019-2021. Etter 6 lange måneder med arbeid og forhandlinger kunne man endelig annonsere Netcompany som ny HSP. Prosessen ble mer omfattende enn tidligere år, med mange interesserte kandidater. I tillegg ønsket man en mer åpen prosess, og brukte mye tid på å ferdigstille planen og publisere den i forkant av selve forhandlingene. Å ta det endelige valget var ekstremt vanskelig. Det var veldig jevnt blant de beste kandidatene, men Netcompanys tilbud skilte seg positivt ut på flere måter. For det første var tilbudet en god match for Abakus’ visjon og verdier. Denne avtalen ville hjelpe Abakus å være åpne og transparente, og ville sørge for at Abakus kunne levere et variert og bredt tilbud som skulle fenge studentene på foreningens linjer. Abakus hadde spesielt tro på at de kunne legge til rette for en stor mengde sosiale arrangementer, at de kunne være lekne og at de kunne skape god variasjon i Abakus' bedriftsarrangementer! Netcompany viste Abakus et ønske om å innovere, og hadde lyst til å lære mer om Abakus, hvilken kunnskap foreningen sitter på og hvordan den fungerer. De skulle hjelpe til med å fornye Abakus, og ville bidra med å utvikle både medlemmer og Abakus som organisasjon. Abakus gledet seg til å ta fatt på de tre neste årene!",
+    "date": "2018"
+  }
+]
