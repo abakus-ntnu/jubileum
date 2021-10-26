@@ -1,0 +1,22 @@
+.timelineIcon {
+  height: 100%;
+  width: 100%;
+}
+
+.accordion {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  color: white;
+  padding: 0;
+}
+
+.accordion::before {
+  height: 0;
+  content: none;
+}
+
+.accordionSummary,
+.accordionDetails > p {
+  margin: 0;
+}
