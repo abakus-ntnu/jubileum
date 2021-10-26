@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import RibbonComponent from "../../components/RibbonComponent";
 import styles from "../../styles/RibbonsPage.module.css";
 import { Stack } from "@mui/material";
