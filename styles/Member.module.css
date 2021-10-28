@@ -1,0 +1,87 @@
+.stackStyle {
+  margin: 0 40px;
+}
+
+.verticleLine {
+  border-top: 2px solid white;
+  margin-top: 70px;
+}
+
+.textBox {
+  width: 700px;
+}
+
+.title {
+  font-size: 21px;
+  margin-bottom: 30;
+}
+
+.text {
+  width: 100%;
+}
+
+.roleStyle {
+  justify-content: center;
+}
+
+.pageStackStyle {
+  max-width: 1500px;
+  margin: auto;
+}
+
+.mainTitle {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.buttonStyle {
+  padding: 20px;
+}
+
+@media (max-width: 900px) {
+  .stackStyle {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+  }
+
+  .titleSize {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .text {
+    display: flex;
+    justify-content: center;
+  }
+
+  .textBox {
+    width: 700px;
+    margin: 0px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .infoBox {
+    width: 100%;
+    margin: 0px !important;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .title {
+    margin: 0px;
+  }
+
+  .roleStyle {
+    margin-bottom: 20px;
+  }
+
+  .titleSize {
+    font-size: 2rem;
+  }
+}

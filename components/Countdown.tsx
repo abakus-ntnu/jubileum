@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Stack, Box } from "@mui/material";
-import styles from "../components/Countdown.module.css";
+import styles from "../styles/Countdown.module.css";
 
 const adjustDate = (date: number) => {
   return date < 10 ? `0${date}` : date;
