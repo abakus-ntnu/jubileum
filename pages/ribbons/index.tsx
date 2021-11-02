@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import RibbonComponent from "../../components/RibbonComponent";
 import styles from "../../styles/RibbonsPage.module.css";
 import { Stack } from "@mui/material";
-import { medalTypes } from "./utils";
+import { medalTypes } from "../../data/ribbonUtils";
 import Header from "../../components/Header";
 
 const RibbonsPage: NextPage = () => {
