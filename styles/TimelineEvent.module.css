@@ -3,7 +3,7 @@
   width: 100%;
 }
 
-.accordion {
+div.accordion {
   background: none;
   border: 0;
   box-shadow: none;
@@ -11,7 +11,7 @@
   padding: 0;
 }
 
-.accordion::before {
+div.accordion::before {
   height: 0;
   content: none;
 }
