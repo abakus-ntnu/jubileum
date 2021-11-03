@@ -22,7 +22,7 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: string }) => {
         <Box sx={{ textAlign: "center", width: "200px", height: "20px" }}>
           <p style={{ fontSize: "20px" }}>{ribbonType.toString()}</p>
         </Box>
-        <Image src={imgSrc} width={240} height={240} alt="" />
+        <Image src={imgSrc} width={240} height={240} alt="Ribbon" />
         <p>{description}</p>
         <p>{info}</p>
       </Box>
