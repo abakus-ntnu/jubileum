@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import React, { useState } from "react";
 import Header from "../../components/Header";
 import styles from "../../styles/Member.module.css";
-import { Stack, Button } from "@mui/material";
+import { Stack, ToggleButton } from "@mui/material";
 import HonoraryMember from "../../components/honoraryMember";
 import { members, info } from "../../data/membersUtils";
 import Accordion from "@mui/material/Accordion";
@@ -11,9 +11,12 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import cx from "classnames";
+import NavBar from "components/NavBar";
+import { useRouter } from "next/dist/client/router";
 
 const HonoraryMembersPage: NextPage = () => {
   const [pageDisplay, setPageDisplay] = useState(true);
+  const router = useRouter();
 
   const honoraryMembers = members.map((m) => (
     <HonoraryMember key={m.name} {...m} />
@@ -57,10 +60,14 @@ const HonoraryMembersPage: NextPage = () => {
       </Accordion>
     </Stack>
   );
+  const [honorSelected, setHonorSelected] = React.useState(true);
+  const [orderSlected, setOrderSlected] = React.useState(false);
 
   return (
     <>
       <Header title="Æresmedlemmer" />
+
+      <NavBar />
 
       <main>
         <h1 className={cx(styles.mainTitle, styles.titleSize)}>
@@ -72,26 +79,40 @@ const HonoraryMembersPage: NextPage = () => {
           justifyContent="center"
           className={styles.buttonStyle}
         >
-          <Button
-            size="large"
-            variant="contained"
-            color="error"
-            onClick={() => {
+          <ToggleButton
+            value="check"
+            selected={honorSelected}
+            onChange={async () => {
+              if (!honorSelected && orderSlected) {
+                setOrderSlected(!orderSlected);
+                setHonorSelected(!honorSelected);
+              }
               setPageDisplay(true);
+              router.query.view = "honorary-members";
+              await router.push(router);
             }}
+            size="large"
+            color="error"
           >
             Æresmedlemmer
-          </Button>
-          <Button
-            size="large"
-            variant="contained"
-            color="error"
-            onClick={() => {
+          </ToggleButton>
+          <ToggleButton
+            value="check"
+            selected={orderSlected}
+            onChange={async () => {
+              if (honorSelected && !orderSlected) {
+                setOrderSlected(!orderSlected);
+                setHonorSelected(!honorSelected);
+              }
               setPageDisplay(false);
+              router.query.view = "the-order";
+              await router.push(router);
             }}
+            size="large"
+            color="error"
           >
             Orden
-          </Button>
+          </ToggleButton>
         </Stack>
         <p />
         {pageDisplay ? displayHonoraryMembers : displayTheOrder}
