@@ -21,7 +21,7 @@ const NavBar = () => {
           <Tab value="/readme" component="a" label="Noe fra readme" />
           <Tab value="/leaderboard" component="a" label="Scoreboard" />
           <Tab value="/timeline" component="a" label="Abakus Historie" />
-          <Tab value="/honorary-members" component="a" label="Æresmedlemmer" />
+          <Tab value="/members" component="a" label="Æresmedlemmer" />
         </Tabs>
       </Toolbar>
     </AppBar>
