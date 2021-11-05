@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import React, { useState } from "react";
+import React from "react";
 import Header from "../../components/Header";
 import styles from "../../styles/Member.module.css";
 import { Stack, ToggleButton } from "@mui/material";
@@ -15,8 +15,8 @@ import NavBar from "components/NavBar";
 import { useRouter } from "next/dist/client/router";
 
 const HonoraryMembersPage: NextPage = () => {
-  const [pageDisplay, setPageDisplay] = useState(true);
   const router = useRouter();
+  const isOrder = router.query.view === "the-order";
 
   const honoraryMembers = members.map((m) => (
     <HonoraryMember key={m.name} {...m} />
@@ -60,8 +60,11 @@ const HonoraryMembersPage: NextPage = () => {
       </Accordion>
     </Stack>
   );
-  const [honorSelected, setHonorSelected] = React.useState(true);
-  const [orderSlected, setOrderSlected] = React.useState(false);
+
+  const comp =
+    router.query.view == "honorary-members"
+      ? displayHonoraryMembers
+      : displayTheOrder;
 
   return (
     <>
@@ -81,15 +84,9 @@ const HonoraryMembersPage: NextPage = () => {
         >
           <ToggleButton
             value="check"
-            selected={honorSelected}
+            selected={!isOrder}
             onChange={async () => {
-              if (!honorSelected && orderSlected) {
-                setOrderSlected(!orderSlected);
-                setHonorSelected(!honorSelected);
-              }
-              setPageDisplay(true);
-              router.query.view = "honorary-members";
-              await router.push(router);
+              await router.replace("/members?view=honorary-members");
             }}
             size="large"
             color="error"
@@ -98,15 +95,9 @@ const HonoraryMembersPage: NextPage = () => {
           </ToggleButton>
           <ToggleButton
             value="check"
-            selected={orderSlected}
+            selected={isOrder}
             onChange={async () => {
-              if (honorSelected && !orderSlected) {
-                setOrderSlected(!orderSlected);
-                setHonorSelected(!honorSelected);
-              }
-              setPageDisplay(false);
-              router.query.view = "the-order";
-              await router.push(router);
+              await router.replace("/members?view=the-order");
             }}
             size="large"
             color="error"
@@ -115,7 +106,7 @@ const HonoraryMembersPage: NextPage = () => {
           </ToggleButton>
         </Stack>
         <p />
-        {pageDisplay ? displayHonoraryMembers : displayTheOrder}
+        {comp}
       </main>
     </>
   );
