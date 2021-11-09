@@ -9,9 +9,11 @@ interface IProps {
 const Timeline = (props: IProps) => {
   return (
     <VerticalTimeline>
-      {props.events.map((event, index) => (
-        <TimelineEventElement key={index} {...event} />
-      ))}
+      {props.events
+        .sort((a, b) => (a.date > b.date ? 1 : -1))
+        .map((event, index) => (
+          <TimelineEventElement key={index} {...event} />
+        ))}
     </VerticalTimeline>
   );
 };
