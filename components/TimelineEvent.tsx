@@ -8,7 +8,12 @@ import { TimelineEvent } from "models/schema";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-const TimelineEventElement = (event: TimelineEvent) => {
+interface IProps {
+  event: TimelineEvent;
+  defaultExpanded?: boolean;
+}
+
+const TimelineEventElement = ({ event, defaultExpanded }: IProps) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -30,7 +35,11 @@ const TimelineEventElement = (event: TimelineEvent) => {
         />
       }
     >
-      <Accordion className={styles.accordion} style={{ margin: 0 }}>
+      <Accordion
+        defaultExpanded={defaultExpanded}
+        className={styles.accordion}
+        style={{ margin: 0 }}
+      >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           className={styles.accordionSummary}

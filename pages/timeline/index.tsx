@@ -29,7 +29,7 @@ const TimelinePage: NextPage = () => {
 
       <main>
         <h1>Tidslinje!</h1>
-        <Timeline events={data} />
+        <Timeline />
       </main>
     </>
   );
