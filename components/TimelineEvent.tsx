@@ -5,6 +5,8 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import styles from "styles/TimelineEvent.module.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { TimelineEvent } from "models/schema";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const TimelineEventElement = (event: TimelineEvent) => {
   const [open, setOpen] = useState(false);
@@ -36,7 +38,9 @@ const TimelineEventElement = (event: TimelineEvent) => {
           <h3 className="vertical-timeline-element-title">{event.title}</h3>
         </AccordionSummary>
         <AccordionDetails className={styles.accordionDetails}>
-          <p>{event.description}</p>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {event.description}
+          </ReactMarkdown>
         </AccordionDetails>
       </Accordion>
     </VerticalTimelineElement>
