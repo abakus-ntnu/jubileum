@@ -40,6 +40,35 @@
   padding: 20px;
 }
 
+.theOrderTypographyStyle {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.theOrderCardStyle {
+  margin-left: 0px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  min-width: 350px;
+  border: 1px solid #d4af37;
+}
+
+.theOrderMemberImgStyle {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.theOrderh4Style {
+  text-align: center;
+}
+
+.tabPanelsStyle {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+}
+
 @media (max-width: 900px) {
   .stackStyle {
     flex-wrap: wrap;
@@ -83,5 +112,9 @@
 
   .titleSize {
     font-size: 2rem;
+  }
+
+  .theOrderCardStyle {
+    min-width: 240px;
   }
 }
