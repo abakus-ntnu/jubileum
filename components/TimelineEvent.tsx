@@ -47,7 +47,7 @@ const TimelineEventElement = ({ event, defaultExpanded }: IProps) => {
           <h3 className="vertical-timeline-element-title">{event.title}</h3>
         </AccordionSummary>
         <AccordionDetails className={styles.accordionDetails}>
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown className={styles.markdownContent} remarkPlugins={[remarkGfm]}>
             {event.description}
           </ReactMarkdown>
         </AccordionDetails>

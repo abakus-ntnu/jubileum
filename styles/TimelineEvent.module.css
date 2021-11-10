@@ -20,3 +20,7 @@ div.accordion::before {
 .accordionDetails > p {
   margin: 0;
 }
+
+.markdownContent img {
+  max-width: 100%;
+}
