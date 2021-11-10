@@ -1,4 +1,3 @@
-import React from "react";
 import { Stack, Box, Tooltip } from "@mui/material";
 import styles from "../styles/Member.module.css";
 import { isMobile } from "react-device-detect";
@@ -6,7 +5,6 @@ import Image from "next/image";
 
 export interface MemberProps {
   name: string;
-  key: string;
   memberInfo: string;
   profilePic: string;
   reverse: boolean;
@@ -15,15 +13,15 @@ export interface MemberProps {
   committee: string[];
 }
 
-const HonoraryMember = (member: MemberProps) => {
-  const displayCommittee = member.committee.map((k) => (
-    <Box key={k}>
-      <Tooltip title={`${k}`}>
+const HonoraryMember = ({ member }: { member: MemberProps }) => {
+  const displayCommittee = member.committee.map((comittee) => (
+    <Box key={comittee}>
+      <Tooltip title={`${comittee}`}>
         <Image
           width={60}
           height={60}
-          src={`/abakus_${k}.png`}
-          alt={`${k} committee`}
+          src={`/abakus_${comittee}.png`}
+          alt={`${comittee} committee`}
         />
       </Tooltip>
     </Box>
@@ -51,6 +49,7 @@ const HonoraryMember = (member: MemberProps) => {
         className={styles.stackStyle}
       >
         <Image
+          layout="fixed"
           src={member.profilePic}
           width={180}
           height={180}

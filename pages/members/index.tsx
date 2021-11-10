@@ -13,13 +13,14 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import cx from "classnames";
 import NavBar from "components/NavBar";
 import { useRouter } from "next/dist/client/router";
+import TheOrder from "components/theOrder";
 
 const HonoraryMembersPage: NextPage = () => {
   const router = useRouter();
   const isOrder = router.query.view === "the-order";
 
-  const honoraryMembers = members.map((m) => (
-    <HonoraryMember key={m.name} {...m} />
+  const honoraryMembers = members.map((member) => (
+    <HonoraryMember key={member.name} member={member} />
   ));
   const displayHonoraryMembers = (
     <Stack className={styles.pageStackStyle} direction="column" spacing={5}>
@@ -27,10 +28,10 @@ const HonoraryMembersPage: NextPage = () => {
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           sx={{
-            bgcolor: "text.secondary",
+            bgcolor: "warning.main",
           }}
         >
-          <Typography color="common.white" variant="h5">
+          <Typography color="common.black" variant="h5">
             Informasjon om Æresmedlemmer
           </Typography>
         </AccordionSummary>
@@ -47,10 +48,10 @@ const HonoraryMembersPage: NextPage = () => {
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           sx={{
-            bgcolor: "text.secondary",
+            bgcolor: "warning.main",
           }}
         >
-          <Typography color="common.white" variant="h5">
+          <Typography color="common.black" variant="h5">
             Hva er Ordenen?
           </Typography>
         </AccordionSummary>
@@ -58,13 +59,9 @@ const HonoraryMembersPage: NextPage = () => {
           <Typography>{info.orden}</Typography>
         </AccordionDetails>
       </Accordion>
+      <TheOrder />
     </Stack>
   );
-
-  const comp =
-    router.query.view == "honorary-members"
-      ? displayHonoraryMembers
-      : displayTheOrder;
 
   return (
     <>
@@ -106,7 +103,7 @@ const HonoraryMembersPage: NextPage = () => {
           </ToggleButton>
         </Stack>
         <p />
-        {comp}
+        {isOrder ? displayTheOrder : displayHonoraryMembers}
       </main>
     </>
   );

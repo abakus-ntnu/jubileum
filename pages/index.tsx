@@ -1,11 +1,4 @@
-/*
-This is the index page, aka the page that opens when you run the project
-This is where you are to put everything you want on the start page and 
-links to all the other pages you want to include in the project
-*/
-
 import type { NextPage } from "next";
-import TestComponent from "../components/TestComponent";
 import styles from "../styles/Home.module.css";
 import Countdown from "../components/Countdown";
 import Header from "../components/Header";
@@ -26,8 +19,6 @@ const Home: NextPage = () => {
           Wohoo her skal dere lage en skikkelig kul side! Lykkke til, det blir
           bra!
         </p>
-
-        <TestComponent />
       </main>
     </div>
   );
