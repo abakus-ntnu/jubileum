@@ -13,7 +13,7 @@ const members = [
     name: "Åsmund Eldhuset",
     memberInfo:
       " I Webkom har han vært en stor ressurs både i forbindelse med kompetanse, utvikling og opplæring av nye medlemmer. Medlemmet har alltid vært meget ivrig på å hjelpe medstudenter, og har holdt forelesninger i mange sentrale fag for medlemmer av linjeforeningen.",
-    profilePic: "/default_male_avatar.png",
+    profilePic: "/Åsmund Eldhuset.jpg",
     reverse: true,
     appointed: "2012",
     position: "Leder av Bedkom",

@@ -41,15 +41,17 @@
 }
 
 .theOrderTypographyStyle {
-  margin-left: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
   margin-top: 10px;
+  text-align: center;
 }
 
 .theOrderCardStyle {
   margin-left: 0px;
   margin-right: 50px;
   margin-bottom: 50px;
-  min-width: 350px;
+  width: 320px;
   border: 1px solid #d4af37;
 }
 
@@ -67,6 +69,22 @@
   flex-wrap: wrap;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+}
+
+.iconButtonStyle {
+  float: right;
+}
+
+.modalStyle {
+  overflow: scroll;
+}
+
+.tmob {
+  display: none;
+}
+.tdesk {
+  display: block;
 }
 
 @media (max-width: 900px) {
@@ -116,5 +134,16 @@
 
   .theOrderCardStyle {
     min-width: 240px;
+  }
+  .theOrderCardStyle {
+    margin-right: 0px;
+    margin-bottom: 50px;
+  }
+
+  .tmob {
+    display: block;
+  }
+  .tdesk {
+    display: none;
   }
 }
