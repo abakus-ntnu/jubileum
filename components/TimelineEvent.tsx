@@ -2,7 +2,7 @@ import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
-import styles from "../styles/TimelineEvent.module.css";
+import styles from "styles/TimelineEvent.module.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { TimelineEvent } from "models/schema";
 

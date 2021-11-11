@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { NextApiRequest, NextApiResponse } from "next";
-import { TimelineEvent, TimelineEventModel } from "../../models/schema";
-import { url } from "./_db";
+import { TimelineEvent, TimelineEventModel } from "models/schema";
+import { url } from "pages/api/_db";
 
 export default async function handler(
   req: NextApiRequest,

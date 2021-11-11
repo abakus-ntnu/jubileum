@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import "react-vertical-timeline-component/style.min.css";
 import React from "react";
-import Timeline from "../../components/Timeline";
-import NavBar from "../../components/NavBar";
-import Header from "../../components/Header";
+import Timeline from "components/Timeline";
+import NavBar from "components/NavBar";
+import Header from "components/Header";
 import useSWR from "swr";
 import { TimelineEvent } from "models/schema";
 
