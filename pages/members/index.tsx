@@ -43,7 +43,7 @@ const HonoraryMembersPage: NextPage = () => {
     </Stack>
   );
   const displayTheOrder = (
-    <Stack direction="column">
+    <Stack className={styles.pageStackStyle} direction="column">
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}

@@ -21,13 +21,7 @@ const TabPanel = (props: TabPanelProps) => {
   const { children, value, index, ...other } = props;
 
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
+    <div hidden={value !== index} {...other}>
       {value === index && (
         <Box sx={{ p: 3 }}>
           <Typography>{children}</Typography>
@@ -35,13 +29,6 @@ const TabPanel = (props: TabPanelProps) => {
       )}
     </div>
   );
-};
-
-const a11yProps = (index: number) => {
-  return {
-    id: `vertical-tab-${index}`,
-    "aria-controls": `vertical-tabpanel-${index}`,
-  };
 };
 
 const TheOrder = () => {
@@ -61,30 +48,53 @@ const TheOrder = () => {
   ));
 
   const viewTabs = indexList.map((index) => (
-    <Tab key={index} label={`${2021 - index}`} {...a11yProps(index)} />
+    <Tab key={index} label={`${2021 - index}`} />
   ));
 
-  return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        bgcolor: "background.paper",
-        display: "flex",
-        height: 1100,
-      }}
+  const TabsWrapper = ({
+    mobile,
+    className,
+  }: {
+    mobile?: boolean;
+    className: string;
+  }) => (
+    <Tabs
+      className={className}
+      orientation={mobile ? "horizontal" : "vertical"}
+      variant="scrollable"
+      value={value}
+      onChange={handleChange}
+      sx={{ borderRight: 1, borderColor: "divider", minWidth: 100 }}
+      TabIndicatorProps={{ style: { background: "yellow" } }}
     >
-      <Tabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: "divider", minWidth: 100 }}
-      >
-        {viewTabs}
-      </Tabs>
-      {viewTabPanels}
-    </Box>
+      {viewTabs}
+    </Tabs>
+  );
+
+  const getNumberOfMembersByYear = orderMembers.reduce((previous, member) => {
+    if (member.appointed === String(2021 - value)) {
+      previous++;
+    }
+    return previous;
+  }, 0);
+
+  const boxStyle = {
+    flexGrow: 1,
+    bgcolor: "background.paper",
+    display: "flex",
+    height: {
+      md: 900,
+      xs: getNumberOfMembersByYear * 300,
+    },
+  };
+
+  return (
+    <div>
+      <TabsWrapper mobile className={styles.tmob} />
+      <Box sx={boxStyle}>
+        <TabsWrapper className={styles.tdesk} /> {viewTabPanels}
+      </Box>
+    </div>
   );
 };
 

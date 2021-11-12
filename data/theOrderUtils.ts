@@ -4,7 +4,7 @@ const orderMembers = [
     grade: "Ridder",
     name: "Odin Ugedal",
     title: "Hans Kyndighet Nånn Sku Hatt Sparken",
-    profilePic: "/default_male_avatar.png",
+    profilePic: "/Åsmund Eldhuset.jpg",
     info: [
       "Odin Ugedal ble tatt opp i Webkom, og ble raskt engasjert i arbeidet i komiteen. Han ble leder av komiteen i 2. klasse og klarte bemerkelsesverdig  å fylle et enormt tomrom av kunnskap som oppstod da mange flinke medlemmer gikk ut av komiteen. Odin har gang på gang reddet abakus.no fra å gå ned, og hvem vet, kanskje serverrommet hadde brent ned hvis ikke det var for Odin sin innsats. Ikke bare nok med at Odin antageligvis har reddet Webkom fra undergang, men han har også lagt ufattelig mye innsats i LEGO, Vote, og mange andre av Webkom’s prosjekter. Odin har overlegent flest commits på LEGO frontend og det skal umenneskelig mye til for å nå opp til Odin sin mengde bidrag både her, på LEGO backend og de fleste andre av Webkoms prosjekter.",
       "Odin har veldig sterke meninger om alle ting, og nåde den som våger å snakke imot. Når noe ikke er akkurat som det skal, eller rettere sagt akkurat som Odin vil at det skal være, kommer det fort en rant der selv den mest erfarne og bakoverlente webkomer blir nødt til å se ned i gulvet og si unnskyld for at resten av verden ikke kan nå opp til Odins skyhøye krav. Det er heller ikke bare når noe er gærnt at Odin sprer frykt. Da komiteen var på skytebane på utenlandstur ble Odin observert med en kalashnikov i hendene og mord i blikket, mens resten av gjengen smilte pent til kamera.",
@@ -15,7 +15,7 @@ const orderMembers = [
     grade: "Ridder",
     name: "Betina Pedersen Bye",
     title: "Hans Kyndighet Nånn Sku Hatt Sparken",
-    profilePic: "/default_female_avatar.png",
+    profilePic: "/default_male_avatar.png",
     info: [
       `Betina har vært en enorm bidragsyter til vår kjære linjeforening i snart 6 år. Hun startet sitt engasjement i Fagkom, hvor hun revolusjonerte komitéens sosiale liv. Selv om hennes tittel som sosialansvarlig er offisielt borte, vil hun nok aldri slutte å inneha rollen. Hennes innovasjonsevne er uten like, som Bedrift-Til-Bedrift, Frokostserien, og Interkom sin nye onboarding har fått merke. 
       Betina er også en backupveteran. Gjennom 4 år har hun blant annet vært med å redefinere HÆLGA, holde ledertreninger, og bistå interessegrupper. I tillegg har hun kurset mange generasjoner av Abakom med sine ferdigheter i GTD og Inbox Zero. Enda et eksempel på Betinas inkluderingsevne er hennes engasjement i Strikk og Drikk, hvor hun har ledet an i over 3 år. `,
@@ -30,7 +30,7 @@ const orderMembers = [
     grade: "Ridder",
     name: "Betina Pedersen Bye",
     title: "Hans Kyndighet Nånn Sku Hatt Sparken",
-    profilePic: "/default_female_avatar.png",
+    profilePic: "/Åsmund Eldhuset.jpg",
     info: ["cool"],
   },
   {
@@ -46,7 +46,7 @@ const orderMembers = [
     grade: "Ridder",
     name: "Betina Pedersen Bye",
     title: "Hans Kyndighet Nånn Sku Hatt Sparken",
-    profilePic: "/default_female_avatar.png",
+    profilePic: "/default_male_avatar.png",
     info: ["cool"],
   },
   {
@@ -54,7 +54,7 @@ const orderMembers = [
     grade: "Ridder",
     name: "Betina Pedersen Bye",
     title: "Hans Kyndighet Nånn Sku Hatt Sparken",
-    profilePic: "/default_male_avatar.png",
+    profilePic: "/default_female_avatar.png",
     info: ["cool"],
   },
   {
@@ -70,7 +70,7 @@ const orderMembers = [
     grade: "Ridder",
     name: "Betina Pedersen Bye",
     title: "Hans Kyndighet Nånn Sku Hatt Sparken",
-    profilePic: "/default_male_avatar.png",
+    profilePic: "/default_female_avatar.png",
     info: ["cool"],
   },
   {
@@ -86,7 +86,7 @@ const orderMembers = [
     grade: "Ridder",
     name: "Betina Pedersen Bye",
     title: "Hans Kyndighet Nånn Sku Hatt Sparken",
-    profilePic: "/default_male_avatar.png",
+    profilePic: "/default_female_avatar.png",
     info: ["cool"],
   },
   {
@@ -98,11 +98,11 @@ const orderMembers = [
     info: ["cool"],
   },
   {
-    appointed: "2018",
+    appointed: "2021",
     grade: "Ridder",
-    name: "Betina Pedersen Bye",
-    title: "Hans Kyndighet Nånn Sku Hatt Sparken",
-    profilePic: "/default_male_avatar.png",
+    name: "Åsmund Eldhuset",
+    title: "Hans Gyldenhet Stormester Emeritus, Hans Evighet Reddende Engel",
+    profilePic: "/Åsmund Eldhuset.jpg",
     info: ["cool"],
   },
 ];

@@ -17,12 +17,14 @@ const HonoraryMember = ({ member }: { member: MemberProps }) => {
   const displayCommittee = member.committee.map((comittee) => (
     <Box key={comittee}>
       <Tooltip title={`${comittee}`}>
-        <Image
-          width={60}
-          height={60}
-          src={`/abakus_${comittee}.png`}
-          alt={`${comittee} committee`}
-        />
+        <div>
+          <Image
+            width={60}
+            height={60}
+            src={`/abakus_${comittee}.png`}
+            alt={`${comittee} committee`}
+          />
+        </div>
       </Tooltip>
     </Box>
   ));
