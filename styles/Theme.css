@@ -1,0 +1,6 @@
+@font-face {
+  font-family: "SoraBold";
+  src: local("SoraBold"),
+    url("../fonts/SoraBold.woff2") format("woff2");
+  font-weight: bold;
+}
