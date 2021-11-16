@@ -1,15 +1,16 @@
+import { TimelineEvent } from "models/schema";
 import { VerticalTimeline } from "react-vertical-timeline-component";
-import TimelineEvent, { TimelineEventProps } from "./TimelineEvent";
+import TimelineEventElement from "./TimelineEvent";
 
 interface IProps {
-  events: TimelineEventProps[];
+  events: TimelineEvent[];
 }
 
 const Timeline = (props: IProps) => {
   return (
     <VerticalTimeline>
       {props.events.map((event, index) => (
-        <TimelineEvent key={index} {...event} />
+        <TimelineEventElement key={index} {...event} />
       ))}
     </VerticalTimeline>
   );

@@ -2,17 +2,11 @@ import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
-import styles from "../styles/TimelineEvent.module.css";
+import styles from "styles/TimelineEvent.module.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { TimelineEvent } from "models/schema";
 
-export interface TimelineEventProps {
-  title: string;
-  subTitle?: string;
-  description?: string;
-  date: string;
-}
-
-const TimelineEvent = (event: TimelineEventProps) => {
+const TimelineEventElement = (event: TimelineEvent) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -49,4 +43,4 @@ const TimelineEvent = (event: TimelineEventProps) => {
   );
 };
 
-export default TimelineEvent;
+export default TimelineEventElement;
