@@ -115,7 +115,7 @@ const TimelinePage: NextPage = () => {
           </Grid>
         </Grid>
         <h2>Tidslinjen:</h2>
-        <Timeline />
+        <Timeline adminPassword={password} />
       </Container>
     </>
   );

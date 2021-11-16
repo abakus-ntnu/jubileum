@@ -11,10 +11,21 @@ import remarkGfm from "remark-gfm";
 interface IProps {
   event: TimelineEvent;
   defaultExpanded?: boolean;
+  adminPassword?: string;
 }
 
-const TimelineEventElement = ({ event, defaultExpanded }: IProps) => {
+const TimelineEventElement = ({ event, defaultExpanded, adminPassword }: IProps) => {
   const [open, setOpen] = useState(false);
+
+  const deleteElement = async () => {
+    await fetch(`/api/timelineEvents/${event._id as string}`, {
+      method: "DELETE",
+      headers: {
+        password: adminPassword ?? "",
+        "Content-Type": "application/json",
+      },
+    });
+  }
 
   return (
     <VerticalTimelineElement
@@ -45,6 +56,7 @@ const TimelineEventElement = ({ event, defaultExpanded }: IProps) => {
           className={styles.accordionSummary}
         >
           <h3 className="vertical-timeline-element-title">{event.title}</h3>
+          {adminPassword && <button onClick={deleteElement}>Delete</button>}
         </AccordionSummary>
         <AccordionDetails className={styles.accordionDetails}>
           <ReactMarkdown className={styles.markdownContent} remarkPlugins={[remarkGfm]}>

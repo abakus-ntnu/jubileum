@@ -5,7 +5,7 @@ import TimelineEventElement from "./TimelineEvent";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-const Timeline = () => {
+const Timeline = ({adminPassword} : {adminPassword?: string}) => {
   const { data: events, error } = useSWR<TimelineEvent[], unknown>(
     "/api/timelineEvents",
     fetcher,
@@ -26,6 +26,7 @@ const Timeline = () => {
             key={index}
             event={event}
             defaultExpanded={index === 0}
+            adminPassword={adminPassword}
           />
         ))}
     </VerticalTimeline>
