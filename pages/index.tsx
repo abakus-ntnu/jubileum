@@ -4,6 +4,8 @@ import JubPage from "components/JubPage";
 import { Typography } from "@mui/material";
 import useFireworks from "hooks/useFireworks";
 import Centered from "../components/Centered";
+import ProgramComponent from "components/Program";
+import { events } from "../data/programUtils";
 
 const Home: NextPage = () => {
   useFireworks();
@@ -35,6 +37,9 @@ const Home: NextPage = () => {
           frameBorder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         />
+        {events.map((program) => {
+          return(<ProgramComponent program={program} />);
+        })}
       </Centered>
     </JubPage>
   );
