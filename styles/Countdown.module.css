@@ -1,17 +1,26 @@
-.vertical {
-  display: inline-block;
-  border-left: 1px solid #ccc;
-  margin: 0 10px;
-  height: 125px;
-  bottom: 50px;
-}
-
 .integer {
-  margin-top: 0;
-  margin-bottom: 0;
+  font-family: SoraRegular;
+  color: white;
+  margin-bottom: 1.5rem;
 }
 
 .box {
-  height: 140px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  width: 10rem;
   text-align: center;
+  background-color: #eb4034;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.26);
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.26);
+}
+
+.p {
+  font-family: SoraRegular;
+  position: absolute;
+  margin-top: 6rem;
+  color: white;
 }
