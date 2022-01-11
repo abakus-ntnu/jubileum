@@ -32,14 +32,14 @@ const Countdown = ({ countDownDate }: CountdownProps) => {
 
   const drawerWidth = {
     width: {
-      md: "120px",
+      md: "100px",
       xs: "63px",
     },
   };
   const drawerFontSize = {
     fontSize: {
-      md: "75px",
-      xs: "50px",
+      md: "60px",
+      xs: "30px",
     },
   };
   return (
@@ -49,28 +49,25 @@ const Countdown = ({ countDownDate }: CountdownProps) => {
           <Box sx={drawerFontSize} className={styles.integer}>
             {adjustDate(days)}
           </Box>
-          <p>DAYS</p>
+          <p className={styles.p}>DAGER</p>
         </Box>
-        <span className={styles.vertical}></span>
         <Box sx={drawerWidth} className={styles.box}>
           <Box sx={drawerFontSize} className={styles.integer}>
             {adjustDate(hours)}
           </Box>
-          <p>HOURS</p>
+          <p className={styles.p}>TIMER</p>
         </Box>
-        <span className={styles.vertical}></span>
         <Box sx={drawerWidth} className={styles.box}>
           <Box sx={drawerFontSize} className={styles.integer}>
             {adjustDate(minutes)}
           </Box>
-          <p>MINUTES</p>
+          <p className={styles.p}>MINUTTER</p>
         </Box>
-        <span className={styles.vertical}></span>
         <Box sx={drawerWidth} className={styles.box}>
           <Box sx={drawerFontSize} className={styles.integer}>
             {adjustDate(seconds)}
           </Box>
-          <p>SECONDS</p>
+          <p className={styles.p}>SEKUNDER</p>
         </Box>
       </Stack>
     </div>

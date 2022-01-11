@@ -20,20 +20,22 @@ const LeaderboardPage: NextPage = () => {
       <NavBar />
 
       <main className={styles.main}>
-        <h1>Leaderboard :D</h1>
-        <TableContainer component={Paper}>
+        <h1 className={styles.title}></h1>
+        <TableContainer className={styles.Table} component={Paper}>
           <Table aria-label="customized table">
             <TableHead>
               <TableRow>
                 <StyledTableCell></StyledTableCell>
-                <StyledTableCell>Name</StyledTableCell>
-                <StyledTableCell>Score</StyledTableCell>
+                <StyledTableCell>Navn</StyledTableCell>
+                <StyledTableCell>Poeng</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {participants.map((participants, index) => (
                 <StyledTableRow key={participants.name}>
-                  <StyledTableCellNumber>{index + 1}</StyledTableCellNumber>
+                  <StyledTableCellNumber>
+                    {"0" + (index + 1).toString() + "."}
+                  </StyledTableCellNumber>
                   <StyledTableCell component="th" scope="row">
                     {participants.name}
                   </StyledTableCell>
@@ -43,6 +45,7 @@ const LeaderboardPage: NextPage = () => {
             </TableBody>
           </Table>
         </TableContainer>
+        <p className={styles.description}>😎😎😎😎😎😎😎😎😎</p>
       </main>
     </div>
   );
@@ -50,29 +53,36 @@ const LeaderboardPage: NextPage = () => {
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: "#6e110e",
-    fontSize: 20,
+    backgroundColor: "#262626",
+    fontSize: 17,
     fontWeight: theme.typography.fontWeightBold,
+    fontFamily: "SoraRegular",
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 20,
+    fontSize: 17,
+    color: "#000000",
+    fontFamily: "SoraRegular",
+  },
+  divider: {
+    // Theme Color, or use css color in quote
+    background: "#ffffff",
   },
 }));
 
-const StyledTableCellNumber = styled(TableCell)(({ theme }) => ({
+const StyledTableCellNumber = styled(TableCell)(() => ({
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 20,
-    fontWeight: theme.typography.fontWeightBold,
+    fontSize: 17,
+    color: "#000000",
   },
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
     color: theme.palette.common.white,
-    backgroundColor: "#E21617",
+    backgroundColor: "#f7f7f7",
   },
   "&:nth-of-type(even)": {
-    backgroundColor: "#B21C17",
+    backgroundColor: "#f2f2f2",
   },
   "&:last-child td, &:last-child th": {
     border: 0,

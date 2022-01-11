@@ -3,6 +3,9 @@ import React from "react";
 import { useRouter } from "next/dist/client/router";
 import jubileum_theme from "./Theme";
 import { ThemeProvider } from "@mui/material";
+import styles from "../styles/NavBar.module.css";
+import Image from "next/image";
+import abakus45 from "../assets/abakus_logo_2.png";
 
 const NavBar = () => {
   const router = useRouter();
@@ -13,19 +16,49 @@ const NavBar = () => {
 
   return (
     <ThemeProvider theme={jubileum_theme}>
-      <AppBar position="static" sx={{ backgroundColor: "#DAA520"}} >
-        <Toolbar sx={{height: 50}}>
-          <Tabs 
-          value={router.pathname} 
-          variant="scrollable"
-          scrollButtons="auto"
-          indicatorColor="primary"
-          onChange={(evt, newValue: string) => handleChange(newValue)} centered>
-            <Tab value="/" component="a" label="Hjem" sx={{color: '#ffffff'}}/>
-            <Tab value="/ribbons" component="a" label="Daljer, Pins og Bånd" sx={{color: '#ffffff'}}/>
-            <Tab value="/leaderboard" component="a" label="Scoreboard" sx={{color: '#ffffff'}}/>
-            <Tab value="/timeline" component="a" label="Abakus Historie" sx={{color: '#ffffff'}}/>
-            <Tab value="/members" component="a" label="Æresmedlemmer" sx={{color: '#ffffff'}}/>
+      <AppBar position="static">
+        <Toolbar className={styles.Toolbar}>
+          <Tabs
+            value={router.pathname}
+            className={styles.Tabs}
+            scrollButtons="auto"
+            indicatorColor="primary"
+            TabIndicatorProps={{
+              children: <span className={styles.indicatorSpan} />,
+            }}
+            variant="scrollable"
+            onChange={(evt, newValue: string) => handleChange(newValue)}
+          >
+            <Tab
+              value="/ribbons"
+              component="a"
+              label="Daljer, Pins og Bånd"
+              className={styles.Tab}
+            />
+            <Tab
+              value="/leaderboard"
+              component="a"
+              label="Scoreboard"
+              className={styles.Tab}
+            />
+            <Tab
+              value="/"
+              component="a"
+              icon={<Image src={abakus45} width={35} height={35} alt={""} />}
+              className={styles.Tab}
+            />
+            <Tab
+              value="/timeline"
+              component="a"
+              label="Abakus Historie"
+              className={styles.Tab}
+            />
+            <Tab
+              value="/members"
+              component="a"
+              label="Æresmedlemmer"
+              className={styles.Tab}
+            />
           </Tabs>
         </Toolbar>
       </AppBar>

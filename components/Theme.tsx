@@ -1,19 +1,25 @@
-import { createTheme } from '@mui/material/styles';
-import SoraBold from '../fonts/SoraBold.woff2'; 
+import { createTheme } from "@mui/material/styles";
 
 const jubileum_theme = createTheme({
   palette: {
     primary: {
-      main: '#ffffff',
+      main: "#ffffff",
     },
     secondary: {
-      main: '#57995a',
+      main: "#57995a",
     },
   },
   typography: {
-    fontSize: 15,
-    fontFamily: 'SoraBold'
-  }
+    fontSize: 17,
+    fontFamily: "SoraRegular",
+  },
+  components: {
+    MuiTab: {
+      styleOverrides: {
+        textColorPrimary: "white",
+      },
+    },
+  },
 });
 
-export default jubileum_theme
+export default jubileum_theme;

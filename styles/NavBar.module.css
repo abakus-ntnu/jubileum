@@ -1,0 +1,42 @@
+.Tab {
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.Toolbar {
+  height: 1000;
+  background-color: #eb4034;
+  justify-content: center;
+  align-items: center;
+}
+
+.Tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 7rem;
+  color: white;
+}
+
+.Circle {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: black;
+}
+
+.indicator {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.idicatorSpan {
+  width: 50%;
+  background-color: white;
+}

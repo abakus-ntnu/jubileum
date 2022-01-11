@@ -1,8 +1,29 @@
+@font-face {
+  font-family: "SoraRegular";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../fonts/SoraRegular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SoraBold";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../fonts/SoraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "LatoRegular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/LatoRegular.ttf") format("truetype");
+}
+
 html,
 body {
   padding: 0;
-  background-color: #1e1e1e;
-  color: white;
+  background-color: white;
+  color: black;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;

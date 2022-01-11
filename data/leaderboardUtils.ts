@@ -9,7 +9,7 @@ const participants = [
   },
   {
     name: "Maracas",
-    score: 600000,
+    score: 60000,
   },
   {
     name: "Donald",
