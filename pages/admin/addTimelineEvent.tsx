@@ -25,9 +25,9 @@ const TimelinePage: NextPage = () => {
     date: "",
   });
 
-  const postEvent = async (event: TimelineEvent): Promise<boolean> => {
+  const putEvent = async (event: TimelineEvent): Promise<boolean> => {
     const res = await fetch("/api/timelineEvents", {
-      method: "POST",
+      method: "PUT",
       headers: {
         password: password,
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const TimelinePage: NextPage = () => {
   const submit = async (e: FormEvent) => {
     e.preventDefault();
     if (event.date && event.description && event.title) {
-      if (await postEvent(event)) {
+      if (await putEvent(event)) {
         setEvent({ title: "", description: "", date: "" });
       }
     }
@@ -115,7 +115,7 @@ const TimelinePage: NextPage = () => {
           </Grid>
         </Grid>
         <h2>Tidslinjen:</h2>
-        <Timeline adminPassword={password} />
+        <Timeline adminPassword={password} onEditClick={(timelineEvent: TimelineEvent) => setEvent(timelineEvent)} />
       </Container>
     </>
   );

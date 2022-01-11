@@ -15,6 +15,22 @@ export default async function handler(
     case "GET":
       res.status(200).json(await TimelineEventModel.find({}));
       break;
+    case "PUT":
+      {
+        if (headers.password !== process.env.POST_PASSWORD) {
+          res.status(401).end();
+          return;
+        }
+        const requestEvent = req.body as TimelineEvent;
+        if (requestEvent._id){
+          await TimelineEventModel.findOneAndUpdate({ _id: requestEvent._id as mongoose.Types.ObjectId }, requestEvent, {
+            upsert: true,
+          });
+          res.status(200).send("");
+          break;
+        }
+      }
+    // eslint-disable-next-line no-fallthrough
     case "POST":
       {
         if (headers.password !== process.env.POST_PASSWORD) {

@@ -12,9 +12,10 @@ interface IProps {
   event: TimelineEvent;
   defaultExpanded?: boolean;
   adminPassword?: string;
+  onEditClick?: (event: TimelineEvent) => void;
 }
 
-const TimelineEventElement = ({ event, defaultExpanded, adminPassword }: IProps) => {
+const TimelineEventElement = ({ event, defaultExpanded, adminPassword, onEditClick }: IProps) => {
   const [open, setOpen] = useState(false);
 
   const deleteElement = async () => {
@@ -57,6 +58,7 @@ const TimelineEventElement = ({ event, defaultExpanded, adminPassword }: IProps)
         >
           <h3 className="vertical-timeline-element-title">{event.title}</h3>
           {adminPassword && <button onClick={deleteElement}>Delete</button>}
+          {onEditClick && <button onClick={() => onEditClick(event)}>Edit</button>}
         </AccordionSummary>
         <AccordionDetails className={styles.accordionDetails}>
           <ReactMarkdown className={styles.markdownContent} remarkPlugins={[remarkGfm]}>
