@@ -1,12 +1,12 @@
 import React from "react";
 import { Box, Card } from "@mui/material";
-import Image from "next/image";
 
 export interface RibbonProps {
   medalType: string;
   medalDesign: string;
   medalInformation: string;
   imageLink: string;
+  filterTag: string;
 }
 
 const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
@@ -17,17 +17,28 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
     ribbonType != null ? ribbonType.medalInformation : "MedalInformation";
   const imgSrc = ribbonType != null ? ribbonType.imageLink : "/SampleDalje.png";
 
+  const imageStyles = {
+    paperContainer: {
+      backgroundImage: `url(${imgSrc})`,
+      backgroundSize: "contain",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "center",
+      height: "260px",
+      width: "240px",
+    },
+  };
+
   return (
     <div>
       <Card
-        sx={{ textAlign: "center", width: "240px", height: "360px" }}
+        sx={{ textAlign: "center", width: "240px", height: "480px" }}
         variant="outlined"
         style={{ backgroundColor: "red" }}
       >
-        <Box sx={{ textAlign: "center", width: "200px", height: "20px" }}>
+        <div>
           <p style={{ fontSize: "20px" }}>{ribbonType.medalType}</p>
-        </Box>
-        <Image src={imgSrc} width={240} height={240} alt="Ribbon" />
+        </div>
+        <Box style={imageStyles.paperContainer}></Box>
         <p>{description}</p>
         <p>{info}</p>
       </Card>
