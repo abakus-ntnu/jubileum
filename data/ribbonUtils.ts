@@ -1,75 +1,196 @@
-const medalTypes = {
-  formatted: "Formattert",
-  comitteeLeader: "Komitéleder",
-  comittee: "Komitémedlem",
-  backup: "backup",
-  abakusLeader: "Abakus-leder",
-  hs: "Hovedstyret",
-  honorary: "Æresmedlem",
-  revueBoard: "Revystyret",
-  anniversary: "Jubileumsdaljer",
-  knight: "Ridderdalje",
-  lineLeader: "Linjeleder ",
-};
-
 //TODO: Fill descriptions
-const medalDescriptions = {
-  [medalTypes.formatted]: {
-    medalDesign: "Sølvfinish",
-    medalInformation: "Formatert",
-    imageLink: "/SampleDalje.png",
-  },
-  [medalTypes.comitteeLeader]: {
-    medalDesign: "Gullfinish av komitédalje, ikke sort stripe i stoffet",
+const medalDescriptions = [
+  {
+    medalType: "Komitéleder Arrkom",
+    medalDesign: "Gullfinish av komitédalje",
     medalInformation: "Komitéleder",
-    imageLink: "/SampleDalje.png",
+    imageLink: "/Ribbons/Arrkom_gull.png",
+    filterTag: "abakom",
   },
-  [medalTypes.comittee]: {
+  {
+    medalType: "Komitéleder backup",
+    medalDesign: "Gullfinish av komitédalje",
+    medalInformation: "Komitéleder",
+    imageLink: "/Ribbons/backup_gull.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Komitéleder Bedkom",
+    medalDesign: "Gullfinish av komitédalje",
+    medalInformation: "Komitéleder",
+    imageLink: "/Ribbons/Bedkom_gull.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Komitéleder Fagkom",
+    medalDesign: "Gullfinish av komitédalje",
+    medalInformation: "Komitéleder",
+    imageLink: "/Ribbons/Fagkom_gull.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Komitéleder Koskom",
+    medalDesign: "Gullfinish av komitédalje",
+    medalInformation: "Komitéleder",
+    imageLink: "/Ribbons/Koskom_gull.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Komitéleder LaBamba",
+    medalDesign: "Gullfinish av komitédalje",
+    medalInformation: "Komitéleder",
+    imageLink: "/Ribbons/LaBamba_gull.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Komitéleder PR",
+    medalDesign: "Gullfinish av komitédalje",
+    medalInformation: "Komitéleder",
+    imageLink: "/Ribbons/PR_gull.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Komitéleder readme",
+    medalDesign: "Gullfinish av komitédalje",
+    medalInformation: "Komitéleder",
+    imageLink: "/Ribbons/readme_gull.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Komitéleder Webkom",
+    medalDesign: "Gullfinish av komitédalje",
+    medalInformation: "Komitéleder",
+    imageLink: "/Ribbons/Webkom_gull.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Komitémedlem Arrkom",
     medalDesign: "Sølvfinish",
     medalInformation: "Komiteene",
-    imageLink: "/SampleDalje.png",
+    imageLink: "/Ribbons/Arrkom_sølv.png",
+    filterTag: "abakom",
   },
-  [medalTypes.backup]: {
+  {
+    medalType: "Komitémedlem backup",
     medalDesign: "Sølvfinish",
-    medalInformation: "backup",
-    imageLink: "/SampleDalje.png",
+    medalInformation: "Komiteene",
+    imageLink: "/Ribbons/backup_sølv.png",
+    filterTag: "abakom",
   },
-  [medalTypes.abakusLeader]: {
+  {
+    medalType: "Komitémedlem Bedkom",
+    medalDesign: "Sølvfinish",
+    medalInformation: "Komiteene",
+    imageLink: "/Ribbons/Bedkom_sølv.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Komitémedlem Fagkom",
+    medalDesign: "Sølvfinish",
+    medalInformation: "Komiteene",
+    imageLink: "/Ribbons/Fagkom_sølv.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Komitémedlem Koskom",
+    medalDesign: "Sølvfinish",
+    medalInformation: "Komiteene",
+    imageLink: "/Ribbons/Koskom_sølv.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Komitémedlem LaBamba",
+    medalDesign: "Sølvfinish",
+    medalInformation: "Komiteene",
+    imageLink: "/Ribbons/LaBamba_sølv.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Komitémedlem PR",
+    medalDesign: "Sølvfinish",
+    medalInformation: "Komiteene",
+    imageLink: "/Ribbons/PR_sølv.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Komitémedlem readme",
+    medalDesign: "Sølvfinish",
+    medalInformation: "Komiteene",
+    imageLink: "/Ribbons/readme_sølv.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Komitémedlem Webkom",
+    medalDesign: "Sølvfinish",
+    medalInformation: "Komiteene",
+    imageLink: "/Ribbons/Webkom_sølv.png",
+    filterTag: "abakom",
+  },
+  {
+    medalType: "Abakus-leder",
     medalDesign: "Gullfinish av HS-dalje, ikke sort stripe i stoffet",
     medalInformation: "Abakusleder",
-    imageLink: "/SampleDalje.png",
+    imageLink: "/Ribbons/Abakusleder.png",
+    filterTag: "ekstra",
   },
-  [medalTypes.hs]: {
+  {
+    medalType: "Hovedstyret",
     medalDesign: "Sølvfinish, ikke sort stripe i stoffet",
     medalInformation: "Hovedstyret",
-    imageLink: "/SampleDalje.png",
+    imageLink: "/Ribbons/HS.png",
+    filterTag: "ekstra",
   },
-  [medalTypes.honorary]: {
-    medalDesign: "Bronse",
-    medalInformation: "Æresmedlemmer",
-    imageLink: "/SampleDalje.png",
-  },
-  [medalTypes.revueBoard]: {
+  {
+    medalType: "Revystyret",
     medalDesign: "Sølv",
     medalInformation: "Revystyret",
-    imageLink: "/SampleDalje.png",
+    imageLink: "/Ribbons/Revystyret.png",
+    filterTag: "ekstra",
   },
-  [medalTypes.anniversary]: {
-    medalDesign: "Who the fuck knows",
-    medalInformation:
-      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
-    imageLink: "/SampleDalje.png",
+  {
+    medalType: "Formatert",
+    medalDesign: "Sølvfinish",
+    medalInformation: "Formatert",
+    imageLink: "/Ribbons/Formatert.png",
+    filterTag: "ekstra",
   },
-  [medalTypes.knight]: {
+  {
+    medalType: "Æresmedlem",
+    medalDesign: "Bronse",
+    medalInformation: "Æresmedlemmer",
+    imageLink: "/Ribbons/Æresmedlem.png",
+    filterTag: "ekstra",
+  },
+  {
+    medalType: "Ridderdalje",
     medalDesign: "Rød og gull",
     medalInformation: "Ridderdalje. Oppbevares av PR, betalt av ordenen",
     imageLink: "/SampleDalje.png",
+    filterTag: "ekstra",
   },
-  [medalTypes.lineLeader]: {
+  {
+    medalType: "Abakus 40-års jubileum",
     medalDesign: "Who the fuck knows",
     medalInformation:
-      "Linjeleder dalje. Oppbevares av PR, bæres av Abakus-leder og bestilles gjennom linjeleder-forum av Abakus-leder)",
-    imageLink: "/SampleDalje.png",
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    imageLink: "/Ribbons/40jub.png",
+    filterTag: "jubileum",
   },
-};
-export { medalTypes, medalDescriptions };
+  {
+    medalType: "Abakus 35-års jubileum",
+    medalDesign: "Who the fuck knows",
+    medalInformation:
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    imageLink: "/Ribbons/35jub.png",
+    filterTag: "jubileum",
+  },
+  {
+    medalType: "Abakus 30-års jubileum",
+    medalDesign: "Who the fuck knows",
+    medalInformation:
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    imageLink: "/Ribbons/30jub.png",
+    filterTag: "jubileum",
+  },
+];
+export { medalDescriptions };

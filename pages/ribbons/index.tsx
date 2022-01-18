@@ -1,54 +1,68 @@
 import type { NextPage } from "next";
 import RibbonComponent from "../../components/RibbonComponent";
 import styles from "../../styles/RibbonsPage.module.css";
-import { Stack } from "@mui/material";
-import { medalTypes } from "../../data/ribbonUtils";
+import { Grid } from "@mui/material";
+import { medalDescriptions } from "../../data/ribbonUtils";
 import Header from "../../components/Header";
 import NavBar from "../../components/NavBar";
 
 const RibbonsPage: NextPage = () => {
+  const viewRibbons = (filterTag: string) =>
+    medalDescriptions.map((ribbonType) => {
+      if (filterTag === ribbonType.filterTag) {
+        return (
+          <Grid item xs="auto" key={ribbonType.medalType}>
+            <RibbonComponent ribbonType={ribbonType} />
+          </Grid>
+        );
+      }
+    });
+
   return (
     <div className={styles.content}>
-      <Header title="Daljer, Pins og Bånd" />
+      <Header title="Daljer og Pins" />
 
       <NavBar />
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Daljer, Pins og Bånd</h1>
+        <h1 className={styles.title}>Daljer og Pins</h1>
 
-        <p className={styles.description}>Info om daljer</p>
-        <Stack direction="row" spacing={2}>
-          <RibbonComponent ribbonType={medalTypes.formatted} />
-          <RibbonComponent ribbonType={medalTypes.comitteeLeader} />
-          <RibbonComponent ribbonType={medalTypes.comittee} />
-          <RibbonComponent ribbonType={medalTypes.backup} />
-        </Stack>
-
-        <Stack direction="row" spacing={2}>
-          <RibbonComponent ribbonType={medalTypes.abakusLeader} />
-          <RibbonComponent ribbonType={medalTypes.hs} />
-          <RibbonComponent ribbonType={medalTypes.honorary} />
-          <RibbonComponent ribbonType={medalTypes.revueBoard} />
-        </Stack>
-        <Stack direction="row" spacing={2}>
-          <RibbonComponent ribbonType={medalTypes.anniversary} />
-          <RibbonComponent ribbonType={medalTypes.knight} />
-          <RibbonComponent ribbonType={medalTypes.lineLeader} />
-        </Stack>
-        <p className={styles.description}>Info om Bånd</p>
-        <Stack direction="row" spacing={2}>
-          <RibbonComponent ribbonType="" />
-          <RibbonComponent ribbonType="" />
-          <RibbonComponent ribbonType="" />
-          <RibbonComponent ribbonType="" />
-        </Stack>
-        <p className={styles.description}>Info om pins</p>
-        <Stack direction="row" spacing={2}>
-          <RibbonComponent ribbonType="" />
-          <RibbonComponent ribbonType="" />
-          <RibbonComponent ribbonType="" />
-          <RibbonComponent ribbonType="" />
-        </Stack>
+        <p className={styles.description}>Vanlige Daljer</p>
+        <div>
+          <Grid
+            container
+            spacing={5}
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            {viewRibbons(`${"ekstra"}`)}
+          </Grid>
+        </div>
+        <p className={styles.description}>Jubileumsdaljer</p>
+        <div>
+          <Grid
+            container
+            spacing={5}
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            {viewRibbons(`${"jubileum"}`)}
+          </Grid>
+        </div>
+        <p className={styles.description}>Komitédaljer</p>
+        <div>
+          <Grid
+            container
+            spacing={5}
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            {viewRibbons(`${"abakom"}`)}
+          </Grid>
+        </div>
       </main>
     </div>
   );
