@@ -1,31 +1,36 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Card } from "@mui/material";
 import Image from "next/image";
-import { medalDescriptions } from "../data/ribbonUtils";
 
-const ribbonComponent = ({ ribbonType }: { ribbonType: string }) => {
+export interface RibbonProps {
+  medalType: string;
+  medalDesign: string;
+  medalInformation: string;
+  imageLink: string;
+}
+
+const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
   // Take in dalje enum as param and render picture + context accordingly.
-  const theObjectIWant = medalDescriptions[ribbonType];
-
   const description =
-    theObjectIWant != null ? theObjectIWant.medalDesign : "MedalDesign";
+    ribbonType != null ? ribbonType.medalDesign : "MedalDesign";
   const info =
-    theObjectIWant != null
-      ? theObjectIWant.medalInformation
-      : "MedalInformation";
-  const imgSrc =
-    theObjectIWant != null ? theObjectIWant.imageLink : "/SampleDalje.png";
+    ribbonType != null ? ribbonType.medalInformation : "MedalInformation";
+  const imgSrc = ribbonType != null ? ribbonType.imageLink : "/SampleDalje.png";
 
   return (
     <div>
-      <Box sx={{ textAlign: "center", width: "240px", height: "360px" }}>
+      <Card
+        sx={{ textAlign: "center", width: "240px", height: "360px" }}
+        variant="outlined"
+        style={{ backgroundColor: "red" }}
+      >
         <Box sx={{ textAlign: "center", width: "200px", height: "20px" }}>
-          <p style={{ fontSize: "20px" }}>{ribbonType.toString()}</p>
+          <p style={{ fontSize: "20px" }}>{ribbonType.medalType}</p>
         </Box>
         <Image src={imgSrc} width={240} height={240} alt="Ribbon" />
         <p>{description}</p>
         <p>{info}</p>
-      </Box>
+      </Card>
     </div>
   );
 };
