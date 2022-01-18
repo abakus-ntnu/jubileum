@@ -5,6 +5,7 @@ import Timeline from "components/Timeline";
 import NavBar from "components/NavBar";
 import Header from "components/Header";
 import useSWR from "swr";
+import styles from "styles/TimelinePage.module.css";
 import { TimelineEvent } from "models/schema";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -27,8 +28,8 @@ const TimelinePage: NextPage = () => {
 
       <NavBar />
 
-      <main>
-        <h1>Tidslinje!</h1>
+      <main className={styles.container}>
+        <h1>Tidslinje</h1>
         <Timeline />
       </main>
     </>

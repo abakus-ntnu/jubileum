@@ -18,8 +18,8 @@ export default async function handler(
           res.status(401).end();
           return;
         }
-        await TimelineEventModel.deleteOne({_id: query.id as string});
-        res.status(200)
+        await TimelineEventModel.deleteOne({ _id: query.id as string });
+        res.status(200);
       }
       break;
     default:

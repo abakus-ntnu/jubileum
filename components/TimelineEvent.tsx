@@ -15,7 +15,12 @@ interface IProps {
   onEditClick?: (event: TimelineEvent) => void;
 }
 
-const TimelineEventElement = ({ event, defaultExpanded, adminPassword, onEditClick }: IProps) => {
+const TimelineEventElement = ({
+  event,
+  defaultExpanded,
+  adminPassword,
+  onEditClick,
+}: IProps) => {
   const [open, setOpen] = useState(false);
 
   const deleteElement = async () => {
@@ -26,17 +31,21 @@ const TimelineEventElement = ({ event, defaultExpanded, adminPassword, onEditCli
         "Content-Type": "application/json",
       },
     });
-  }
+  };
 
   return (
     <VerticalTimelineElement
       key={event.title}
       className="vertical-timeline-element--work"
-      contentStyle={{ background: "#E20F13", color: "#fff", padding: 5 }}
+      contentStyle={{
+        borderTop: "3px solid #E10C16",
+        background: "#FFFFFF",
+        padding: 5,
+      }}
       onTimelineElementClick={() => setOpen(!open)}
-      contentArrowStyle={{ borderRight: "7px solid  #E20F13" }}
+      contentArrowStyle={{ borderRight: "7px solid #FFFFFF" }}
       date={event.date}
-      iconStyle={{ background: "#E20F13", color: "#fff" }}
+      iconStyle={{ background: "#E20F13" }}
       icon={
         <Image
           src="/abakule.png"
@@ -58,10 +67,15 @@ const TimelineEventElement = ({ event, defaultExpanded, adminPassword, onEditCli
         >
           <h3 className="vertical-timeline-element-title">{event.title}</h3>
           {adminPassword && <button onClick={deleteElement}>Delete</button>}
-          {onEditClick && <button onClick={() => onEditClick(event)}>Edit</button>}
+          {onEditClick && (
+            <button onClick={() => onEditClick(event)}>Edit</button>
+          )}
         </AccordionSummary>
         <AccordionDetails className={styles.accordionDetails}>
-          <ReactMarkdown className={styles.markdownContent} remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown
+            className={styles.markdownContent}
+            remarkPlugins={[remarkGfm]}
+          >
             {event.description}
           </ReactMarkdown>
         </AccordionDetails>

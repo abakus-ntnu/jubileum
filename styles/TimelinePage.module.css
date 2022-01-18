@@ -1,0 +1,9 @@
+.container {
+  background-color: #eaeaea;
+}
+
+.container > h1 {
+  padding: 1em;
+  margin: 0;
+  text-align: center;
+}

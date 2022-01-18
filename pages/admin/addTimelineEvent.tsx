@@ -16,7 +16,7 @@ import {
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import Timeline from "components/Timeline";
 
-const TimelinePage: NextPage = () => {
+const TimelineAdminPage: NextPage = () => {
   const [password, setPassword] = React.useState<string>("");
   const [passwordError, setPasswordError] = React.useState<boolean>(false);
   const [event, setEvent] = React.useState<TimelineEvent>({
@@ -115,10 +115,15 @@ const TimelinePage: NextPage = () => {
           </Grid>
         </Grid>
         <h2>Tidslinjen:</h2>
-        <Timeline adminPassword={password} onEditClick={(timelineEvent: TimelineEvent) => setEvent(timelineEvent)} />
+        <Timeline
+          adminPassword={password}
+          onEditClick={(timelineEvent: TimelineEvent) =>
+            setEvent(timelineEvent)
+          }
+        />
       </Container>
     </>
   );
 };
 
-export default TimelinePage;
+export default TimelineAdminPage;
