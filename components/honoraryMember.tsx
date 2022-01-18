@@ -70,7 +70,7 @@ const HonoraryMember = ({ member }: { member: MemberProps }) => {
         {!isMobile && displayRole}
         <p />
       </Stack>
-      <div className={styles.verticleLine} />
+      <hr className={styles.verticalLine} />
     </div>
   );
 };

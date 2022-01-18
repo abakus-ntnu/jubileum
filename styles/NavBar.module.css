@@ -17,7 +17,6 @@
   align-items: center;
   align-content: center;
   height: 7rem;
-  color: white;
 }
 
 .Circle {
@@ -27,7 +26,7 @@
   margin-left: 1rem;
   background-color: red;
   border-radius: 50%;
-  box-shadow: black;
+  box-shadow: white;
 }
 
 .indicator {
@@ -39,4 +38,30 @@
 .idicatorSpan {
   width: 50%;
   background-color: white;
+}
+
+.hamburger {
+  display: none;
+}
+
+.horizontalTab {
+  color: white !important;
+}
+
+@media (max-width: 900px) {
+  .horizontalTab {
+    color: black;
+    display: none !important;
+  }
+  .verticalTab {
+    color: white !important;
+    font-size: 18px !important;
+    margin-bottom: 1rem !important;
+    margin-top: 1rem !important;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 50px;
+  }
 }
