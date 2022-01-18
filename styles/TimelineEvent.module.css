@@ -21,6 +21,10 @@ div.accordion::before {
   margin: 0;
 }
 
+.markdownContent > p {
+  font-weight: normal;
+}
+
 .markdownContent img {
   max-width: 100%;
 }
