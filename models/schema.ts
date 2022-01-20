@@ -2,7 +2,7 @@ import mongoose, { model, Schema } from "mongoose";
 
 delete mongoose.connection.models["TimelineEvent"];
 
-export interface TimelineEvent {
+export interface TimelineEvent extends Partial<mongoose.Document> {
   title: string;
   description: string;
   date: string;

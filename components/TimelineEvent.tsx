@@ -5,19 +5,47 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import styles from "styles/TimelineEvent.module.css";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { TimelineEvent } from "models/schema";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
-const TimelineEventElement = (event: TimelineEvent) => {
+interface IProps {
+  event: TimelineEvent;
+  defaultExpanded?: boolean;
+  adminPassword?: string;
+  onEditClick?: (event: TimelineEvent) => void;
+}
+
+const TimelineEventElement = ({
+  event,
+  defaultExpanded,
+  adminPassword,
+  onEditClick,
+}: IProps) => {
   const [open, setOpen] = useState(false);
+
+  const deleteElement = async () => {
+    await fetch(`/api/timelineEvents/${event._id as string}`, {
+      method: "DELETE",
+      headers: {
+        password: adminPassword ?? "",
+        "Content-Type": "application/json",
+      },
+    });
+  };
 
   return (
     <VerticalTimelineElement
       key={event.title}
       className="vertical-timeline-element--work"
-      contentStyle={{ background: "#E20F13", color: "#fff", padding: 5 }}
+      contentStyle={{
+        borderTop: "3px solid #E10C16",
+        background: "#FFFFFF",
+        padding: 5,
+      }}
       onTimelineElementClick={() => setOpen(!open)}
-      contentArrowStyle={{ borderRight: "7px solid  #E20F13" }}
+      contentArrowStyle={{ borderRight: "7px solid #FFFFFF" }}
       date={event.date}
-      iconStyle={{ background: "#E20F13", color: "#fff" }}
+      iconStyle={{ background: "#E20F13" }}
       icon={
         <Image
           src="/abakule.png"
@@ -28,15 +56,28 @@ const TimelineEventElement = (event: TimelineEvent) => {
         />
       }
     >
-      <Accordion className={styles.accordion} style={{ margin: 0 }}>
+      <Accordion
+        defaultExpanded={defaultExpanded}
+        className={styles.accordion}
+        style={{ margin: 0 }}
+      >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           className={styles.accordionSummary}
         >
           <h3 className="vertical-timeline-element-title">{event.title}</h3>
+          {adminPassword && <button onClick={deleteElement}>Delete</button>}
+          {onEditClick && (
+            <button onClick={() => onEditClick(event)}>Edit</button>
+          )}
         </AccordionSummary>
         <AccordionDetails className={styles.accordionDetails}>
-          <p>{event.description}</p>
+          <ReactMarkdown
+            className={styles.markdownContent}
+            remarkPlugins={[remarkGfm]}
+          >
+            {event.description}
+          </ReactMarkdown>
         </AccordionDetails>
       </Accordion>
     </VerticalTimelineElement>

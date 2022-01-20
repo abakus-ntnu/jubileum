@@ -7,7 +7,7 @@ div.accordion {
   background: none;
   border: 0;
   box-shadow: none;
-  color: white;
+  color: black;
   padding: 0;
 }
 
@@ -19,4 +19,12 @@ div.accordion::before {
 .accordionSummary,
 .accordionDetails > p {
   margin: 0;
+}
+
+.markdownContent > p {
+  font-weight: normal;
+}
+
+.markdownContent img {
+  max-width: 100%;
 }
