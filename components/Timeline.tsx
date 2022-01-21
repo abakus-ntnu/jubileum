@@ -53,7 +53,7 @@ const Timeline = ({
     );
   }
 
-  events.sort((a, b) => (a.date > b.date ? 1 : -1));
+  events.sort((a, b) => (a.index > b.index ? 1 : -1));
 
   return (
     <VerticalTimeline>

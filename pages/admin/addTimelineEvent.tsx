@@ -23,6 +23,7 @@ const TimelineAdminPage: NextPage = () => {
     title: "",
     description: "",
     date: "",
+    index: 0,
   });
 
   const putEvent = async (event: TimelineEvent): Promise<boolean> => {
@@ -47,7 +48,7 @@ const TimelineAdminPage: NextPage = () => {
     e.preventDefault();
     if (event.date && event.description && event.title) {
       if (await putEvent(event)) {
-        setEvent({ title: "", description: "", date: "" });
+        setEvent({ title: "", description: "", date: "", index: 0 });
       }
     }
   };
@@ -96,6 +97,15 @@ const TimelineAdminPage: NextPage = () => {
                   id="date"
                   value={event.date}
                   onChange={(e) => setEvent({ ...event, date: e.target.value })}
+                />
+                <TextField
+                  error={!event.index}
+                  label="Index"
+                  id="index"
+                  value={event.index}
+                  onChange={(e) =>
+                    setEvent({ ...event, index: Number(e.target.value) })
+                  }
                 />
                 <TextField
                   error={passwordError}
