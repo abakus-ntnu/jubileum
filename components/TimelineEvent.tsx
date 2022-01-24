@@ -70,6 +70,7 @@ const TimelineEventElement = ({
           {onEditClick && (
             <button onClick={() => onEditClick(event)}>Edit</button>
           )}
+          {adminPassword && `Index: ${event.index}`}
         </AccordionSummary>
         <AccordionDetails className={styles.accordionDetails}>
           <ReactMarkdown
