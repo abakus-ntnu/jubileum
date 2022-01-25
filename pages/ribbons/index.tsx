@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import RibbonComponent from "../../components/RibbonComponent";
 import styles from "../../styles/RibbonsPage.module.css";
-import { Grid } from "@mui/material";
+import { Grid, Typography, Box } from "@mui/material";
 import { medalDescriptions } from "../../data/ribbonUtils";
 import Header from "../../components/Header";
 import NavBar from "../../components/NavBar";
@@ -19,14 +19,19 @@ const RibbonsPage: NextPage = () => {
     });
 
   return (
-    <div className={styles.content}>
+    <Box>
       <Header title="Daljer og Pins" />
 
       <NavBar />
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>Daljer og Pins</h1>
-        <p className={styles.description}>Jubileumsdaljer</p>
+      <Box padding="5rem 0" flex="1" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+        <Typography variant="h1" margin="1rem">
+          {" "}
+          Daljer og Pins
+        </Typography>
+        <Typography variant="h3" margin="5rem">
+          Jubileumsdaljer
+        </Typography>
         <div>
           <Grid
             container
@@ -38,7 +43,9 @@ const RibbonsPage: NextPage = () => {
             {viewRibbons(`${"jubileum"}`)}
           </Grid>
         </div>
-        <p className={styles.description}>Daljer for Verv i Abakus</p>
+        <Typography variant="h3" margin="5rem">
+          Daljer for Verv i Abakus
+        </Typography>
         <div>
           <Grid
             container
@@ -50,7 +57,9 @@ const RibbonsPage: NextPage = () => {
             {viewRibbons(`${"abakom"}`)}
           </Grid>
         </div>
-        <p className={styles.description}>Den Gylne Kulerammes Orden</p>
+        <Typography variant="h3" margin="5rem">
+          Den Gylne Kulerammes Orden
+        </Typography>
         <div>
           <Grid
             container
@@ -62,7 +71,9 @@ const RibbonsPage: NextPage = () => {
             {viewRibbons(`${"ordenen"}`)}
           </Grid>
         </div>
-        <p className={styles.description}>Pins</p>
+        <Typography variant="h3" margin="5rem">
+          Pins
+        </Typography>
         <div>
           <Grid
             container
@@ -74,8 +85,8 @@ const RibbonsPage: NextPage = () => {
             {viewRibbons(`${"pins"}`)}
           </Grid>
         </div>
-      </main>
-    </div>
+      </Box>
+    </Box>
   );
 };
 
