@@ -1,5 +1,7 @@
 import React from "react";
-import { Box, Card } from "@mui/material";
+import { Box, Card, ThemeProvider, Typography } from "@mui/material";
+import styles from "../styles/RibbonsPage.module.css";
+import jubileum_theme from "./Theme";
 
 export interface RibbonProps {
   medalType: string;
@@ -23,26 +25,24 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
       backgroundSize: "contain",
       backgroundRepeat: "no-repeat",
       backgroundPosition: "center",
-      height: "260px",
-      width: "240px",
+      height: "90%",
+      width: "90%",
     },
   };
 
   return (
-    <div>
-      <Card
-        sx={{ textAlign: "center", width: "240px", height: "480px" }}
-        variant="outlined"
-        style={{ backgroundColor: "red" }}
-      >
-        <div>
-          <p style={{ fontSize: "20px" }}>{ribbonType.medalType}</p>
-        </div>
-        <Box style={imageStyles.paperContainer}></Box>
-        <p>{description}</p>
-        <p>{info}</p>
+    <ThemeProvider theme={jubileum_theme}>
+      <Card className={styles.card}>
+        <Typography variant="h2" color="primary">
+          {ribbonType.medalType}
+          </Typography>
+        <Card className={styles.innerCard}>
+          <Box style={imageStyles.paperContainer} margin="auto"></Box>
+        </Card>
+        <p className={styles.cardDescription}>{description}</p>
+        <p className={styles.cardDescription}>{info}</p>
       </Card>
-    </div>
+    </ThemeProvider>
   );
 };
 

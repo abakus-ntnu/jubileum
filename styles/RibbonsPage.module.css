@@ -45,7 +45,7 @@
 }
 
 .title {
-  margin: 0;
+  margin: 0rem;
   line-height: 1.15;
   font-size: 4rem;
 }
@@ -53,11 +53,26 @@
 .title,
 .description {
   text-align: center;
+  font-family: "SoraRegular";
 }
 
 .description {
   line-height: 1.5;
   font-size: 1.5rem;
+}
+
+.cardDescription {
+  padding-top: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem ;
+  color: white;
+  font-family: "SoraRegular";
+}
+
+.cardTitle {
+  padding-block: 0.5rem;
+  color:white;
+  font-family: "SoraRegular";
 }
 
 .code {
@@ -79,22 +94,39 @@
 }
 
 .card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
+  margin: 0rem;
+  text-align: center;
+  color: #000000;
+  background-color: #eb4034;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
+  border-color: #8a251e5b;
+  border-left: 10px solid #8a251e5b;
+  border-top: 4px solid #8a251e5b;
+  border-right: 4px solid #8a251e5b;
+  border-bottom: 10px solid #8a251e5b;
+  border-radius: 35px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  width: 45%;
+  width: 270px;
+  height: 480px;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: inherit;
+  border-color: none;
+}
+
+.innerCard {
+  background-color: white;
+  border-top: 3px solid #eeeeee;
+  border-left: 7px solid #eeeeee;
+  border-right: 3px solid #eeeeee;
+  border-bottom: 7px solid #eeeeee;
+  border-color: #eaeaea;
+  border-radius: 75px;
+  margin: 0.5rem;
+  height: 240px;
 }
 
 .card h2 {
