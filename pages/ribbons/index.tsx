@@ -26,19 +26,6 @@ const RibbonsPage: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Daljer og Pins</h1>
-
-        <p className={styles.description}>Vanlige Daljer</p>
-        <div>
-          <Grid
-            container
-            spacing={5}
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-          >
-            {viewRibbons(`${"ekstra"}`)}
-          </Grid>
-        </div>
         <p className={styles.description}>Jubileumsdaljer</p>
         <div>
           <Grid
@@ -51,7 +38,7 @@ const RibbonsPage: NextPage = () => {
             {viewRibbons(`${"jubileum"}`)}
           </Grid>
         </div>
-        <p className={styles.description}>Komitédaljer</p>
+        <p className={styles.description}>Daljer for Verv i Abakus</p>
         <div>
           <Grid
             container
@@ -61,6 +48,30 @@ const RibbonsPage: NextPage = () => {
             alignItems="center"
           >
             {viewRibbons(`${"abakom"}`)}
+          </Grid>
+        </div>
+        <p className={styles.description}>Den Gylne Kulerammes Orden</p>
+        <div>
+          <Grid
+            container
+            spacing={5}
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            {viewRibbons(`${"ordenen"}`)}
+          </Grid>
+        </div>
+        <p className={styles.description}>Pins</p>
+        <div>
+          <Grid
+            container
+            spacing={5}
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            {viewRibbons(`${"pins"}`)}
           </Grid>
         </div>
       </main>

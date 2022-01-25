@@ -75,6 +75,15 @@
   font-family: "SoraRegular";
 }
 
+.cardTitleBox {
+  height: 69px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
 .code {
   background: #fafafa;
   border-radius: 5px;
@@ -106,8 +115,8 @@
   border-bottom: 10px solid #8a251e5b;
   border-radius: 35px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  width: 270px;
-  height: 480px;
+  width: 300px;
+  height: 450px;
 }
 
 .card:hover,
@@ -126,7 +135,10 @@
   border-color: #eaeaea;
   border-radius: 75px;
   margin: 0.5rem;
-  height: 240px;
+  height: 75%;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 2%;
 }
 
 .card h2 {

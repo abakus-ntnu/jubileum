@@ -12,11 +12,7 @@ export interface RibbonProps {
 }
 
 const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
-  // Take in dalje enum as param and render picture + context accordingly.
-  const description =
-    ribbonType != null ? ribbonType.medalDesign : "MedalDesign";
-  const info =
-    ribbonType != null ? ribbonType.medalInformation : "MedalInformation";
+
   const imgSrc = ribbonType != null ? ribbonType.imageLink : "/SampleDalje.png";
 
   const imageStyles = {
@@ -25,6 +21,7 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
       backgroundSize: "contain",
       backgroundRepeat: "no-repeat",
       backgroundPosition: "center",
+      transform: "translateY(7%)",
       height: "90%",
       width: "90%",
     },
@@ -33,14 +30,14 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
   return (
     <ThemeProvider theme={jubileum_theme}>
       <Card className={styles.card}>
+        <Box className={styles.cardTitleBox}>
         <Typography variant="h2" color="primary">
           {ribbonType.medalType}
           </Typography>
+          </Box>
         <Card className={styles.innerCard}>
           <Box style={imageStyles.paperContainer} margin="auto"></Box>
         </Card>
-        <p className={styles.cardDescription}>{description}</p>
-        <p className={styles.cardDescription}>{info}</p>
       </Card>
     </ThemeProvider>
   );
