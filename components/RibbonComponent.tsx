@@ -12,7 +12,6 @@ export interface RibbonProps {
 }
 
 const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
-
   const imgSrc = ribbonType != null ? ribbonType.imageLink : "/SampleDalje.png";
 
   const imageStyles = {
@@ -31,10 +30,10 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
     <ThemeProvider theme={jubileum_theme}>
       <Card className={styles.card}>
         <Box className={styles.cardTitleBox}>
-        <Typography variant="h2" color="primary">
-          {ribbonType.medalType}
+          <Typography variant="h2" color="primary">
+            {ribbonType.medalType}
           </Typography>
-          </Box>
+        </Box>
         <Card className={styles.innerCard}>
           <Box style={imageStyles.paperContainer} margin="auto"></Box>
         </Card>

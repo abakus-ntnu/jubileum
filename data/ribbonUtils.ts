@@ -179,49 +179,56 @@ const medalDescriptions = [
   {
     medalType: "Abakus 35-års jubileum",
     medalDesign: "Who the fuck knows",
-    medalInformation: "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    medalInformation:
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/35jub.png",
     filterTag: "jubileum",
   },
   {
     medalType: "Abakus 30-års jubileum",
     medalDesign: "Who the fuck knows",
-    medalInformation: "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    medalInformation:
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/30jub.png",
     filterTag: "jubileum",
   },
   {
     medalType: "Abakus 25-års jubileum",
     medalDesign: "Who the fuck knows",
-    medalInformation: "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    medalInformation:
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/25jub.png",
     filterTag: "jubileum",
   },
   {
     medalType: "Abakus 20-års jubileum",
     medalDesign: "Who the fuck knows",
-    medalInformation: "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    medalInformation:
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/20jub.png",
     filterTag: "jubileum",
   },
   {
     medalType: "LaBamba 35-års jubileum",
     medalDesign: "Who the fuck knows",
-    medalInformation: "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    medalInformation:
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/LaBamba35.png",
     filterTag: "jubileum",
   },
   {
     medalType: "LaBamba 20-års jubileum",
     medalDesign: "Who the fuck knows",
-    medalInformation: "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    medalInformation:
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/LaBamba20.png",
     filterTag: "jubileum",
   },
   {
     medalType: "readme 20-års jubileum",
     medalDesign: "Who the fuck knows",
-    medalInformation: "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    medalInformation:
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/readme20.png",
     filterTag: "jubileum",
   },
