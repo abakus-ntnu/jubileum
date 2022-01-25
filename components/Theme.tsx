@@ -3,21 +3,35 @@ import { createTheme } from "@mui/material/styles";
 const jubileum_theme = createTheme({
   palette: {
     primary: {
-      main: "#ffffff",
+      main: "#e23d32",
     },
     secondary: {
-      main: "#57995a",
+      main: "#ffffff",
+    },
+    background: {
+      default: "#eaeaea",
+    },
+    error: {
+      main: "#b21c17",
     },
   },
   typography: {
-    fontSize: 17,
     fontFamily: "SoraRegular",
   },
   components: {
     MuiTab: {
-      styleOverrides: {
-        textColorPrimary: "white",
-      },
+      styleOverrides: {},
+      variants: [
+        {
+          props: {
+            disabled: false,
+          },
+          style: {
+            opacity: 1,
+            fontSize: "medium",
+          },
+        },
+      ],
     },
   },
 });
