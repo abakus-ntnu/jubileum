@@ -47,7 +47,7 @@ const NavBar = () => {
         <Tab
           value="/ribbons"
           component="a"
-          label="Daljer, Pins og Bånd"
+          label="Daljer og Pins"
           className={isVertical ? styles.verticalTab : styles.horizontalTab}
         />
         <Divider />
