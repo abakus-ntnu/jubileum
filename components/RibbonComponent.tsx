@@ -67,18 +67,16 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
   };
 
   return (
-    <ThemeProvider theme={jubileum_theme}>
-      <Card sx={cardStyles.card}>
-        <Box sx={cardStyles.cardTitleBox}>
-          <Typography variant="h5" color="primary" align="center">
-            {ribbonType.medalType}
-          </Typography>
-        </Box>
-        <Card sx={cardStyles.innerCard}>
-          <Box sx={imageStyles.paperContainer} margin="auto"></Box>
-        </Card>
+    <Card sx={cardStyles.card}>
+      <Box sx={cardStyles.cardTitleBox}>
+        <Typography variant="h5" color="secondary" align="center">
+          {ribbonType.medalType}
+        </Typography>
+      </Box>
+      <Card sx={cardStyles.innerCard}>
+        <Box sx={imageStyles.paperContainer} margin="auto" />
       </Card>
-    </ThemeProvider>
+    </Card>
   );
 };
 

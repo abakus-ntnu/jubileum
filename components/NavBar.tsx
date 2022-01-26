@@ -1,23 +1,25 @@
-import { AppBar, Tabs, Tab, Toolbar } from "@mui/material";
+import {
+  AppBar,
+  Tabs,
+  Tab,
+  Typography,
+  Drawer,
+  Toolbar,
+  Grid,
+} from "@mui/material";
 import React from "react";
 import { useRouter } from "next/dist/client/router";
-import jubileum_theme from "./Theme";
-import { ThemeProvider } from "@mui/material";
-import styles from "../styles/NavBar.module.css";
 import Image from "next/image";
-import abakus45 from "../assets/abakus_logo_2.png";
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
+import abakus45 from "assets/abakus_logo_2.png";
 import MenuIcon from "@mui/icons-material/Menu";
-import Divider from "@mui/material/Divider";
 
-const NavBar = () => {
+const NavBar = ({ height = "7rem" }) => {
   const router = useRouter();
 
-  const handleChange = (path: string): void => {
-    void router.push(path);
+  const handleChange = async (path: string): Promise<void> => {
+    await router.push(path);
   };
-  const [openMenu, setOpneMenu] = React.useState(false);
+  const [openMenu, setOpenMenu] = React.useState(false);
   const toggleDrawer =
     (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
@@ -27,90 +29,99 @@ const NavBar = () => {
       ) {
         return;
       }
-      setOpneMenu(open);
+      setOpenMenu(open);
     };
 
-  const displayTabs = (isVertical: boolean) => (
-    <>
-      <Tabs
-        value={router.pathname}
-        className={isVertical ? styles.hamTabs : styles.Tabs}
-        scrollButtons="auto"
-        orientation={isVertical ? "vertical" : "horizontal"}
-        indicatorColor="primary"
-        TabIndicatorProps={{
-          children: <span className={styles.indicatorSpan} />,
+  const displayTabs = (isVertical: boolean) => {
+    const createTab = (value: string, label: string) => (
+      <Tab
+        component="a"
+        sx={{
+          padding: isVertical ? 3 : 2,
+          display: isVertical
+            ? "inline-flex"
+            : { xs: "none", md: "inline-flex" },
         }}
-        variant="scrollable"
-        onChange={(evt, newValue: string) => handleChange(newValue)}
+        label={label}
+        value={value}
+      />
+    );
+
+    return (
+      <>
+        <Tabs
+          value={router.pathname}
+          scrollButtons={false}
+          orientation={isVertical ? "vertical" : "horizontal"}
+          indicatorColor="secondary"
+          textColor="inherit"
+          color="primary"
+          variant="scrollable"
+          onChange={(evt, newValue: string) => handleChange(newValue)}
+        >
+          {createTab("/ribbons", "Daljer og Pins")}
+          {createTab("/leaderboard", "Scoreboard")}
+          {!isVertical && (
+            <Tab
+              value="/"
+              component="a"
+              style={{ display: "block" }}
+              icon={
+                <Image
+                  src={abakus45}
+                  width={35}
+                  height={35}
+                  alt={"Jubileumslogo"}
+                />
+              }
+            />
+          )}
+          {createTab("/timeline", "Abakus Historie")}
+          {createTab("/members", "Æresmedlemmer")}
+        </Tabs>
+        {!isVertical && displayMenu}
+      </>
+    );
+  };
+
+  const displayMenu = (
+    <>
+      <MenuIcon
+        fontSize="large"
+        sx={{
+          position: "absolute",
+          right: 40,
+          display: { xs: "block", md: "none" },
+        }}
+        onClick={toggleDrawer(true)}
+      />
+      <Drawer
+        anchor={"right"}
+        open={openMenu}
+        onClose={toggleDrawer(false)}
+        PaperProps={{
+          sx: { backgroundColor: "primary.main" },
+        }}
       >
-        <Tab
-          value="/ribbons"
-          component="a"
-          label="Daljer og Pins"
-          className={isVertical ? styles.verticalTab : styles.horizontalTab}
-        />
-        <Divider />
-        <Tab
-          value="/leaderboard"
-          component="a"
-          label="Scoreboard"
-          className={isVertical ? styles.verticalTab : styles.horizontalTab}
-        />
-        <Divider />
-        <Tab
-          value="/"
-          component="a"
-          icon={<Image src={abakus45} width={35} height={35} alt={""} />}
-          className={isVertical ? styles.horizontalTab : styles.verticalTab}
-        />
-        <Divider />
-        <Tab
-          value="/timeline"
-          component="a"
-          label="Abakus Historie"
-          className={isVertical ? styles.verticalTab : styles.horizontalTab}
-        />
-        <Divider />
-        <Tab
-          value="/members"
-          component="a"
-          label="Æresmedlemmer"
-          className={isVertical ? styles.verticalTab : styles.horizontalTab}
-        />
-      </Tabs>
-      {!isVertical && displayMenu}
+        <Typography color="secondary">{displayTabs(true)}</Typography>
+      </Drawer>
     </>
   );
 
-  const displayMenu = (
-    <div className={styles.hamburger}>
-      <React.Fragment>
-        <MenuIcon
-          color="primary"
-          sx={{ fontSize: 40 }}
-          onClick={toggleDrawer(true)}
-        ></MenuIcon>
-        <Drawer anchor={"right"} open={openMenu} onClose={toggleDrawer(false)}>
-          <Box
-            sx={{ width: 190, height: 3000, backgroundColor: "#eb4034" }}
-            role="presentation"
-            onClick={toggleDrawer(false)}
-            onKeyDown={toggleDrawer(false)}
-          >
-            {displayTabs(true)}
-          </Box>
-        </Drawer>
-      </React.Fragment>
-    </div>
-  );
-
   return (
-    <ThemeProvider theme={jubileum_theme}>
-      <AppBar position="static">
-        <Toolbar className={styles.Toolbar}>{displayTabs(false)}</Toolbar>
+    <>
+      <AppBar position="fixed" sx={{ height: height }}>
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"
+          height="100%"
+        >
+          {displayTabs(false)}
+        </Grid>
       </AppBar>
-    </ThemeProvider>
+      <Toolbar sx={{ height: height }} />
+    </>
   );
 };
 
