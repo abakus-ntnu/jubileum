@@ -151,14 +151,14 @@ const medalDescriptions = [
     medalType: "Revystyret",
     medalDesign: "Sølv",
     medalInformation: "Revystyret",
-    imageLink: "/Ribbons/Revystyret.png",
+    imageLink: "/Ribbons/Revyen.png",
     filterTag: "abakom",
   },
   {
     medalType: "Revystyret Gammel",
     medalDesign: "Sølv",
     medalInformation: "Revystyret",
-    imageLink: "/Ribbons/Revystyret_gammel.png",
+    imageLink: "/Ribbons/Revystyret_gammel_sølv.png",
     filterTag: "abakom",
   },
   {
@@ -217,6 +217,22 @@ const medalDescriptions = [
     filterTag: "jubileum",
   },
   {
+    medalType: "LaBamba 30-års jubileum",
+    medalDesign: "Who the fuck knows",
+    medalInformation:
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    imageLink: "/Ribbons/LaBamba30.png",
+    filterTag: "jubileum",
+  },
+  {
+    medalType: "LaBamba 25-års jubileum",
+    medalDesign: "Who the fuck knows",
+    medalInformation:
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    imageLink: "/Ribbons/LaBamba25.png",
+    filterTag: "jubileum",
+  },
+  {
     medalType: "LaBamba 20-års jubileum",
     medalDesign: "Who the fuck knows",
     medalInformation:
@@ -230,6 +246,14 @@ const medalDescriptions = [
     medalInformation:
       "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/readme20.png",
+    filterTag: "jubileum",
+  },
+  {
+    medalType: "Revyen 5-års jubileum",
+    medalDesign: "Who the fuck knows",
+    medalInformation:
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    imageLink: "/Ribbons/Revyen5.png",
     filterTag: "jubileum",
   },
   {
@@ -307,7 +331,7 @@ const medalDescriptions = [
     medalDesign: "Dunno",
     medalInformation: "Dunno",
     imageLink: "/Ribbons/Revy_pin_første_revy.png",
-    filterTag: "pins",
+    filterTag: "unlisted",
   },
 ];
 export { medalDescriptions };
