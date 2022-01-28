@@ -9,7 +9,7 @@ const medalDescriptions = [
   },
   {
     medalType: "Abakus-leder (Gammel)",
-    medalDesign: "Dunno",
+    medalDesign: " ",
     medalInformation: "Abakusleder",
     imageLink: "/Ribbons/Abakusleder_gammel.png",
     filterTag: "abakom",
@@ -170,7 +170,7 @@ const medalDescriptions = [
   },
   {
     medalType: "Abakus 40-års jubileum",
-    medalDesign: "Who the fuck knows",
+    medalDesign: " ",
     medalInformation:
       "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/40jub.png",
@@ -178,7 +178,7 @@ const medalDescriptions = [
   },
   {
     medalType: "Abakus 35-års jubileum",
-    medalDesign: "Who the fuck knows",
+    medalDesign: " ",
     medalInformation:
       "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/35jub.png",
@@ -186,7 +186,7 @@ const medalDescriptions = [
   },
   {
     medalType: "Abakus 30-års jubileum",
-    medalDesign: "Who the fuck knows",
+    medalDesign: " ",
     medalInformation:
       "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/30jub.png",
@@ -194,7 +194,7 @@ const medalDescriptions = [
   },
   {
     medalType: "Abakus 25-års jubileum",
-    medalDesign: "Who the fuck knows",
+    medalDesign: " ",
     medalInformation:
       "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/25jub.png",
@@ -202,7 +202,7 @@ const medalDescriptions = [
   },
   {
     medalType: "Abakus 20-års jubileum",
-    medalDesign: "Who the fuck knows",
+    medalDesign: " ",
     medalInformation:
       "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/20jub.png",
@@ -210,7 +210,7 @@ const medalDescriptions = [
   },
   {
     medalType: "LaBamba 35-års jubileum",
-    medalDesign: "Who the fuck knows",
+    medalDesign: " ",
     medalInformation:
       "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/LaBamba35.png",
@@ -218,7 +218,7 @@ const medalDescriptions = [
   },
   {
     medalType: "LaBamba 30-års jubileum",
-    medalDesign: "Who the fuck knows",
+    medalDesign: " ",
     medalInformation:
       "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/LaBamba30.png",
@@ -226,7 +226,7 @@ const medalDescriptions = [
   },
   {
     medalType: "LaBamba 25-års jubileum",
-    medalDesign: "Who the fuck knows",
+    medalDesign: " ",
     medalInformation:
       "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/LaBamba25.png",
@@ -234,7 +234,7 @@ const medalDescriptions = [
   },
   {
     medalType: "LaBamba 20-års jubileum",
-    medalDesign: "Who the fuck knows",
+    medalDesign: " ",
     medalInformation:
       "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/LaBamba20.png",
@@ -242,7 +242,7 @@ const medalDescriptions = [
   },
   {
     medalType: "readme 20-års jubileum",
-    medalDesign: "Who the fuck knows",
+    medalDesign: " ",
     medalInformation:
       "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/readme20.png",
@@ -250,7 +250,7 @@ const medalDescriptions = [
   },
   {
     medalType: "Revyen 5-års jubileum",
-    medalDesign: "Who the fuck knows",
+    medalDesign: " ",
     medalInformation:
       "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
     imageLink: "/Ribbons/Revyen5.png",
@@ -300,36 +300,36 @@ const medalDescriptions = [
   },
   {
     medalType: "Abakus-pin",
-    medalDesign: "Dunno",
-    medalInformation: "Dunno",
+    medalDesign: " ",
+    medalInformation: " ",
     imageLink: "/Ribbons/AbakusPin.png",
     filterTag: "pins",
   },
   {
     medalType: "Årets Komitémedlem",
-    medalDesign: "Dunno",
-    medalInformation: "Dunno",
+    medalDesign: " ",
+    medalInformation: " ",
     imageLink: "/Ribbons/Årets_komitémedlem_pin.png",
     filterTag: "pins",
   },
   {
     medalType: "Fondstyret",
-    medalDesign: "Dunno",
-    medalInformation: "Dunno",
+    medalDesign: " ",
+    medalInformation: " ",
     imageLink: "/Ribbons/Fondstyret.png",
     filterTag: "pins",
   },
   {
     medalType: "Korona-pin",
-    medalDesign: "Dunno",
-    medalInformation: "Dunno",
+    medalDesign: " ",
+    medalInformation: " ",
     imageLink: "/Ribbons/Koronapin.png",
     filterTag: "pins",
   },
   {
     medalType: "Første Revy",
-    medalDesign: "Dunno",
-    medalInformation: "Dunno",
+    medalDesign: " ",
+    medalInformation: " ",
     imageLink: "/Ribbons/Revy_pin_første_revy.png",
     filterTag: "unlisted",
   },
