@@ -58,17 +58,31 @@ const TheOrder = () => {
     mobile?: boolean;
     className: string;
   }) => (
-    <Tabs
+    <Box
       className={className}
-      orientation={mobile ? "horizontal" : "vertical"}
-      variant="scrollable"
-      value={value}
-      onChange={handleChange}
-      sx={{ borderRight: 1, borderColor: "divider", minWidth: 100 }}
-      TabIndicatorProps={{ style: { background: "yellow" } }}
+      sx={{
+        maxWidth: 450,
+        bgcolor: "background.paper",
+      }}
     >
-      {viewTabs}
-    </Tabs>
+      <Tabs
+        value={value}
+        orientation={mobile ? "horizontal" : "vertical"}
+        variant="scrollable"
+        scrollButtons={false}
+        allowScrollButtonsMobile
+        onChange={handleChange}
+        textColor="primary"
+        sx={{
+          borderRight: 2,
+          borderColor: "divider",
+          minWidth: 100,
+        }}
+        TabIndicatorProps={{ style: { background: "black" } }}
+      >
+        {viewTabs}
+      </Tabs>
+    </Box>
   );
 
   const getNumberOfMembersByYear = orderMembers.reduce((previous, member) => {

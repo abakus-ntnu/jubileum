@@ -17,7 +17,7 @@ const HonoraryMember = ({ member }: { member: MemberProps }) => {
   const displayCommittee = member.committee.map((comittee) => (
     <Box key={comittee}>
       <Tooltip title={`${comittee}`}>
-        <div>
+        <div className={styles.img}>
           <Image
             width={60}
             height={60}
@@ -46,17 +46,19 @@ const HonoraryMember = ({ member }: { member: MemberProps }) => {
     <div>
       <Stack
         direction={`row${member.reverse ? "-reverse" : ""}`}
-        spacing={2}
+        spacing={10}
         justifyContent="flex-start"
         className={styles.stackStyle}
       >
-        <Image
-          layout="fixed"
-          src={member.profilePic}
-          width={180}
-          height={180}
-          alt={`${member.name}`}
-        />
+        <div className={styles.img}>
+          <Image
+            layout="fixed"
+            src={member.profilePic}
+            width={180}
+            height={180}
+            alt={`${member.name}`}
+          />
+        </div>
         <Box className={styles.textBox}>
           <h1
             className={styles.titleSize}

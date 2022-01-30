@@ -25,6 +25,7 @@
 
 .roleStyle {
   justify-content: center;
+  margin-right: 100px;
 }
 
 .pageStackStyle {
@@ -55,7 +56,7 @@
   margin-right: 50px;
   margin-bottom: 50px;
   width: 320px;
-  border: 1px solid #d4af37;
+  border: 2px solid black !important;
 }
 
 .theOrderMemberImgStyle {
@@ -84,17 +85,21 @@
 }
 
 .tmob {
-  display: none;
+  display: none !important;
 }
 .tdesk {
-  display: block;
+  display: block !important;
+}
+
+.img {
+  display: flex !important;
 }
 
 @media (max-width: 900px) {
   .stackStyle {
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: center;
+    flex-wrap: wrap !important;
+    display: flex !important;
+    justify-content: center !important;
   }
 
   .titleSize {
@@ -106,6 +111,10 @@
   .text {
     display: flex;
     justify-content: center;
+  }
+
+  .img {
+    display: flex !important;
   }
 
   .textBox {
@@ -129,6 +138,7 @@
 
   .roleStyle {
     margin-bottom: 20px;
+    margin-right: 0px;
   }
 
   .titleSize {
@@ -144,9 +154,9 @@
   }
 
   .tmob {
-    display: block;
+    display: block !important;
   }
   .tdesk {
-    display: none;
+    display: none !important;
   }
 }
