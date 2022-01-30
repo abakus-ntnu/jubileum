@@ -18,8 +18,8 @@ import { Participant } from "models/leaderboardSchema";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const LeaderboardPage: NextPage = () => {
-  const { data: participants, error } = useSWR<Participant[], unknown>(
-    "/api/leaderboardAPI/leaderboardMain",
+  const { data: participants, error } = useSWR<Score[], unknown>(
+    "/api/leaderboardAPI/participant",
     fetcher,
     {
       refreshInterval: 5000,
@@ -35,7 +35,7 @@ const LeaderboardPage: NextPage = () => {
       <Header title="Leaderboard" />
       <NavBar />
       <main className={styles.main}>
-        <h1 className={styles.title}>Leaderboard</h1>
+        <h1 className={styles.title}></h1>
         <TableContainer className={styles.Table} component={Paper}>
           <Table aria-label="customized table">
             <TableHead>
@@ -55,7 +55,7 @@ const LeaderboardPage: NextPage = () => {
                     <StyledTableCell
                       component="th"
                       scope="row"
-                      onClick={() => navigateTo("/participant?_id="+_id)}
+                      onClick={() => navigateTo("/participant?" + _id)}
                     >
                       {name}
                     </StyledTableCell>
