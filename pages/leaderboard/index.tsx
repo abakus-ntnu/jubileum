@@ -55,7 +55,7 @@ const LeaderboardPage: NextPage = () => {
                     <StyledTableCell
                       component="th"
                       scope="row"
-                      onClick={() => navigateTo("/participant?_id="+_id)}
+                      //onClick={() => navigateTo("/participant?_id="+_id)}
                     >
                       {name}
                     </StyledTableCell>
