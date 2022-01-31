@@ -10,7 +10,7 @@ import {
 import React from "react";
 import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
-import abakus45 from "assets/abakus_logo_2.png";
+import abakus45Logo from "assets/logo_light.png";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const NavBar = ({ height = "7rem" }) => {
@@ -68,9 +68,9 @@ const NavBar = ({ height = "7rem" }) => {
               style={{ display: "block" }}
               icon={
                 <Image
-                  src={abakus45}
-                  width={35}
-                  height={35}
+                  src={abakus45Logo}
+                  layout="fill"
+                  objectFit="contain"
                   alt={"Jubileumslogo"}
                 />
               }
