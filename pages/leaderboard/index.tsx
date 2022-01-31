@@ -17,7 +17,7 @@ import { Participant } from "models/leaderboardSchema";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const LeaderboardPage: NextPage = () => {
-  const { data: participants} = useSWR<Participant[], unknown>(
+  const { data: participants } = useSWR<Participant[], unknown>(
     "/api/leaderboardAPI/leaderboardMain",
     fetcher,
     {
@@ -42,7 +42,7 @@ const LeaderboardPage: NextPage = () => {
             </TableHead>
             <TableBody>
               {participants &&
-                participants.map(({ name, totalScore}, index) => (
+                participants.map(({ name, totalScore }, index) => (
                   <StyledTableRow key={name}>
                     <StyledTableCellNumber>
                       {(index + 1).toString() + "."}

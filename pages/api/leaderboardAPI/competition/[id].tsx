@@ -17,7 +17,7 @@ export default async function handler(
         .status(200)
         .json(
           await ScoreModel.find({ CID: query })
-            .populate("UID","CID")
+            .populate("UID", "CID")
             .sort({ score: -1 })
             .limit(10)
         );
