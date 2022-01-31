@@ -11,24 +11,19 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Header from "../../components/Header";
 import NavBar from "../../components/NavBar";
-import { useRouter } from "next/dist/client/router";
 import useSWR from "swr";
 import { Participant } from "models/leaderboardSchema";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const LeaderboardPage: NextPage = () => {
-  const { data: participants, error } = useSWR<Participant[], unknown>(
+  const { data: participants} = useSWR<Participant[], unknown>(
     "/api/leaderboardAPI/leaderboardMain",
     fetcher,
     {
       refreshInterval: 5000,
     }
   );
-  const router = useRouter();
-  const navigateTo = function (to: string) {
-    router.push(to);
-  };
 
   return (
     <div className={styles.container}>
@@ -47,7 +42,7 @@ const LeaderboardPage: NextPage = () => {
             </TableHead>
             <TableBody>
               {participants &&
-                participants.map(({ name, totalScore, _id }, index) => (
+                participants.map(({ name, totalScore}, index) => (
                   <StyledTableRow key={name}>
                     <StyledTableCellNumber>
                       {(index + 1).toString() + "."}
