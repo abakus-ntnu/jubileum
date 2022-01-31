@@ -2,7 +2,7 @@ import mongoose, { model, Schema } from "mongoose";
 
 delete mongoose.connection.models["participant"];
 
-export interface Participant extends Partial<mongoose.Document> {
+export interface Participant extends Partial<mongoose.Document<string>> {
   name: string;
   totalScore: number;
 }

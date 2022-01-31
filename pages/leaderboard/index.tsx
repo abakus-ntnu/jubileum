@@ -42,8 +42,8 @@ const LeaderboardPage: NextPage = () => {
             </TableHead>
             <TableBody>
               {participants &&
-                participants.map(({ name, totalScore }, index) => (
-                  <StyledTableRow key={name}>
+                participants.map(({ name, totalScore, _id }, index) => (
+                  <StyledTableRow key={_id}>
                     <StyledTableCellNumber>
                       {(index + 1).toString() + "."}
                     </StyledTableCellNumber>
