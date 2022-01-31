@@ -24,7 +24,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "*.d.ts", "models/leaderboardSchema.tsx", "models/leaderboardSchema.ts", "pages/api/leaderboardAPI/leaderboardAPI.tsx",
+    "*.d.ts",
   ],
   "exclude": [
     "node_modules"
