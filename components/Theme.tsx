@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material/styles";
+import { responsiveFontSizes } from "@mui/material";
 
-const jubileum_theme = createTheme({
+let jubileum_theme = createTheme({
   palette: {
     primary: {
       main: "#e23d32",
@@ -33,7 +34,19 @@ const jubileum_theme = createTheme({
         },
       ],
     },
+    MuiTypography: {
+      styleOverrides: {
+        h1: {
+          margin: "6rem 0 3rem 0",
+        },
+        h3: {
+          margin: "6rem 0 3rem 0",
+        },
+      },
+    },
   },
 });
+
+jubileum_theme = responsiveFontSizes(jubileum_theme);
 
 export default jubileum_theme;

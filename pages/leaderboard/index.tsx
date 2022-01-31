@@ -30,7 +30,7 @@ const LeaderboardPage: NextPage = () => {
       <Header title="Leaderboard" />
       <NavBar />
       <Box component="main" maxWidth="fit-content" margin="auto">
-        <Typography variant="h1" align="center" margin="5rem">
+        <Typography variant="h1" align="center">
           Leaderboard
         </Typography>
         <TableContainer component={Paper} elevation={2}>
