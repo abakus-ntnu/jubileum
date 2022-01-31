@@ -2,7 +2,7 @@ import mongoose, { model, Schema } from "mongoose";
 
 export interface Participant extends Partial<mongoose.Document> {
   name: string;
-  totalScore: Number;
+  totalScore: number;
 }
 const ParticipantSchema = new Schema({
   name: {
@@ -35,9 +35,9 @@ export const CompetitionModel = mongoose.model(
 );
 
 export interface Score extends Partial<mongoose.Document> {
-  UID: String;
-  CID: String;
-  score: Number;
+  UID: string;
+  CID: string;
+  score: number;
 }
 const ScoreSchema = new Schema({
   UID: {
