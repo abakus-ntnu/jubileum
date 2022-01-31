@@ -1,5 +1,7 @@
 import mongoose, { model, Schema } from "mongoose";
 
+delete mongoose.connection.models["participant"];
+
 export interface Participant extends Partial<mongoose.Document> {
   name: string;
   totalScore: number;
@@ -20,6 +22,8 @@ export const ParticipantModel = mongoose.model(
   ParticipantSchema
 );
 
+delete mongoose.connection.models["competition"];
+
 export interface Competition extends Partial<mongoose.Document> {
   name: string;
 }
@@ -33,6 +37,8 @@ export const CompetitionModel = mongoose.model(
   "competition",
   CompetitionSchema
 );
+
+delete mongoose.connection.models["score"];
 
 export interface Score extends Partial<mongoose.Document> {
   UID: string;
