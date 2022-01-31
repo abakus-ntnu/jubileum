@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Card, ThemeProvider, Typography } from "@mui/material";
-import jubileum_theme from "./Theme";
+import { Box, Card, Grid, Paper, Typography } from "@mui/material";
+import Image from "next/image";
 
 export interface RibbonProps {
   medalType: string;
@@ -12,18 +12,6 @@ export interface RibbonProps {
 
 const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
   const imgSrc = ribbonType != null ? ribbonType.imageLink : "/SampleDalje.png";
-
-  const imageStyles = {
-    paperContainer: {
-      backgroundImage: `url(${imgSrc})`,
-      backgroundSize: "contain",
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "center",
-      transform: "translateY(6%)",
-      height: "90%",
-      width: "90%",
-    },
-  };
 
   const cardStyles = {
     cardTitleBox: {
@@ -51,7 +39,6 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
       height: "450px",
     },
     innerCard: {
-      backgroundColor: "white",
       borderTop: "3px solid #eeeeee",
       borderLeft: "7px solid #eeeeee",
       borderRight: "3px solid #eeeeee",
@@ -73,9 +60,24 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
           {ribbonType.medalType}
         </Typography>
       </Box>
-      <Card sx={cardStyles.innerCard}>
-        <Box sx={imageStyles.paperContainer} margin="auto" />
-      </Card>
+      <Paper sx={cardStyles.innerCard}>
+        <Grid
+          container
+          height="100%"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Box height="90%" width="90%" sx={{ position: "relative" }}>
+            <Image
+              src={imgSrc}
+              layout="fill"
+              objectFit="contain"
+              sizes="240px"
+              alt={ribbonType.medalType}
+            />
+          </Box>
+        </Grid>
+      </Paper>
     </Card>
   );
 };
