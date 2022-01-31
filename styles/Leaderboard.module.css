@@ -1,11 +1,11 @@
 .main {
   max-width: fit-content;
-  text-align: left;
+  text-align: center;
   font-size: 1.5em;
   display: flex;
-  flex-direction: row;
-  margin-left: 4rem;
-  margin-top: 4rem;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 1.5em;
 }
 
 .description {
