@@ -6,6 +6,7 @@ import useFireworks from "hooks/useFireworks";
 import Centered from "../components/Centered";
 import ProgramComponent from "components/Program";
 import { events } from "../data/programUtils";
+import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   useFireworks();
@@ -37,9 +38,12 @@ const Home: NextPage = () => {
           frameBorder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         />
+        <div>
+          <h1 className={styles.program}>Program</h1>
         {events.map((program) => {
           return(<ProgramComponent program={program} />);
         })}
+        </div>
       </Centered>
     </JubPage>
   );
