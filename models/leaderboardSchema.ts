@@ -1,8 +1,10 @@
 import mongoose, { model, Schema } from "mongoose";
 
-export interface Participant extends Partial<mongoose.Document> {
+delete mongoose.connection.models["participant"];
+
+export interface Participant extends Partial<mongoose.Document<string>> {
   name: string;
-  totalScore: Number;
+  totalScore: number;
 }
 const ParticipantSchema = new Schema({
   name: {
@@ -20,6 +22,8 @@ export const ParticipantModel = mongoose.model(
   ParticipantSchema
 );
 
+delete mongoose.connection.models["competition"];
+
 export interface Competition extends Partial<mongoose.Document> {
   name: string;
 }
@@ -34,10 +38,12 @@ export const CompetitionModel = mongoose.model(
   CompetitionSchema
 );
 
+delete mongoose.connection.models["score"];
+
 export interface Score extends Partial<mongoose.Document> {
-  UID: String;
-  CID: String;
-  score: Number;
+  UID: string;
+  CID: string;
+  score: number;
 }
 const ScoreSchema = new Schema({
   UID: {

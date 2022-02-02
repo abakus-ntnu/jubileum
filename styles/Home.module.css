@@ -2,11 +2,6 @@
   padding-top: 4rem;
 }
 
-.container {
-  width: 100%;
-  background-color: black;
-}
-
 .main {
   padding: 2rem 0;
   display: flex;
