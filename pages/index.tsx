@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       <NavBar />
       <div className={styles.boks}>
         <h1 className={styles.title}>Abakus fyller 45 år! 🥳</h1>
-        <Countdown countDownDate={new Date("Mar 13, 2022 02:00:00")} />
+        <Countdown countDownDate={new Date("Mar 7, 2022 12:15:00")} />
         <p className={styles.description}>
           Abakus ble i 1977 stiftet av en gruppe datateknikkstudenter som brøt
           ut fra linjeforeningen Omega. I dag har denne linjeforeningen vokst

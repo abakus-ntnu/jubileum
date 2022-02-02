@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import RibbonComponent from "../../components/RibbonComponent";
-import { Grid, Typography, Box } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { medalDescriptions } from "../../data/ribbonUtils";
 import Header from "../../components/Header";
 import NavBar from "../../components/NavBar";
@@ -33,7 +33,7 @@ const RibbonsPage: NextPage = () => {
       >
         <Typography variant="h1">Daljer og Pins</Typography>
         <Typography variant="h3" marginTop="0">
-          Jubileumsdaljer
+          Abakus-utmerkelser
         </Typography>
         <div>
           <Grid
@@ -43,7 +43,19 @@ const RibbonsPage: NextPage = () => {
             justifyContent="center"
             alignItems="center"
           >
-            {viewRibbons(`${"jubileum"}`)}
+            {viewRibbons(`${"abakus"}`)}
+          </Grid>
+        </div>
+        <Typography variant="h3">Styredaljer</Typography>
+        <div>
+          <Grid
+            container
+            spacing={5}
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            {viewRibbons(`${"styre"}`)}
           </Grid>
         </div>
         <Typography variant="h3">Daljer for Verv i Abakus</Typography>
@@ -70,7 +82,7 @@ const RibbonsPage: NextPage = () => {
             {viewRibbons(`${"ordenen"}`)}
           </Grid>
         </div>
-        <Typography variant="h3">Pins</Typography>
+        <Typography variant="h3">Jubileumsdaljer</Typography>
         <div>
           <Grid
             container
@@ -79,7 +91,7 @@ const RibbonsPage: NextPage = () => {
             justifyContent="center"
             alignItems="center"
           >
-            {viewRibbons(`${"pins"}`)}
+            {viewRibbons(`${"jubileum"}`)}
           </Grid>
         </div>
       </Grid>
