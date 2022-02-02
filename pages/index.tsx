@@ -6,7 +6,7 @@ import NavBar from "../components/NavBar";
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <>
       <Header title="Hjem" />
       <NavBar />
       <div className={styles.boks}>
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
           konkurranser er det selvfølgelig også.
         </p>
       </div>
-    </div>
+    </>
   );
 };
 

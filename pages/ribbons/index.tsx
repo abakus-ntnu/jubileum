@@ -18,7 +18,7 @@ const RibbonsPage: NextPage = () => {
     });
 
   return (
-    <Box>
+    <>
       <Header title="Daljer og Pins" />
 
       <NavBar />
@@ -83,7 +83,7 @@ const RibbonsPage: NextPage = () => {
           </Grid>
         </div>
       </Grid>
-    </Box>
+    </>
   );
 };
 
