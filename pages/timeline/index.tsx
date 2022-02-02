@@ -14,7 +14,7 @@ const TimelinePage: NextPage = () => {
 
       <NavBar />
 
-      <main className={styles.container}>
+      <main>
         <div className={styles.introContainer}>
           <Card className={styles.introCard}>
             <h1>Tidslinje</h1>
