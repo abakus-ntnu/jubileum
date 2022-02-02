@@ -3,7 +3,7 @@ import React from "react";
 import Header from "../../components/Header";
 import styles from "../../styles/Member.module.css";
 import { Stack, ToggleButton } from "@mui/material";
-import HonoraryMember from "../../components/honoraryMember";
+import HonoraryMember from "../../components/HonoraryMember";
 import { members, info } from "../../data/membersUtils";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -13,7 +13,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import cx from "classnames";
 import NavBar from "components/NavBar";
 import { useRouter } from "next/dist/client/router";
-import TheOrder from "components/theOrder";
+import TheOrder from "components/TheOrder";
 
 const HonoraryMembersPage: NextPage = () => {
   const router = useRouter();
