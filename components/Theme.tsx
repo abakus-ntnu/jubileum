@@ -38,9 +38,15 @@ let jubileum_theme = createTheme({
       styleOverrides: {
         h1: {
           margin: "6rem 0 3rem 0",
+          textAlign: "center",
+        },
+        h2: {
+          margin: "6rem 0 3rem 0",
+          textAlign: "center",
         },
         h3: {
           margin: "6rem 0 3rem 0",
+          textAlign: "center",
         },
       },
     },
