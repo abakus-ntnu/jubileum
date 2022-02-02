@@ -7,6 +7,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { TimelineEvent } from "models/schema";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import abakule from "assets/timelineImages/abakule.png";
+import kronikenKule from "assets/timelineImages/krøniken.png";
 
 interface IProps {
   event: TimelineEvent;
@@ -36,7 +38,13 @@ const TimelineEventElement = ({
       date={event.date}
       iconStyle={{ background: "#E20F13" }}
       icon={
-        <Image src="/abakule.png" alt="Abakule" height="100px" width="100px" />
+        <Image
+          src={event.tags.includes("krøniken") ? kronikenKule : abakule}
+          className={styles.timelineIcon}
+          alt=""
+          height="100px"
+          width="100px"
+        />
       }
     >
       <Accordion
