@@ -7,6 +7,7 @@ export interface TimelineEvent extends Partial<mongoose.Document> {
   description: string;
   date: string;
   index: number;
+  tags: string[];
 }
 
 const schema = new Schema<TimelineEvent>({
@@ -14,6 +15,7 @@ const schema = new Schema<TimelineEvent>({
   description: { type: String, default: "" },
   date: { type: String, default: "" },
   index: { type: Number, default: 0 },
+  tags: { type: [String] },
 });
 
 export const TimelineEventModel = model<TimelineEvent>("TimelineEvent", schema);

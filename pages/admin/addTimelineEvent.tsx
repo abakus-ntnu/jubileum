@@ -45,15 +45,18 @@ const AdminTimeline = ({
 
 const MemoizedAdminTimeline = memo(AdminTimeline);
 
+const emptyEvent: TimelineEvent = {
+  title: "",
+  description: "",
+  date: "",
+  index: 0,
+  tags: [],
+};
+
 const TimelineAdminPage: NextPage = () => {
   const [password, setPassword] = React.useState<string>("");
   const [passwordError, setPasswordError] = React.useState<boolean>(false);
-  const [event, setEvent] = React.useState<TimelineEvent>({
-    title: "",
-    description: "",
-    date: "",
-    index: 0,
-  });
+  const [event, setEvent] = React.useState<TimelineEvent>(emptyEvent);
 
   const putEvent = async (event: TimelineEvent): Promise<boolean> => {
     const res = await putTimelineEvent(event, password);
@@ -69,7 +72,7 @@ const TimelineAdminPage: NextPage = () => {
     e.preventDefault();
     if (event.date && event.description && event.title) {
       if (await putEvent(event)) {
-        setEvent({ title: "", description: "", date: "", index: 0 });
+        setEvent(emptyEvent);
       }
     }
   };
@@ -129,6 +132,13 @@ const TimelineAdminPage: NextPage = () => {
                   id="date"
                   value={event.date}
                   onChange={(e) => setEvent({ ...event, date: e.target.value })}
+                />
+                <TextField
+                  label="Tags"
+                  value={event.tags.join(", ")}
+                  onChange={(e) =>
+                    setEvent({ ...event, tags: e.target.value.split(", ") })
+                  }
                 />
                 <TextField
                   error={!event.index}
