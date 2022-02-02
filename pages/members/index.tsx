@@ -70,9 +70,9 @@ const HonoraryMembersPage: NextPage = () => {
       <NavBar />
 
       <main>
-        <h1 className={cx(styles.mainTitle, styles.titleSize)}>
+        <Typography variant="h1">
           Æresmedlemmer og Den Gyldne Kulerammes Orden
-        </h1>
+        </Typography>
         <Stack
           direction="row"
           spacing={2}

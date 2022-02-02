@@ -33,13 +33,6 @@
   margin: auto;
 }
 
-.mainTitle {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-  text-align: center;
-}
-
 .buttonStyle {
   padding: 20px;
 }
@@ -100,12 +93,6 @@
     flex-wrap: wrap !important;
     display: flex !important;
     justify-content: center !important;
-  }
-
-  .titleSize {
-    text-align: center;
-    display: flex;
-    justify-content: center;
   }
 
   .text {
