@@ -56,7 +56,7 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
   return (
     <Card sx={cardStyles.card}>
       <Box sx={cardStyles.cardTitleBox}>
-        <Typography variant="h5" color="secondary" align="center">
+        <Typography variant="h4" color="primary.contrastText" align="center">
           {ribbonType.medalType}
         </Typography>
       </Box>

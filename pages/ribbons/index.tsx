@@ -32,7 +32,7 @@ const RibbonsPage: NextPage = () => {
         paddingRight="10%"
       >
         <Typography variant="h1">Daljer og Pins</Typography>
-        <Typography variant="h3" marginTop="0">
+        <Typography variant="h2" marginTop="0">
           Abakus-utmerkelser
         </Typography>
         <div>
@@ -46,7 +46,7 @@ const RibbonsPage: NextPage = () => {
             {viewRibbons(`${"abakus"}`)}
           </Grid>
         </div>
-        <Typography variant="h3">Styredaljer</Typography>
+        <Typography variant="h2">Styredaljer</Typography>
         <div>
           <Grid
             container
@@ -58,7 +58,7 @@ const RibbonsPage: NextPage = () => {
             {viewRibbons(`${"styre"}`)}
           </Grid>
         </div>
-        <Typography variant="h3">Daljer for Verv i Abakus</Typography>
+        <Typography variant="h2">Daljer for Verv i Abakus</Typography>
         <div>
           <Grid
             container
@@ -70,7 +70,7 @@ const RibbonsPage: NextPage = () => {
             {viewRibbons(`${"abakom"}`)}
           </Grid>
         </div>
-        <Typography variant="h3">Den Gylne Kulerammes Orden</Typography>
+        <Typography variant="h2">Den Gylne Kulerammes Orden</Typography>
         <div>
           <Grid
             container
@@ -82,7 +82,7 @@ const RibbonsPage: NextPage = () => {
             {viewRibbons(`${"ordenen"}`)}
           </Grid>
         </div>
-        <Typography variant="h3">Jubileumsdaljer</Typography>
+        <Typography variant="h2">Jubileumsdaljer</Typography>
         <div>
           <Grid
             container
