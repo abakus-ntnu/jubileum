@@ -8,11 +8,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Header from "../../components/Header";
-import NavBar from "../../components/NavBar";
 import useSWR from "swr";
 import { Participant } from "models/leaderboardSchema";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
+import JubPage from "components/JubPage";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -26,13 +25,8 @@ const LeaderboardPage: NextPage = () => {
   );
 
   return (
-    <>
-      <Header title="Leaderboard" />
-      <NavBar />
-      <Box component="main" maxWidth="fit-content" margin="auto">
-        <Typography variant="h1" align="center">
-          Leaderboard
-        </Typography>
+    <JubPage title="Leaderboard" header="Leaderboard">
+      <Box maxWidth="fit-content" margin="auto">
         <TableContainer component={Paper} elevation={2}>
           <Table aria-label="customized table">
             <TableHead>
@@ -62,7 +56,7 @@ const LeaderboardPage: NextPage = () => {
           </Table>
         </TableContainer>
       </Box>
-    </>
+    </JubPage>
   );
 };
 

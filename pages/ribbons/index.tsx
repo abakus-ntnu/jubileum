@@ -2,8 +2,7 @@ import type { NextPage } from "next";
 import RibbonComponent from "../../components/RibbonComponent";
 import { Grid, Typography } from "@mui/material";
 import { medalDescriptions } from "../../data/ribbonUtils";
-import Header from "../../components/Header";
-import NavBar from "../../components/NavBar";
+import JubPage from "components/JubPage";
 
 const RibbonsPage: NextPage = () => {
   const viewRibbons = (filterTag: string) =>
@@ -18,11 +17,7 @@ const RibbonsPage: NextPage = () => {
     });
 
   return (
-    <>
-      <Header title="Daljer og Pins" />
-
-      <NavBar />
-
+    <JubPage title="Daljer og Pins" header="Daljer og Pins">
       <Grid
         container
         direction="column"
@@ -31,7 +26,6 @@ const RibbonsPage: NextPage = () => {
         paddingLeft="10%"
         paddingRight="10%"
       >
-        <Typography variant="h1">Daljer og Pins</Typography>
         <Typography variant="h2" marginTop="0">
           Abakus-utmerkelser
         </Typography>
@@ -95,7 +89,7 @@ const RibbonsPage: NextPage = () => {
           </Grid>
         </div>
       </Grid>
-    </>
+    </JubPage>
   );
 };
 
