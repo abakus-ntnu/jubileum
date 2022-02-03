@@ -1,9 +1,50 @@
 import React, { useState, useEffect } from "react";
-import { Stack, Box } from "@mui/material";
-import styles from "../styles/Countdown.module.css";
+import { Stack, Paper, Typography } from "@mui/material";
 
 const adjustDate = (date: number) => {
   return date < 10 ? `0${date}` : date;
+};
+
+const CountdownBox = ({ number, text }: { number: number; text: string }) => {
+  const boxSize = {
+    xs: 80,
+    md: 160,
+  };
+  return (
+    <Paper
+      elevation={0}
+      sx={{
+        backgroundColor: "primary.main",
+      }}
+    >
+      <Stack
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        sx={{
+          width: boxSize,
+          height: boxSize,
+        }}
+      >
+        <Typography
+          variant="h2"
+          color="primary.contrastText"
+          margin={0}
+          sx={{ fontSize: { xs: 28, md: 56 } }}
+        >
+          {adjustDate(number)}
+        </Typography>
+        <Typography
+          variant="body1"
+          color="primary.contrastText"
+          margin={0}
+          sx={{ fontSize: { xs: 12, md: 16 } }}
+        >
+          {text}
+        </Typography>
+      </Stack>
+    </Paper>
+  );
 };
 
 type CountdownProps = { countDownDate: Date };
@@ -30,47 +71,13 @@ const Countdown = ({ countDownDate }: CountdownProps) => {
     return () => clearInterval(interval);
   }, [countDownDate]);
 
-  const drawerWidth = {
-    width: {
-      md: "100px",
-      xs: "63px",
-    },
-  };
-  const drawerFontSize = {
-    fontSize: {
-      md: "60px",
-      xs: "30px",
-    },
-  };
   return (
-    <div>
-      <Stack direction="row" spacing={2}>
-        <Box sx={drawerWidth} className={styles.box}>
-          <Box sx={drawerFontSize} className={styles.integer}>
-            {adjustDate(days)}
-          </Box>
-          <p className={styles.p}>DAGER</p>
-        </Box>
-        <Box sx={drawerWidth} className={styles.box}>
-          <Box sx={drawerFontSize} className={styles.integer}>
-            {adjustDate(hours)}
-          </Box>
-          <p className={styles.p}>TIMER</p>
-        </Box>
-        <Box sx={drawerWidth} className={styles.box}>
-          <Box sx={drawerFontSize} className={styles.integer}>
-            {adjustDate(minutes)}
-          </Box>
-          <p className={styles.p}>MINUTTER</p>
-        </Box>
-        <Box sx={drawerWidth} className={styles.box}>
-          <Box sx={drawerFontSize} className={styles.integer}>
-            {adjustDate(seconds)}
-          </Box>
-          <p className={styles.p}>SEKUNDER</p>
-        </Box>
-      </Stack>
-    </div>
+    <Stack direction="row" spacing={2}>
+      <CountdownBox number={days} text="DAGER" />
+      <CountdownBox number={hours} text="TIMER" />
+      <CountdownBox number={minutes} text="MINUTTER" />
+      <CountdownBox number={seconds} text="SEKUNDER" />
+    </Stack>
   );
 };
 
