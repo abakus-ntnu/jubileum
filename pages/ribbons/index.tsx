@@ -2,8 +2,7 @@ import type { NextPage } from "next";
 import RibbonComponent from "../../components/RibbonComponent";
 import { Grid, Typography } from "@mui/material";
 import { medalDescriptions } from "../../data/ribbonUtils";
-import Header from "../../components/Header";
-import NavBar from "../../components/NavBar";
+import JubPage from "components/JubPage";
 
 const RibbonsPage: NextPage = () => {
   const viewRibbons = (filterTag: string) =>
@@ -18,11 +17,7 @@ const RibbonsPage: NextPage = () => {
     });
 
   return (
-    <>
-      <Header title="Daljer og Pins" />
-
-      <NavBar />
-
+    <JubPage title="Daljer og Pins" header="Daljer og Pins">
       <Grid
         container
         direction="column"
@@ -31,8 +26,7 @@ const RibbonsPage: NextPage = () => {
         paddingLeft="10%"
         paddingRight="10%"
       >
-        <Typography variant="h1">Daljer og Pins</Typography>
-        <Typography variant="h3" marginTop="0">
+        <Typography variant="h2" marginTop="0">
           Abakus-utmerkelser
         </Typography>
         <div>
@@ -46,7 +40,7 @@ const RibbonsPage: NextPage = () => {
             {viewRibbons(`${"abakus"}`)}
           </Grid>
         </div>
-        <Typography variant="h3">Styredaljer</Typography>
+        <Typography variant="h2">Styredaljer</Typography>
         <div>
           <Grid
             container
@@ -58,7 +52,7 @@ const RibbonsPage: NextPage = () => {
             {viewRibbons(`${"styre"}`)}
           </Grid>
         </div>
-        <Typography variant="h3">Daljer for Verv i Abakus</Typography>
+        <Typography variant="h2">Daljer for Verv i Abakus</Typography>
         <div>
           <Grid
             container
@@ -70,7 +64,7 @@ const RibbonsPage: NextPage = () => {
             {viewRibbons(`${"abakom"}`)}
           </Grid>
         </div>
-        <Typography variant="h3">Den Gylne Kulerammes Orden</Typography>
+        <Typography variant="h2">Den Gylne Kulerammes Orden</Typography>
         <div>
           <Grid
             container
@@ -82,7 +76,7 @@ const RibbonsPage: NextPage = () => {
             {viewRibbons(`${"ordenen"}`)}
           </Grid>
         </div>
-        <Typography variant="h3">Jubileumsdaljer</Typography>
+        <Typography variant="h2">Jubileumsdaljer</Typography>
         <div>
           <Grid
             container
@@ -95,7 +89,7 @@ const RibbonsPage: NextPage = () => {
           </Grid>
         </div>
       </Grid>
-    </>
+    </JubPage>
   );
 };
 

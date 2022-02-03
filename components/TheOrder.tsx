@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box, Typography, Tab, Tabs } from "@mui/material";
-import TheOrderMember from "./theOrderMember";
+import TheOrderMember from "./TheOrderMember";
 import { orderMembers } from "../data/theOrderUtils";
 import styles from "../styles/Member.module.css";
 
