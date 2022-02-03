@@ -2,8 +2,11 @@ import type { NextPage } from "next";
 import Countdown from "components/Countdown";
 import JubPage from "components/JubPage";
 import { Grid, Typography } from "@mui/material";
+import useFireworks from "hooks/useFireworks";
 
 const Home: NextPage = () => {
+  useFireworks();
+
   return (
     <JubPage title="Hjem" header="Abakus fyller 45 år! 🥳">
       <Grid container justifyContent="center">
