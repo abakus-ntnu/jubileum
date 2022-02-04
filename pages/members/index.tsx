@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import React from "react";
 import styles from "../../styles/Member.module.css";
-import { Stack, ToggleButton } from "@mui/material";
-import HonoraryMember from "../../components/HonoraryMember";
+import { Box, Divider, Stack, ToggleButton } from "@mui/material";
+import HonoraryMember from "components/HonoraryMember";
 import { members, info } from "../../data/membersUtils";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -16,27 +16,79 @@ import JubPage from "components/JubPage";
 const HonoraryMembersPage: NextPage = () => {
   const router = useRouter();
   const isOrder = router.query.view === "the-order";
-
-  const honoraryMembers = members.map((member) => (
-    <HonoraryMember key={member.name} member={member} />
+  members.sort((m1, m2) => m2.appointed.localeCompare(m1.appointed));
+  const honoraryMembers = members.map((member, index) => (
+    <HonoraryMember
+      key={member.name}
+      member={member}
+      reverse={index % 2 != 0}
+    />
   ));
   const displayHonoraryMembers = (
-    <Stack className={styles.pageStackStyle} direction="column" spacing={5}>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+    <Stack className={styles.pageStackStyle} direction="column" spacing={0}>
+      <Box
+        sx={{
+          backgroundColor: "#eb4034",
+          height: "56px",
+          alignItems: "center",
+          verticalAlign: "middsle",
+          display: "flex",
+        }}
+        className={styles.boxStyle}
+      >
+        <Typography
+          fontSize="1.5rem"
+          fontWeight={400}
+          color="secondary"
+          marginLeft={2}
           sx={{
-            bgcolor: "warning.main",
+            fontSize: {
+              xs: "1.3rem",
+              md: "1.5rem",
+            },
           }}
         >
-          <Typography color="common.black" variant="h5">
-            Informasjon om Æresmedlemmer
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>{info.aresMedlemmer}</Typography>
-        </AccordionDetails>
-      </Accordion>
+          Informasjon om Æresmedlemmer
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          height: { xs: 190, md: 100 },
+          backgroundColor: "white",
+          marginBottom: 4,
+        }}
+      >
+        <Typography
+          marginTop={1}
+          sx={{
+            fontSize: {
+              xs: "1",
+              md: "16px",
+            },
+            marginRight: {
+              xs: "1rem",
+              md: "2rem",
+            },
+            marginLeft: {
+              xs: "1rem",
+              md: "2rem",
+            },
+          }}
+        >
+          Har noen innlagt seg særlige fortjenester for foreningen, eller
+          utmerket seg på annet vis, kan Hovedstyret innby vedkommende som
+          æresmedlem av Abakus. Et æresmedlem skal ha vært, eller fortsatt være
+          en stor ressurs for foreningen og skal ha lagt mer jobb enn det som er
+          forventet i foreningens arbeid.
+        </Typography>
+        <Divider
+          sx={{
+            marginTop: 3,
+            borderBottomWidth: 2,
+            borderBottomColor: "rgb(0 0 0 / 30%)",
+          }}
+        />
+      </Box>
       {honoraryMembers}
     </Stack>
   );
@@ -46,10 +98,10 @@ const HonoraryMembersPage: NextPage = () => {
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           sx={{
-            bgcolor: "warning.main",
+            bgcolor: "#eb4034",
           }}
         >
-          <Typography color="common.black" variant="h5">
+          <Typography color="secondary" variant="h5">
             Hva er Ordenen?
           </Typography>
         </AccordionSummary>

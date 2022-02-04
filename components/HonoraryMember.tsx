@@ -7,13 +7,18 @@ export interface MemberProps {
   name: string;
   memberInfo: string;
   profilePic: string;
-  reverse: boolean;
   appointed: string;
   position: string;
   committee: string[];
 }
 
-const HonoraryMember = ({ member }: { member: MemberProps }) => {
+const HonoraryMember = ({
+  member,
+  reverse,
+}: {
+  reverse: boolean;
+  member: MemberProps;
+}) => {
   const displayCommittee = member.committee.map((comittee) => (
     <Box key={comittee}>
       <Tooltip title={`${comittee}`}>
@@ -45,7 +50,7 @@ const HonoraryMember = ({ member }: { member: MemberProps }) => {
   return (
     <div>
       <Stack
-        direction={`row${member.reverse ? "-reverse" : ""}`}
+        direction={`row${reverse ? "-reverse" : ""}`}
         spacing={10}
         justifyContent="flex-start"
         className={styles.stackStyle}
@@ -62,7 +67,7 @@ const HonoraryMember = ({ member }: { member: MemberProps }) => {
         <Box className={styles.textBox}>
           <h1
             className={styles.titleSize}
-            style={{ textAlign: member.reverse ? "right" : "left" }}
+            style={{ textAlign: reverse ? "right" : "left" }}
           >
             {member.name}
           </h1>

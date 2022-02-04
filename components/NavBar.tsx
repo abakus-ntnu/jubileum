@@ -77,7 +77,7 @@ const NavBar = ({ height = "7rem" }) => {
             />
           )}
           {createTab("/timeline", "Abakus Historie")}
-          {createTab("/members", "Æresmedlemmer")}
+          {createTab("/members", "Utnevnte")}
         </Tabs>
         {!isVertical && displayMenu}
       </>
