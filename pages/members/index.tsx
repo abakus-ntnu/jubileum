@@ -1,42 +1,17 @@
 import type { NextPage } from "next";
 import React from "react";
 import styles from "../../styles/Member.module.css";
-import { Stack, ToggleButton } from "@mui/material";
+import { Box, Stack, ToggleButton } from "@mui/material";
 import { info } from "data/membersUtils";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useRouter } from "next/dist/client/router";
 import TheOrder from "components/TheOrder";
 import JubPage from "components/JubPage";
 import HonoraryMembers from "components/HonoraryMembers";
+import InfoBox from "components/InfoBox";
 
 const AppointedMembersPage: NextPage = () => {
   const router = useRouter();
   const isOrder = router.query.view === "the-order";
-
-  const displayTheOrder = (
-    <Stack className={styles.pageStackStyle} direction="column">
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          sx={{
-            bgcolor: "#eb4034",
-          }}
-        >
-          <Typography color="secondary" variant="h5">
-            Hva er Ordenen?
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>{info.orden}</Typography>
-        </AccordionDetails>
-      </Accordion>
-      <TheOrder />
-    </Stack>
-  );
 
   return (
     <JubPage
@@ -72,8 +47,13 @@ const AppointedMembersPage: NextPage = () => {
           Orden
         </ToggleButton>
       </Stack>
-      <p />
-      {isOrder ? displayTheOrder : <HonoraryMembers />}
+      <InfoBox
+        title={isOrder ? "Hva er Ordenen?" : "Informasjon om Æresmedlemmer"}
+        text={isOrder ? info.orden : info.aresMedlemmer}
+      />
+      <Box maxWidth={1500} m="20px auto">
+        {isOrder ? <TheOrder /> : <HonoraryMembers />}
+      </Box>
     </JubPage>
   );
 };
