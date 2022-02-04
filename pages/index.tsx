@@ -24,6 +24,17 @@ const Home: NextPage = () => {
         være mange arrangementer og begivenheter tilknyttet jubileet, og
         konkurranser er det selvfølgelig også.
       </Typography>
+      <Grid container justifyContent="center">
+        <iframe
+          className="spotify-embed"
+          src="https://open.spotify.com/embed/show/2ZeUiQ4pclClRbDfBvwPyC?utm_source=generator"
+          color=""
+          width="600"
+          height="232"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        />
+      </Grid>
     </JubPage>
   );
 };
