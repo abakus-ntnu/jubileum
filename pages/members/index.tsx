@@ -13,7 +13,7 @@ import { useRouter } from "next/dist/client/router";
 import TheOrder from "components/TheOrder";
 import JubPage from "components/JubPage";
 
-const HonoraryMembersPage: NextPage = () => {
+const AppointedMembersPage: NextPage = () => {
   const router = useRouter();
   const isOrder = router.query.view === "the-order";
   members.sort((m1, m2) => m2.appointed.localeCompare(m1.appointed));
@@ -153,4 +153,4 @@ const HonoraryMembersPage: NextPage = () => {
   );
 };
 
-export default HonoraryMembersPage;
+export default AppointedMembersPage;
