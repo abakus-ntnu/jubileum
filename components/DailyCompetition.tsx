@@ -1,8 +1,9 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 import { DailyCompetition } from "models/codeCompetitionSchema";
 import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import styles from "styles/TimelinePage.module.css";
 
 interface IProps {
   competition: DailyCompetition;
@@ -21,19 +22,17 @@ const DailyCompetitionElement = ({ competition, adminPassword }: IProps) => {
       },
     });
   };
-
+  //TODO: Style Box:
   return (
-    <Box>
-      <Typography variant="h1">
-        {competition.title}, index {competition.index}
+    <Card className={styles.introCard}>
+      <Typography variant="h2">
+        {competition.title}
       </Typography>
       <Typography>{competition.date} </Typography>
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-      >
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>
         {competition.description}
       </ReactMarkdown>
-    </Box>
+    </Card>
   );
 };
 

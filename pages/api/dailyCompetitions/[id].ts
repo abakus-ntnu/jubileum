@@ -11,7 +11,9 @@ export default async function handler(
 
   await mongoose.connect(url);
 
-  switch (method) {
+  switch (
+    method //TODO: Case when there is nothing to return/delete
+  ) {
     case "DELETE":
       {
         if (headers.password !== process.env.POST_PASSWORD) {
@@ -19,7 +21,7 @@ export default async function handler(
           return;
         }
         await DailyCompetitionModel.deleteOne({ _id: query.id as string });
-        res.status(200);
+        res.status(200).end();
       }
       break;
     case "GET":
@@ -28,7 +30,11 @@ export default async function handler(
           res.status(401).end();
           return;
         }
-        await DailyCompetitionModel.findOne({ _id: query.id as string });
+        res
+          .status(200)
+          .json(
+            await DailyCompetitionModel.findOne({ _id: query.id as string })
+          );
       }
       break;
     default:

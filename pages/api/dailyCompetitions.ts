@@ -18,24 +18,25 @@ export default async function handler(
     case "GET":
       res.status(200).json(await DailyCompetitionModel.find({}));
       break;
-    case "PUT": {
-      if (headers.password !== process.env.POST_PASSWORD) {
-        res.status(401).end();
-        return;
+    case "PUT":
+      {
+        if (headers.password !== process.env.POST_PASSWORD) {
+          res.status(401).end();
+          return;
+        }
+        const requestCompetition = req.body as DailyCompetition;
+        if (requestCompetition._id) {
+          await DailyCompetitionModel.findOneAndUpdate(
+            { _id: requestCompetition._id as mongoose.Types.ObjectId },
+            requestCompetition,
+            {
+              upsert: true, // insert rows into a database table if they do not already exist, or update them if they do
+            }
+          );
+          res.status(200).send("");
+        }
       }
-      const requestCompetition = req.body as DailyCompetition;
-      if (requestCompetition._id) {
-        await DailyCompetitionModel.findOneAndUpdate(
-          { _id: requestCompetition._id as mongoose.Types.ObjectId },
-          requestCompetition,
-          {
-            upsert: true, // insert rows into a database table if they do not already exist, or update them if they do
-          }
-        );
-        res.status(200).send("");
-      }
-    }
-    break;
+      break;
     case "POST":
       {
         if (headers.password !== process.env.POST_PASSWORD) {
