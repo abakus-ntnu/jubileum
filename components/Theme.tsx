@@ -4,16 +4,19 @@ import { responsiveFontSizes } from "@mui/material";
 let jubileum_theme = createTheme({
   palette: {
     primary: {
-      main: "#e23d32",
+      main: "#eeeeee",
     },
     secondary: {
-      main: "#ffffff",
+      light: "#ffffff",
+      main: "#000000",
+      dark: "#000000",
+      contrastText: "#000",
     },
     background: {
       default: "#eaeaea",
     },
     error: {
-      main: "#b21c17",
+      main: "#eb4034",
     },
   },
   typography: {

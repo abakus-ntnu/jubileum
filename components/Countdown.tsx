@@ -14,7 +14,7 @@ const CountdownBox = ({ number, text }: { number: number; text: string }) => {
     <Paper
       elevation={0}
       sx={{
-        backgroundColor: "primary.main",
+        backgroundColor: "error.main",
       }}
     >
       <Stack
@@ -28,7 +28,7 @@ const CountdownBox = ({ number, text }: { number: number; text: string }) => {
       >
         <Typography
           variant="h2"
-          color="primary.contrastText"
+          color="secondary.light"
           margin={0}
           sx={{ fontSize: { xs: 28, md: 56 } }}
         >
@@ -36,7 +36,7 @@ const CountdownBox = ({ number, text }: { number: number; text: string }) => {
         </Typography>
         <Typography
           variant="body1"
-          color="primary.contrastText"
+          color="secondary.light"
           margin={0}
           sx={{ fontSize: { xs: 12, md: 16 } }}
         >

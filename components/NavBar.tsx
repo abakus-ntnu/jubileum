@@ -10,7 +10,7 @@ import {
 import React from "react";
 import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
-import abakus45Logo from "assets/logo_light.png";
+import abakus45Logo from "assets/logo_dark.png";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const NavBar = ({ height = "7rem" }) => {
@@ -110,7 +110,7 @@ const NavBar = ({ height = "7rem" }) => {
 
   return (
     <>
-      <AppBar position="fixed" sx={{ height: height }}>
+      <AppBar elevation={0} position="fixed" sx={{ height: height }}>
         <Grid
           container
           justifyContent="center"
