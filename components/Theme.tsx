@@ -4,16 +4,17 @@ import { responsiveFontSizes } from "@mui/material";
 let jubileum_theme = createTheme({
   palette: {
     primary: {
-      main: "#eeeeee",
+      main: "#eb4034",
+      light: "#ff755f",
+      dark: "#B21C17",
     },
     secondary: {
       light: "#ffffff",
-      main: "#000000",
+      main: "#191919",
       dark: "#000000",
-      contrastText: "#000",
     },
     background: {
-      default: "#eaeaea",
+      default: "#eeeeee",
     },
     error: {
       main: "#eb4034",
@@ -25,7 +26,12 @@ let jubileum_theme = createTheme({
   },
   components: {
     MuiTab: {
-      styleOverrides: {},
+      styleOverrides: {
+        selected: {
+          opacity: 0,
+        },
+      },
+
       variants: [
         {
           props: {

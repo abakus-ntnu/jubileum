@@ -41,6 +41,7 @@ const NavBar = ({ height = "7rem" }) => {
           display: isVertical
             ? "inline-flex"
             : { xs: "none", md: "inline-flex" },
+          color: "secondary.main",
         }}
         label={label}
         value={value}
@@ -54,8 +55,8 @@ const NavBar = ({ height = "7rem" }) => {
           scrollButtons={false}
           orientation={isVertical ? "vertical" : "horizontal"}
           indicatorColor="secondary"
-          textColor="inherit"
-          color="primary"
+          color="secondary.main"
+          sx={{ opacity: 1 }}
           variant="scrollable"
           onChange={(evt, newValue: string) => handleChange(newValue)}
         >
@@ -100,7 +101,7 @@ const NavBar = ({ height = "7rem" }) => {
         open={openMenu}
         onClose={toggleDrawer(false)}
         PaperProps={{
-          sx: { backgroundColor: "primary.main" },
+          sx: { backgroundColor: "background" },
         }}
       >
         <Typography color="secondary">{displayTabs(true)}</Typography>
@@ -110,7 +111,11 @@ const NavBar = ({ height = "7rem" }) => {
 
   return (
     <>
-      <AppBar elevation={0} position="fixed" sx={{ height: height }}>
+      <AppBar
+        elevation={0}
+        position="fixed"
+        sx={{ height: height, backgroundColor: "background.default" }}
+      >
         <Grid
           container
           justifyContent="center"
