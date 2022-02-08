@@ -7,6 +7,7 @@ let jubileum_theme = createTheme({
       main: "#eb4034",
       light: "#ff755f",
       dark: "#B21C17",
+      contrastText: "#ffffff",
     },
     secondary: {
       light: "#ffffff",
