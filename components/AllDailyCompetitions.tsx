@@ -4,9 +4,10 @@ import {
   FormControl,
   InputLabel,
   NativeSelect,
+  Button,
 } from "@mui/material";
 import { DailyCompetition } from "models/codeCompetitionSchema";
-import React from "react";
+import React, { useState } from "react";
 import useSWR from "swr";
 import DailyCompetitionElement from "./DailyCompetition";
 
@@ -39,27 +40,24 @@ const AllDailyCompetitions = ({
 
   competitions.sort((a, b) => (a.date < b.date ? 1 : -1));
 
+  const [value, setValue] = useState(competitions[0]._id);
+  const handleChange = (newValue: string) => {
+    setValue(newValue);
+  };
+
   return (
     <Box>
-      <FormControl fullWidth>
-        <InputLabel variant="standard" htmlFor="uncontrolled-native">
-          Dato for konkurranse
-        </InputLabel>
-        <NativeSelect
-          defaultValue={30}
-          inputProps={{
-            name: "konkurranse",
-            id: "uncontrolled-native",
-          }}
-        >
-          {competitions.map((competition) =>
-          <option value={competition.date}>{competition.date}</option>
-          )}
-        </NativeSelect>
-      </FormControl>
+      <Box sx={{alignSelf: "left"}} >
+      {competitions.map((competition) =>
+        <Button
+          onClick={() => {handleChange(competition._id)}}
+        >{competition.date}</Button>)}
+      </Box>
 
       <Box>
-        {competitions.map((competition) => (
+        {competitions
+        .filter(competition => competition._id == value)
+        .map((competition) => (
           <DailyCompetitionElement
             competition={competition}
             adminPassword={adminPassword}
