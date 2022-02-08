@@ -23,7 +23,10 @@ let jubileum_theme = createTheme({
   },
   typography: {
     fontFamily: "SoraRegular",
-    fontSize: 10,
+    fontSize: 14,
+    h1: {
+      fontSize: "4rem",
+    },
   },
   components: {
     MuiTab: {

@@ -1,7 +1,8 @@
-import { Stack, Box, Tooltip } from "@mui/material";
-import styles from "../styles/Member.module.css";
-import { isMobile } from "react-device-detect";
+import { Stack, Box, Tooltip, Card, Typography } from "@mui/material";
 import Image from "next/image";
+import Centered from "./Centered";
+
+const IMAGE_SIZE = 220;
 
 export interface MemberProps {
   name: string;
@@ -19,66 +20,87 @@ const HonoraryMember = ({
   reverse: boolean;
   member: MemberProps;
 }) => {
-  const displayCommittee = member.committee.map((comittee) => (
-    <Box key={comittee}>
-      <Tooltip title={`${comittee}`}>
-        <div className={styles.img}>
-          <Image
-            width={60}
-            height={60}
-            src={`/abakus_${comittee}.png`}
-            alt={`${comittee} committee`}
-          />
-        </div>
-      </Tooltip>
-    </Box>
-  ));
-  const displayRole = (
-    <Box className={styles.infoBox}>
-      <p className={styles.title}>
-        <strong>Utnevnt:</strong> {member.appointed}
-      </p>
-      <p className={styles.title}>
-        <strong>Stilling:</strong> {member.position}
-      </p>
-      <Stack className={styles.roleStyle} direction={"row"} spacing={2}>
-        {displayCommittee}
-      </Stack>
-    </Box>
-  );
-
   return (
-    <div>
+    <Card sx={{ p: 4 }}>
       <Stack
-        direction={`row${reverse ? "-reverse" : ""}`}
-        spacing={10}
+        direction={{ xs: "column", md: `row${reverse ? "-reverse" : ""}` }}
+        spacing={8}
         justifyContent="flex-start"
-        className={styles.stackStyle}
       >
-        <div className={styles.img}>
-          <Image
-            layout="fixed"
-            src={member.profilePic}
-            width={180}
-            height={180}
-            alt={`${member.name}`}
-          />
-        </div>
-        <Box className={styles.textBox}>
-          <h1
-            className={styles.titleSize}
-            style={{ textAlign: reverse ? "right" : "left" }}
+        <Centered
+          sx={{
+            width: { xs: undefined, md: IMAGE_SIZE },
+            flexGrow: 0,
+          }}
+        >
+          <Box
+            sx={{
+              height: IMAGE_SIZE,
+              width: IMAGE_SIZE,
+              borderRadius: IMAGE_SIZE / 2,
+              overflow: "hidden",
+            }}
           >
-            {member.name}
-          </h1>
-          {isMobile && displayRole}
-          <p className={styles.text}>{member.memberInfo}</p>
-        </Box>
-        {!isMobile && displayRole}
-        <p />
+            <Image
+              layout="fixed"
+              src={member.profilePic}
+              width={IMAGE_SIZE}
+              height={IMAGE_SIZE}
+              alt={member.name}
+            />
+          </Box>
+        </Centered>
+        <Stack
+          direction={{ xs: "column", md: `row${reverse ? "-reverse" : ""}` }}
+          spacing={8}
+          sx={{
+            flexGrow: 1,
+            width: { xs: undefined, md: 0 },
+          }}
+        >
+          <Box>
+            <Typography
+              variant="h3"
+              marginTop={0}
+              marginBottom={2}
+              sx={{
+                textAlign: { xs: "center", md: reverse ? "right" : "left" },
+              }}
+            >
+              {member.name}
+            </Typography>
+            <Typography variant="body1" textAlign="justify">
+              {member.memberInfo}
+            </Typography>
+          </Box>
+          <Stack
+            justifyContent="space-between"
+            sx={{ width: { xs: undefined, md: IMAGE_SIZE }, flexShrink: 0 }}
+          >
+            <Typography textAlign="center">
+              <Typography variant="h6">Utnevnt</Typography>
+              <Typography variant="body1">{member.appointed}</Typography>
+              <Typography variant="h6">Stilling</Typography>
+              <Typography variant="body1">{member.position}</Typography>
+            </Typography>
+            <Stack direction="row" justifyContent="center" spacing={2}>
+              {member.committee.map((committee) => (
+                <Tooltip title={committee} key={committee}>
+                  <Box>
+                    <Image
+                      width={60}
+                      height={60}
+                      src={`/abakus_${committee}.png`}
+                      alt={`${committee} committee`}
+                    />
+                  </Box>
+                </Tooltip>
+              ))}
+            </Stack>
+          </Stack>
+        </Stack>
       </Stack>
-      <hr className={styles.verticalLine} />
-    </div>
+    </Card>
   );
 };
 

@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import React from "react";
-import styles from "../../styles/Member.module.css";
 import { Box, Stack, ToggleButton } from "@mui/material";
 import { info } from "data/membersUtils";
 import { useRouter } from "next/dist/client/router";
@@ -18,12 +17,7 @@ const AppointedMembersPage: NextPage = () => {
       title="Æresmedlemmer"
       header="Æresmedlemmer og Den Gyldne Kulerammes Orden"
     >
-      <Stack
-        direction="row"
-        spacing={2}
-        justifyContent="center"
-        className={styles.buttonStyle}
-      >
+      <Stack direction="row" spacing={2} justifyContent="center" sx={{ p: 2 }}>
         <ToggleButton
           value="check"
           selected={!isOrder}
