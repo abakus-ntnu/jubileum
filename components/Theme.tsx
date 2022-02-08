@@ -26,11 +26,7 @@ let jubileum_theme = createTheme({
   },
   components: {
     MuiTab: {
-      styleOverrides: {
-        selected: {
-          opacity: 0,
-        },
-      },
+      styleOverrides: {},
 
       variants: [
         {
