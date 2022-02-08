@@ -3,6 +3,7 @@ import Countdown from "components/Countdown";
 import JubPage from "components/JubPage";
 import { Grid, Typography } from "@mui/material";
 import useFireworks from "hooks/useFireworks";
+import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   useFireworks();
@@ -12,7 +13,7 @@ const Home: NextPage = () => {
       <Grid container justifyContent="center">
         <Countdown countDownDate={new Date("Mar 7, 2022 12:15:00")} />
       </Grid>
-      <Typography fontSize="x-large" align="center">
+      <Typography className={styles.infoboks} fontSize="x-large" align="center">
         Abakus ble i 1977 stiftet av en gruppe datateknikkstudenter som brøt ut
         fra linjeforeningen Omega. I dag har denne linjeforeningen vokst seg til
         noe som man i den tid ikke kunne forestilt seg. Foreningen fungerer som

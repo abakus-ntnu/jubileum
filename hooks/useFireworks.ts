@@ -3,9 +3,9 @@ import confetti from "canvas-confetti";
 
 function useFireworks() {
   useEffect(() => {
-    const duration = 15 * 1000;
+    const duration = 5 * 1000;
     const animationEnd = Date.now() + duration;
-    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+    const defaults = { startVelocity: 30, spread: 700, ticks: 60, zIndex: 0 };
 
     function randomInRange(min: number, max: number): number {
       return Math.random() * (max - min) + min;
@@ -18,7 +18,7 @@ function useFireworks() {
         return clearInterval(interval);
       }
 
-      const particleCount = 50 * (timeLeft / duration);
+      const particleCount = 30 * (timeLeft / duration);
       // since particles fall down, start a bit higher than random
       void confetti({
         ...defaults,

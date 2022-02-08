@@ -8,7 +8,7 @@ interface IHeaderProps {
 const Header = (props: IHeaderProps) => {
   return (
     <Head>
-      <title>{props.title} | Abakus 45års jubilieum</title>
+      <title>{props.title} | Abakus 45års jubileum</title>
       <meta name="description" content="" />
       <link rel="icon" href="/favicon.ico" />
     </Head>

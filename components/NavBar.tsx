@@ -10,7 +10,7 @@ import {
 import React from "react";
 import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
-import abakus45Logo from "assets/logo_light.png";
+import abakus45Logo from "assets/logo_dark.png";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const NavBar = ({ height = "7rem" }) => {
@@ -41,6 +41,7 @@ const NavBar = ({ height = "7rem" }) => {
           display: isVertical
             ? "inline-flex"
             : { xs: "none", md: "inline-flex" },
+          color: "secondary.main",
         }}
         label={label}
         value={value}
@@ -54,8 +55,8 @@ const NavBar = ({ height = "7rem" }) => {
           scrollButtons={false}
           orientation={isVertical ? "vertical" : "horizontal"}
           indicatorColor="secondary"
-          textColor="inherit"
-          color="primary"
+          color="secondary.main"
+          sx={{ opacity: 1 }}
           variant="scrollable"
           onChange={(evt, newValue: string) => handleChange(newValue)}
         >
@@ -100,7 +101,7 @@ const NavBar = ({ height = "7rem" }) => {
         open={openMenu}
         onClose={toggleDrawer(false)}
         PaperProps={{
-          sx: { backgroundColor: "primary.main" },
+          sx: { backgroundColor: "background" },
         }}
       >
         <Typography color="secondary">{displayTabs(true)}</Typography>
@@ -110,7 +111,11 @@ const NavBar = ({ height = "7rem" }) => {
 
   return (
     <>
-      <AppBar position="fixed" sx={{ height: height }}>
+      <AppBar
+        elevation={0}
+        position="fixed"
+        sx={{ height: height, backgroundColor: "background.default" }}
+      >
         <Grid
           container
           justifyContent="center"
