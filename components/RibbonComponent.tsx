@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Card, Grid, Paper, Typography } from "@mui/material";
+import { Box, Card, Paper, Typography } from "@mui/material";
 import Image from "next/image";
+import Centered from "./Centered";
 
 export interface RibbonProps {
   medalType: string;
@@ -61,12 +62,7 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
         </Typography>
       </Box>
       <Paper sx={cardStyles.innerCard}>
-        <Grid
-          container
-          height="100%"
-          alignItems="center"
-          justifyContent="center"
-        >
+        <Centered height="100%">
           <Box height="90%" width="90%" sx={{ position: "relative" }}>
             <Image
               src={imgSrc}
@@ -76,7 +72,7 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
               alt={ribbonType.medalType}
             />
           </Box>
-        </Grid>
+        </Centered>
       </Paper>
     </Card>
   );
