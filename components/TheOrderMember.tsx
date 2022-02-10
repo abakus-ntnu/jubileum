@@ -8,8 +8,9 @@ import {
   IconButton,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import Image from "next/image";
 import styles from "../styles/Member.module.css";
+import CircularImage from "./CircularImage";
+import Centered from "./Centered";
 
 export interface MemberProps {
   appointed: string;
@@ -66,15 +67,9 @@ const TheOrderMember = ({ member }: { member: MemberProps }) => {
       onClick={handleOpen}
     >
       <CardActionArea>
-        <div className={styles.theOrderMemberImgStyle}>
-          <Image
-            src={member.profilePic}
-            width={110}
-            height={110}
-            layout="fixed"
-            alt={"Profile-Picture"}
-          />
-        </div>
+        <Centered>
+          <CircularImage size={110} src={member.profilePic} alt={member.name} />
+        </Centered>
         <Typography
           gutterBottom
           variant="h5"

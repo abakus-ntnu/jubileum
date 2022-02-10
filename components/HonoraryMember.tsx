@@ -1,6 +1,7 @@
 import { Stack, Box, Tooltip, Card, Typography } from "@mui/material";
 import Image from "next/image";
 import Centered from "./Centered";
+import CircularImage from "./CircularImage";
 
 const IMAGE_SIZE = 220;
 
@@ -33,22 +34,11 @@ const HonoraryMember = ({
             flexGrow: 0,
           }}
         >
-          <Box
-            sx={{
-              height: IMAGE_SIZE,
-              width: IMAGE_SIZE,
-              borderRadius: IMAGE_SIZE / 2,
-              overflow: "hidden",
-            }}
-          >
-            <Image
-              layout="fixed"
-              src={member.profilePic}
-              width={IMAGE_SIZE}
-              height={IMAGE_SIZE}
-              alt={member.name}
-            />
-          </Box>
+          <CircularImage
+            size={IMAGE_SIZE}
+            src={member.profilePic}
+            alt={member.name}
+          />
         </Centered>
         <Stack
           direction={{ xs: "column", md: `row${reverse ? "-reverse" : ""}` }}
