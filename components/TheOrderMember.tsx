@@ -4,13 +4,15 @@ import {
   CardActionArea,
   Typography,
   Modal,
-  Box,
   IconButton,
+  Stack,
+  Paper,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import styles from "../styles/Member.module.css";
 import CircularImage from "./CircularImage";
 import Centered from "./Centered";
+import { SxProps } from "@mui/system";
+import { Theme } from "@mui/material/styles";
 
 export interface MemberProps {
   appointed: string;
@@ -20,19 +22,27 @@ export interface MemberProps {
   profilePic: string;
   info: string[];
 }
-const style = {
+
+const modalStyle: SxProps<Theme> = {
   position: "absolute",
-  top: { md: "50%", xs: "100%" },
+  top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: { md: 800, xs: 330 },
-  bgcolor: "background.paper",
-  border: "1px solid 	#d4af37",
+  maxWidth: 800,
+  width: "90vw",
+  maxHeight: "90vh",
+  overflow: "auto",
   boxShadow: 24,
   p: 4,
-} as const;
+};
 
-const TheOrderMember = ({ member }: { member: MemberProps }) => {
+const TheOrderMember = ({
+  member,
+  sx,
+}: {
+  member: MemberProps;
+  sx: SxProps<Theme>;
+}) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -40,62 +50,60 @@ const TheOrderMember = ({ member }: { member: MemberProps }) => {
   };
 
   const handleClose = () => {
-    setOpen(false);
+    open && setOpen(false);
   };
-
-  const viewMemberInfo = member.info.map((i) => (
-    <Typography key={i} sx={{ mt: 5 }}>
-      {i}
-      <br />
-    </Typography>
-  ));
-
-  const cardButton = (
-    <IconButton
-      size="large"
-      className={styles.iconButtonStyle}
-      onClick={handleClose}
-    >
-      <CloseIcon />
-    </IconButton>
-  );
 
   return (
     <Card
       variant="outlined"
-      className={styles.theOrderCardStyle}
+      sx={{ width: { xs: 300, sm: 350 }, ...sx }}
       onClick={handleOpen}
     >
-      <CardActionArea>
-        <Centered>
-          <CircularImage size={110} src={member.profilePic} alt={member.name} />
-        </Centered>
-        <Typography
-          gutterBottom
-          variant="h5"
-          component="div"
-          className={styles.theOrderTypographyStyle}
-        >
-          {member.name}
+      <CardActionArea sx={{ height: 1, p: 1.5 }}>
+        <Typography textAlign="center">
+          <Stack sx={{ height: 1 }} justifyContent="space-between">
+            <Centered>
+              <CircularImage
+                size={110}
+                src={member.profilePic}
+                alt={member.name}
+                sx={{ m: 2 }}
+              />
+            </Centered>
+            <Typography variant="h5" gutterBottom>
+              {member.name}
+            </Typography>
+            <Typography variant="body2" color="text.secondary" gutterBottom>
+              {member.title}
+            </Typography>
+            <Typography variant="caption">{member.grade}</Typography>
+          </Stack>
         </Typography>
-        <Typography
-          className={styles.theOrderTypographyStyle}
-          variant="body2"
-          color="text.secondary"
-        >
-          {member.title}
-        </Typography>
-
-        <h5 className={styles.theOrderh4Style}>{member.grade}</h5>
       </CardActionArea>
-      <Modal open={open} onClose={handleClose} className={styles.modalStyle}>
-        <Box sx={style}>
-          {cardButton}
+      <Modal open={open} onClose={handleClose}>
+        <Paper sx={modalStyle}>
+          <IconButton
+            size="large"
+            sx={{ position: "absolute", right: 30, top: 30 }}
+            onClick={handleClose}
+          >
+            <CloseIcon />
+          </IconButton>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Info
+            Om {member.name}
           </Typography>
-          {viewMemberInfo}
-        </Box>
+          <CircularImage
+            size={200}
+            src={member.profilePic}
+            alt={member.name}
+            sx={{ float: "right", mt: 6, ml: 2 }}
+          />
+          {member.info.map((infoParagraph, i) => (
+            <Typography key={i} sx={{ mt: 5 }}>
+              {infoParagraph}
+            </Typography>
+          ))}
+        </Paper>
       </Modal>
     </Card>
   );
