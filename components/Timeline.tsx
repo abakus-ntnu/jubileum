@@ -8,11 +8,11 @@ import TimelineLoadingElement from "./TimelineLoadingElement";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const Timeline = ({
-  adminPassword,
-  onEditClick,
+  onEditEvent,
+  onDeleteEvent,
 }: {
-  adminPassword?: string;
-  onEditClick?: (event: TimelineEvent) => void;
+  onEditEvent?: (event: TimelineEvent) => void;
+  onDeleteEvent?: (event: TimelineEvent) => void;
 }) => {
   const { data: events, error } = useSWR<TimelineEvent[], unknown>(
     "/api/timelineEvents",
@@ -37,8 +37,8 @@ const Timeline = ({
               key={index}
               event={event}
               defaultExpanded={index === 0}
-              adminPassword={adminPassword}
-              onEditClick={onEditClick}
+              onEditClick={onEditEvent && (() => onEditEvent(event))}
+              onDeleteClick={onDeleteEvent && (() => onDeleteEvent(event))}
             />
           ))
       ) : (
