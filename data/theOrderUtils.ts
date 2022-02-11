@@ -1,6 +1,6 @@
 const orderMembers = [
   {
-    appointed: "2021",
+    appointed: 2021,
     grade: "Ridder",
     name: "Odin Ugedal",
     title: "Hans Kyndighet Nånn Sku Hatt Sparken",
@@ -12,7 +12,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2021",
+    appointed: 2021,
     grade: "Ridder",
     name: "Betina Pedersen Bye",
     title: "Hennes Strikkelighet Detta Sto Ikke I Kalendra",
@@ -28,7 +28,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2021",
+    appointed: 2021,
     grade: "Ridder",
     name: "Preveen Kirubaharan",
     title: "Hans Trådhet Babyface Backer Den",
@@ -36,7 +36,7 @@ const orderMembers = [
     info: ["Ingen Info!"],
   },
   {
-    appointed: "2021",
+    appointed: 2021,
     grade: "Ridder",
     name: "Karoline Bonnerud",
     title: "Hennes Umenneskelige Dyktighet Thatcher",
@@ -50,7 +50,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2021",
+    appointed: 2021,
     grade: "Ridder",
     name: "Ingrid Kindem",
     title: "Hennes Barmfagerhet Mor LaBamba Jeg Tar Bare En Taktisk Kont",
@@ -64,7 +64,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2021",
+    appointed: 2021,
     grade: "Ridder",
     name: "Åsmund Haugse",
     title: "Hans Powerposehet For Snill For Sitt Eget Beste",
@@ -77,7 +77,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2021",
+    appointed: 2021,
     grade: "Ridder",
     name: "Mari Langås",
     title: "Hennes Maskinhet NOBODY PUTS BEDKOM IN THE CORNER",
@@ -85,7 +85,7 @@ const orderMembers = [
     info: [""],
   },
   {
-    appointed: "2020",
+    appointed: 2020,
     grade: "Ridder",
     name: "Eivind Høydal",
     title: "Hans Arbeidsomhet Dette MÅ Jo Sikre Plassen Min I Ordenen",
@@ -99,7 +99,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2020",
+    appointed: 2020,
     grade: "Ridder",
     name: "Ingrid Sørdal Volden",
     title: "Hennes Bestemthet Sett På Kaptein Sabeltann",
@@ -112,7 +112,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2020",
+    appointed: 2020,
     grade: "Ridder",
     name: "Morten Bujordet",
     title:
@@ -129,7 +129,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2020",
+    appointed: 2020,
     grade: "Ridder",
     name: "Sarmilan Gunabala",
     title: "Hans Storsjarmørhet Diplomaten",
@@ -143,7 +143,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2019",
+    appointed: 2019,
     grade: "Ridder",
     name: "Edvard Viggaklev Bakken",
     title: "Hans Åpenhet Æ Hadd En Ting Te Men Det Har Æ Glemt",
@@ -155,7 +155,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2019",
+    appointed: 2019,
     grade: "Ridder",
     name: "Eivind Skjelmo Kristianses",
     title: "Hans Nidkjærhet Tenketanken",
@@ -168,7 +168,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2019",
+    appointed: 2019,
     grade: "Ridder",
     name: "Gaute Solbu Kleiven",
     title: "Hans Innbydenhet HÆLGenen av Wienerboden",
@@ -181,7 +181,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2019",
+    appointed: 2019,
     grade: "Ridder",
     name: "Nora Kristine Futsæter",
     title: "Hennes Omstendelighet Har-Vi-Post-Its?",
@@ -193,7 +193,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2019",
+    appointed: 2019,
     grade: "Ridder",
     name: "Sandra Marie Skarshaug",
     title: "Hennes Behjelpelighet Dronningen av Midtsiden",
@@ -205,7 +205,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2019",
+    appointed: 2019,
     grade: "Ridder",
     name: "Vegard Hellem",
     title: "Hans Overmenneskelighet Revyfaderen",
@@ -217,7 +217,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2018",
+    appointed: 2018,
     grade: "Ridder",
     name: "Eirik Martiniussen",
     title: "Hans Standhaftighet Sjefen",
@@ -229,7 +229,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2018",
+    appointed: 2018,
     grade: "Ridder",
     name: "Vegard Saga",
     title: "Hans Behjelpelighet Jeg Bruker Ikke Hersketeknikk Din Dust",
@@ -242,7 +242,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2018",
+    appointed: 2018,
     grade: "Ridder",
     name: "Lars Martin Bævre Ek",
     title: "Hans Selvstendighet Det Går Ikke Fort Nok Jeg Gjør Det Selv",
@@ -250,7 +250,7 @@ const orderMembers = [
     info: ["Ingen Info"],
   },
   {
-    appointed: "2018",
+    appointed: 2018,
     grade: "Ridder",
     name: "Marie Haga",
     title: "Hennes Synlighet DU E FAAN ITJ TRØNDER",
@@ -269,7 +269,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2018",
+    appointed: 2018,
     grade: "Ridder",
     name: "Thomas Normann",
     title: "Hans Beherskethet JEG HAR VEL IKKE ADHD?",
@@ -281,7 +281,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2017",
+    appointed: 2017,
     grade: "Ridder",
     name: "Stein-Otto Svorstøl",
     title: "Hans Gyldenhet Det Er Bare Å Gjøre Det",
@@ -293,7 +293,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2017",
+    appointed: 2017,
     grade: "Ridder",
     name: "Kristoffer Kjørlaug Larsen",
     title: "Hans Fingernemhet Gi Meg en Fireball og en Drill",
@@ -305,7 +305,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2017",
+    appointed: 2017,
     grade: "Ridder",
     name: "Hege Krokås Borge",
     title: "Hennes Uselvhøytidelighet Kjellerfrelseren",
@@ -317,7 +317,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2017",
+    appointed: 2017,
     grade: "Ridder",
     name: "Mats Byrkjeland",
     title: "Hans Nynorskhet Kongen av Gløsløken",
@@ -332,7 +332,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2017",
+    appointed: 2017,
     grade: "Ridder",
     name: "Hans-Kristian Seen Koren",
     title: "Hans Urokkelighet Sveise-Det-Som-Sveises-Kan",
@@ -344,7 +344,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2017",
+    appointed: 2017,
     grade: "Ridder",
     name: "Martin Hallen",
     title: "Hans Kontaktskapendehet Alle Skal Inkluderes Blunk Blunk",
@@ -356,7 +356,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2017",
+    appointed: 2017,
     grade: "Kommandør",
     name: "Erik Drolshammer",
     title: "Hans Gyldenhet Nautet",
@@ -368,7 +368,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2016",
+    appointed: 2016,
     grade: "Ridder",
     name: "Ann-Helen Brembo",
     title: "Hennes Fornuftighet Full Kontroll",
@@ -378,7 +378,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2016",
+    appointed: 2016,
     grade: "Ridder",
     name: "Geir Bruskeland",
     title: "Hans Kjellerhet Grand Old Man G-Brush Inthemix",
@@ -389,7 +389,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2016",
+    appointed: 2016,
     grade: "Ridder",
     name: "Kristine Steine",
     title:
@@ -400,7 +400,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2016",
+    appointed: 2016,
     grade: "Ridder",
     name: "Henriette Chiem",
     title: "Hennes Utadvendthet Energibomben",
@@ -410,7 +410,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2016",
+    appointed: 2016,
     grade: "Ridder",
     name: "Nicolai Haraldsen Eeg-Larsen",
     title: "Hans Selvfølgelighet Det Er Vors Og Nach Hos Meg",
@@ -420,7 +420,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2016",
+    appointed: 2016,
     grade: "Ridder",
     name: "Emilie Engen",
     title:
@@ -431,7 +431,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2016",
+    appointed: 2016,
     grade: "Ridder",
     name: "Fredrik Larsen",
     title: "Hans Oppfinnsomhet Fikenblae",
@@ -441,7 +441,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2016",
+    appointed: 2016,
     grade: "Ridder",
     name: "Trond Hønsi",
     title: "Hans Drikkfeldighet Vil Du Ha Noe Fra Storcash?",
@@ -451,7 +451,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2016",
+    appointed: 2016,
     grade: "Ridder",
     name: "Astri Marie Ravnaas",
     title: "Hennes Ivrighet Bankende Hjerte",
@@ -461,7 +461,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2016",
+    appointed: 2016,
     grade: "Ridder",
     name: "Patrick Skjennum",
     title:
@@ -472,7 +472,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2015",
+    appointed: 2015,
     grade: "Ridder",
     name: "Ole Rønning",
     title: "Hans Stilfullhet Propagandaministeren",
@@ -484,7 +484,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2015",
+    appointed: 2015,
     grade: "Ridder",
     name: "Marte Lørge",
     title: "Hennes Omtenksomhet Fagkom-Mamma",
@@ -496,7 +496,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2015",
+    appointed: 2015,
     grade: "Ridder",
     name: "Rolf Erik Lekang",
     title: "Hans Ydmykhet Jeg-Bare-Fikset-Det",
@@ -508,7 +508,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2015",
+    appointed: 2015,
     grade: "Ridder",
     name: "Odd Magnus Trondrud",
     title:
@@ -520,7 +520,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2015",
+    appointed: 2015,
     grade: "Ridder",
     name: "kjersti Marie Vaktdal",
     title: "Hennes Interessegruppehet Sangfuglen",
@@ -532,7 +532,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2014",
+    appointed: 2014,
     grade: "Ridder",
     name: "Jarle Lindseth",
     title: "HANS DECIBELHETS, MEN DET ER BARE ÈN LITEN DETALJ",
@@ -542,7 +542,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2014",
+    appointed: 2014,
     grade: "Ridder",
     name: "Nils Fredrik Kleven",
     title: "Hans Høytidelighet den Pratsomme",
@@ -552,7 +552,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2014",
+    appointed: 2014,
     grade: "Ridder",
     name: "Fredrik Carlsen",
     title: "Hans Umettelighet Sprudle-Sprudle",
@@ -562,7 +562,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2014",
+    appointed: 2014,
     grade: "Ridder",
     name: "Jean Niklas L'orange",
     title: "Hans Gyldenhet Han med Skjegg og det Franske Navnet",
@@ -572,7 +572,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2014",
+    appointed: 2014,
     grade: "Ridder",
     name: "Christian Askeland",
     title: "Hans Gyldenhet Mesterkokken",
@@ -582,7 +582,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2013",
+    appointed: 2013,
     grade: "Kommandør",
     name: "Åsmund Eldhuset",
     title: "Hans Gyldenhet Stormester Emeritus, Hans Evighet Reddende Engel",
@@ -594,7 +594,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2013",
+    appointed: 2013,
     grade: "Kommandør",
     name: "Håkon Ericksen",
     title: "Hans Fårhet Pragmatikeren",
@@ -606,7 +606,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2013",
+    appointed: 2013,
     grade: "Kommandør",
     name: "Marte Berg Innset",
     title: "Hennes Sparsommelighet Økonomikvelden",
@@ -618,7 +618,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2013",
+    appointed: 2013,
     grade: "Kommandør",
     name: "Brage Strand",
     title: "Hans Gyldenhet av med Buksa",
@@ -630,7 +630,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2013",
+    appointed: 2013,
     grade: "Kommandør",
     name: "Ingjard Sandhei",
     title: "Hans Gyldenhet Reply-to-all, ooog den sku egentlig til HS-lista",
@@ -642,7 +642,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2013",
+    appointed: 2013,
     grade: "Kommandør",
     name: "Anders Nordbø",
     title: "Hans Gyldenhet Kongen av Kvilhaugen",
@@ -654,7 +654,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2013",
+    appointed: 2013,
     grade: "Ridder",
     name: "Hans Magnus Wold",
     title: "Hans Gyldenhet OnkL Skrue",
@@ -666,7 +666,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2013",
+    appointed: 2013,
     grade: "Ridder",
     name: "Sutharsan Jeyaseelan",
     title: "Hans Gyldenhet Ukeetteruke",
@@ -678,7 +678,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2013",
+    appointed: 2013,
     grade: "Ridder",
     name: "Aurora Klæboe Berg",
     title: "Hennes Gyldenhet Skittenbit",
@@ -688,7 +688,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2013",
+    appointed: 2013,
     grade: "Ridder",
     name: "Stian Tokheim",
     title: "Hans Kortfattethet TL;DR",
@@ -700,7 +700,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2013",
+    appointed: 2013,
     grade: "Ridder",
     name: "Per Simonsen",
     title: "Hans Evighet Mammuten",
@@ -712,7 +712,7 @@ const orderMembers = [
     ],
   },
   {
-    appointed: "2013",
+    appointed: 2013,
     grade: "Ridder",
     name: "Ørjan Bøe Thygesen",
     title: "Hans Jordnærhet Klirrklirr Se på Meg",

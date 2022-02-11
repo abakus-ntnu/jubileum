@@ -1,114 +1,86 @@
-import { useState } from "react";
-import { Box, Typography, Tab, Tabs } from "@mui/material";
+import { SyntheticEvent, useState } from "react";
+import { Tab, Tabs, Paper, Stack, Grid, Typography } from "@mui/material";
 import TheOrderMember from "./TheOrderMember";
 import { orderMembers } from "../data/theOrderUtils";
-import styles from "../styles/Member.module.css";
+import { SxProps } from "@mui/system";
+import { Theme } from "@mui/material/styles";
 
-const viewOrderMembers = (appointed: string) =>
-  orderMembers.map((member) => {
-    if (appointed === member.appointed) {
-      return <TheOrderMember member={member} />;
-    }
-  });
+const EARLIEST_YEAR = 2013;
+const LATEST_YEAR = 2021;
+const YEARS = Array.from(
+  { length: LATEST_YEAR - EARLIEST_YEAR + 1 },
+  (x, i) => i + EARLIEST_YEAR
+).reverse();
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
-
-const TabPanel = (props: TabPanelProps) => {
-  const { children, value, index, ...other } = props;
-
+const OrderMembers = ({
+  appointedYear,
+  sx,
+}: {
+  appointedYear: number;
+  sx?: SxProps<Theme>;
+}) => {
   return (
-    <div hidden={value !== index} {...other}>
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
+    <Stack>
+      <Typography variant="h3" mt={5} mb={1}>
+        Utnevnt i {appointedYear}
+      </Typography>
+      <Grid container spacing={2} justifyContent="center" sx={sx}>
+        {orderMembers
+          .filter((member) => appointedYear === member.appointed)
+          .map((member) => (
+            <Grid item key={member.name}>
+              <TheOrderMember member={member} />
+            </Grid>
+          ))}
+      </Grid>
+    </Stack>
   );
 };
 
 const TheOrder = () => {
-  const [value, setValue] = useState(0);
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
+  const [selectedYear, setSelectedYear] = useState(LATEST_YEAR);
+  const handleChange = (event: SyntheticEvent, newValue: number) => {
+    setSelectedYear(newValue);
   };
-
-  const indexList = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-
-  const viewTabPanels = indexList.map((index) => (
-    <TabPanel key={index} value={value} index={index}>
-      <div className={styles.tabPanelsStyle}>
-        {viewOrderMembers(`${2021 - index}`)}
-      </div>
-    </TabPanel>
-  ));
-
-  const viewTabs = indexList.map((index) => (
-    <Tab key={index} label={`${2021 - index}`} />
-  ));
 
   const TabsWrapper = ({
     mobile,
-    className,
+    sx,
   }: {
     mobile?: boolean;
-    className: string;
+    sx?: SxProps<Theme>;
   }) => (
-    <Box
-      className={className}
+    <Tabs
+      value={selectedYear}
+      orientation={mobile ? "horizontal" : "vertical"}
+      variant="scrollable"
+      scrollButtons={false}
+      allowScrollButtonsMobile
+      onChange={handleChange}
+      textColor="primary"
       sx={{
-        maxWidth: 450,
-        bgcolor: "background.paper",
+        borderRight: mobile ? 0 : 2,
+        borderBottom: mobile ? 2 : 0,
+        borderColor: "divider",
+        minWidth: 100,
+        ...sx,
       }}
+      TabIndicatorProps={{ style: { background: "black" } }}
     >
-      <Tabs
-        value={value}
-        orientation={mobile ? "horizontal" : "vertical"}
-        variant="scrollable"
-        scrollButtons={false}
-        allowScrollButtonsMobile
-        onChange={handleChange}
-        textColor="primary"
-        sx={{
-          borderRight: 2,
-          borderColor: "divider",
-          minWidth: 100,
-        }}
-        TabIndicatorProps={{ style: { background: "black" } }}
-      >
-        {viewTabs}
-      </Tabs>
-    </Box>
+      {YEARS.map((year) => (
+        <Tab key={year} value={year} label={`${year}`} />
+      ))}
+    </Tabs>
   );
 
-  const getNumberOfMembersByYear = orderMembers.reduce((previous, member) => {
-    if (member.appointed === String(2021 - value)) {
-      previous++;
-    }
-    return previous;
-  }, 0);
-
-  const boxStyle = {
-    flexGrow: 1,
-    bgcolor: "background.paper",
-    display: "flex",
-    height: {
-      md: 900,
-      xs: getNumberOfMembersByYear * 300,
-    },
-  };
-
   return (
-    <div>
-      <TabsWrapper mobile className={styles.tmob} />
-      <Box sx={boxStyle}>
-        <TabsWrapper className={styles.tdesk} /> {viewTabPanels}
-      </Box>
-    </div>
+    <Paper>
+      <Stack alignItems="stretch" direction={{ xs: "column", md: "row" }}>
+        <TabsWrapper mobile sx={{ display: { xs: "flex", md: "none" } }} />
+        <TabsWrapper sx={{ display: { xs: "none", md: "flex" } }} />
+        <OrderMembers appointedYear={selectedYear} sx={{ p: 4 }} />
+      </Stack>
+    </Paper>
   );
 };
 

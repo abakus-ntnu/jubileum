@@ -15,7 +15,7 @@ import { SxProps } from "@mui/system";
 import { Theme } from "@mui/material/styles";
 
 export interface MemberProps {
-  appointed: string;
+  appointed: number;
   grade: string;
   name: string;
   title: string;
@@ -41,7 +41,7 @@ const TheOrderMember = ({
   sx,
 }: {
   member: MemberProps;
-  sx: SxProps<Theme>;
+  sx?: SxProps<Theme>;
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -56,11 +56,11 @@ const TheOrderMember = ({
   return (
     <Card
       variant="outlined"
-      sx={{ width: { xs: 300, sm: 350 }, ...sx }}
+      sx={{ width: { xs: 300, sm: 350 }, height: 1, ...sx }}
       onClick={handleOpen}
     >
       <CardActionArea sx={{ height: 1, p: 1.5 }}>
-        <Typography textAlign="center">
+        <Typography height={1} textAlign="center">
           <Stack sx={{ height: 1 }} justifyContent="space-between">
             <Centered>
               <CircularImage
