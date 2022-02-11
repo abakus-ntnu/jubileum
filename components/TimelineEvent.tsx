@@ -36,7 +36,6 @@ const TimelineEventElement = ({
   return (
     <VerticalTimelineElement
       key={event.title}
-      className="vertical-timeline-element--work"
       contentStyle={{
         borderTop: "3px solid #E10C16",
         background: "#FFFFFF",
@@ -47,24 +46,16 @@ const TimelineEventElement = ({
       date={event.date}
       iconStyle={{ background: "#E20F13" }}
       icon={
-        <Image
-          src="/abakule.png"
-          className={styles.timelineIcon}
-          alt=""
-          height="100px"
-          width="100px"
-        />
+        <Image src="/abakule.png" alt="Abakule" height="100px" width="100px" />
       }
     >
       <Accordion
         defaultExpanded={defaultExpanded}
+        variant="elevation"
+        elevation={0}
         className={styles.accordion}
-        style={{ margin: 0 }}
       >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          className={styles.accordionSummary}
-        >
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <h3 className="vertical-timeline-element-title">{event.title}</h3>
           {adminPassword && <button onClick={deleteElement}>Delete</button>}
           {onEditClick && (
@@ -72,7 +63,7 @@ const TimelineEventElement = ({
           )}
           {adminPassword && `Index: ${event.index}`}
         </AccordionSummary>
-        <AccordionDetails className={styles.accordionDetails}>
+        <AccordionDetails>
           <ReactMarkdown
             className={styles.markdownContent}
             remarkPlugins={[remarkGfm]}
