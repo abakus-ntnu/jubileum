@@ -3,6 +3,7 @@ import RibbonComponent from "../../components/RibbonComponent";
 import { Grid, Typography } from "@mui/material";
 import { medalDescriptions } from "../../data/ribbonUtils";
 import JubPage from "components/JubPage";
+import Centered from "components/Centered";
 
 const RibbonsPage: NextPage = () => {
   const viewRibbons = (filterTag: string) =>
@@ -18,77 +19,40 @@ const RibbonsPage: NextPage = () => {
 
   return (
     <JubPage title="Daljer og Pins" header="Daljer og Pins">
-      <Grid
-        container
-        direction="column"
-        justifyContent="center"
-        alignItems="center"
-        paddingLeft="10%"
-        paddingRight="10%"
-      >
+      <Centered direction="column" paddingLeft="10%" paddingRight="10%">
         <Typography variant="h2" marginTop="0">
           Abakus-utmerkelser
         </Typography>
         <div>
-          <Grid
-            container
-            spacing={5}
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-          >
+          <Centered spacing={5} direction="row">
             {viewRibbons(`${"abakus"}`)}
-          </Grid>
+          </Centered>
         </div>
         <Typography variant="h2">Styredaljer</Typography>
         <div>
-          <Grid
-            container
-            spacing={5}
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-          >
+          <Centered spacing={5} direction="row">
             {viewRibbons(`${"styre"}`)}
-          </Grid>
+          </Centered>
         </div>
         <Typography variant="h2">Daljer for Verv i Abakus</Typography>
         <div>
-          <Grid
-            container
-            spacing={5}
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-          >
+          <Centered spacing={5} direction="row">
             {viewRibbons(`${"abakom"}`)}
-          </Grid>
+          </Centered>
         </div>
         <Typography variant="h2">Den Gylne Kulerammes Orden</Typography>
         <div>
-          <Grid
-            container
-            spacing={5}
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-          >
+          <Centered spacing={5} direction="row">
             {viewRibbons(`${"ordenen"}`)}
-          </Grid>
+          </Centered>
         </div>
         <Typography variant="h2">Jubileumsdaljer</Typography>
         <div>
-          <Grid
-            container
-            spacing={5}
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-          >
+          <Centered spacing={5} direction="row">
             {viewRibbons(`${"jubileum"}`)}
-          </Grid>
+          </Centered>
         </div>
-      </Grid>
+      </Centered>
     </JubPage>
   );
 };
