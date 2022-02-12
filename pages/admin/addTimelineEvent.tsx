@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import "react-vertical-timeline-component/style.min.css";
-import React, { FormEvent, memo, ReactElement, useCallback } from "react";
-import NavBar from "../../components/NavBar";
-import Header from "../../components/Header";
+import React, { FormEvent, memo, useCallback } from "react";
+import NavBar from "components/NavBar";
+import Header from "components/Header";
 import TimelineEventElement from "components/TimelineEvent";
 import { TimelineEvent } from "models/schema";
 import {
@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import Timeline from "components/Timeline";
+import { deleteTimelineEvent, putTimelineEvent } from "data/endpoints/timeline";
 
 interface IAdminTimelineProps {
   password: string;
@@ -28,13 +29,7 @@ const AdminTimeline = ({
   onEditEvent,
 }: IAdminTimelineProps) => {
   const deleteEvent = async (id: string) => {
-    const res = await fetch(`/api/timelineEvents/${id}`, {
-      method: "DELETE",
-      headers: {
-        password: password ?? "",
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await deleteTimelineEvent(id, password);
     if (res.status == 401) {
       onUnauthorized();
     }
@@ -61,14 +56,7 @@ const TimelineAdminPage: NextPage = () => {
   });
 
   const putEvent = async (event: TimelineEvent): Promise<boolean> => {
-    const res = await fetch("/api/timelineEvents", {
-      method: "PUT",
-      headers: {
-        password: password,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(event),
-    });
+    const res = await putTimelineEvent(event, password);
     if (res.ok) {
       return true;
     } else if (res.status == 401) {
