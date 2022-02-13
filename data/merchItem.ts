@@ -1,7 +1,8 @@
 export interface MerchItem {
   title: string;
   description: string;
-  buyLink: string;
+  buyLink?: string;
+  buyInfo?: string;
   image: string;
 }
 
@@ -23,7 +24,7 @@ export const merchItems: MerchItem[] = [
     title: "Kuleramme",
     description:
       "Tror ikke dette er en ekte ting, men hvis det var det hadde jeg kjøpt en!",
-    buyLink: "https://www.abakus.no",
+    buyInfo: "Kjøp den på kontoret!",
     image: "/AndersNordbø.jpg",
   },
   {

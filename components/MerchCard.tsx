@@ -34,9 +34,16 @@ const MerchCard = ({ merchItem }: { merchItem: MerchItem }) => {
           </CardContent>
         </Box>
         <CardActions>
-          <Button size="small" href={merchItem.buyLink}>
-            Kjøp
-          </Button>
+          {merchItem.buyLink && (
+            <Button size="small" href={merchItem.buyLink}>
+              Kjøp
+            </Button>
+          )}
+          {merchItem.buyInfo && (
+            <Typography gutterBottom ml={1} variant="body1">
+              {merchItem.buyInfo}
+            </Typography>
+          )}
         </CardActions>
       </Stack>
     </Card>
