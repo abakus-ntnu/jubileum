@@ -13,7 +13,7 @@ import { MerchItem } from "../data/merchItem";
 
 const MerchCard = ({ merchItem }: { merchItem: MerchItem }) => {
   return (
-    <Card sx={{ width: 450, height: 1 }}>
+    <Card sx={{ width: 1, height: 1 }}>
       <Stack justifyContent="space-between" height={1}>
         <Box>
           <CardMedia>
