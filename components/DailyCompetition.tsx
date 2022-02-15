@@ -1,4 +1,4 @@
-import { Card, Typography } from "@mui/material";
+import { Card, Typography, Button, Box } from "@mui/material";
 import { DailyCompetition } from "models/codeCompetitionSchema";
 import React from "react";
 import ReactMarkdown from "react-markdown";
@@ -25,6 +25,13 @@ const DailyCompetitionElement = ({ competition, adminPassword }: IProps) => {
     <Card className={styles.introCard}>
       <Typography variant="h2">{competition.title}</Typography>
       <Typography>{competition.date} </Typography>
+      <Box>
+        {adminPassword && (
+          <Button variant="contained" onClick={deleteElement}>
+            Delete
+          </Button>
+        )}
+      </Box>
       <ReactMarkdown remarkPlugins={[remarkGfm]}>
         {competition.description}
       </ReactMarkdown>

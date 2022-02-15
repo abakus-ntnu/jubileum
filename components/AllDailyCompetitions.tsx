@@ -12,12 +12,11 @@ interface ICompetitionsProps {
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const AllDailyCompetitions = ({ adminPassword }: ICompetitionsProps) => {
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = React.useState<string | null>(null);
 
   const handleChange =
-    (panel: string | ((prevState: string) => boolean)) =>
-    (event: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpanded(isExpanded ? (panel as unknown as boolean) : false);
+    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : null);
     };
   const { data: competitions, error } = useSWR<DailyCompetition[], Error>(
     "/api/dailyCompetitions",
@@ -41,14 +40,14 @@ const AllDailyCompetitions = ({ adminPassword }: ICompetitionsProps) => {
       <Box>
         {competitions.map((competition) => (
           <Accordion
-            expanded={expanded === competition._id}
-            onChange={handleChange(competition._id)}
-            key={competition._id}
+            expanded={expanded === (competition._id as string)}
+            onChange={handleChange(competition._id as string)}
+            key={competition._id as string}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1bh-conssstent"
-              id={competition._id}
+              id={competition._id as string}
             >
               <Typography sx={{ width: "50%", flexShrink: 0 }}>
                 {competition.date}
