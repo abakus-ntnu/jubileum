@@ -3,6 +3,7 @@ import { DailyCompetition } from "models/codeCompetitionSchema";
 import React from "react";
 import useSWR from "swr";
 import DailyCompetitionElement from "./DailyCompetition";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 interface ICompetitionsProps {
   adminPassword?: string;
@@ -18,7 +19,7 @@ const AllDailyCompetitions = ({ adminPassword }: ICompetitionsProps) => {
     (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? (panel as unknown as boolean) : false);
     };
-  const { data: competitions, error } = useSWR<DailyCompetition[], unknown>(
+  const { data: competitions, error } = useSWR<DailyCompetition[], Error>(
     "/api/dailyCompetitions",
     fetcher,
     {
@@ -45,6 +46,7 @@ const AllDailyCompetitions = ({ adminPassword }: ICompetitionsProps) => {
             key={competition._id}
           >
             <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1bh-conssstent"
               id={competition._id}
             >
