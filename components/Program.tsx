@@ -11,7 +11,6 @@ This is the components for the Jubileum program.
 import { Card, CardContent, Typography } from "@mui/material";
 import styles from "../styles/Program.module.css";
 import Image from "next/image";
-import { isMobile } from "react-device-detect";
 
 export interface ProgramProps {
   title: string;
@@ -23,12 +22,11 @@ export interface ProgramProps {
 const ProgramComponent = ({ program }: { program: ProgramProps }) => {
   return (
     <div>
-      <Card sx={{ maxWidth: 1200 }} className={styles.card}>
-        <Image
-          src={program.banner}
-          width={isMobile ? "900" : "1200"}
-          height={isMobile ? "270" : "360"}
-        />
+      <Card
+        sx={{ maxWidth: 1200, m: { xs: 2, md: 7 } }}
+        className={styles.card}
+      >
+        <Image src={program.banner} width={"1200"} height={"360"} />
         <CardContent>
           <Typography
             sx={{
@@ -55,8 +53,10 @@ const ProgramComponent = ({ program }: { program: ProgramProps }) => {
               lineHeight: 1.5,
               inlineSize: { md: 1000 },
               fontSize: { xs: 20, md: 24 },
+              whiteSpace: "pre-line",
             }}
           >
+            <a></a>
             {program.information}
           </Typography>
         </CardContent>
