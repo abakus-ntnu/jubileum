@@ -1,27 +1,23 @@
-import {
-  Typography,
-  Box,
-  FormControl,
-  InputLabel,
-  NativeSelect,
-  Button,
-} from "@mui/material";
+import { Typography, Box, Accordion, AccordionSummary } from "@mui/material";
 import { DailyCompetition } from "models/codeCompetitionSchema";
-import React, { useState } from "react";
+import React from "react";
 import useSWR from "swr";
 import DailyCompetitionElement from "./DailyCompetition";
 
 interface ICompetitionsProps {
   adminPassword?: string;
-  selectedCompetition?: (competition: DailyCompetition) => void;
 }
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-const AllDailyCompetitions = ({
-  adminPassword,
-  selectedCompetition,
-}: ICompetitionsProps) => {
+const AllDailyCompetitions = ({ adminPassword }: ICompetitionsProps) => {
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleChange =
+    (panel: string | ((prevState: string) => boolean)) =>
+    (event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? (panel as unknown as boolean) : false);
+    };
   const { data: competitions, error } = useSWR<DailyCompetition[], unknown>(
     "/api/dailyCompetitions",
     fetcher,
@@ -37,31 +33,34 @@ const AllDailyCompetitions = ({
   if (!competitions) {
     return <Typography>loading...</Typography>;
   }
-
   competitions.sort((a, b) => (a.date < b.date ? 1 : -1));
-
-  const [value, setValue] = useState(competitions[0]._id);
-  const handleChange = (newValue: string) => {
-    setValue(newValue);
-  };
 
   return (
     <Box>
-      <Box sx={{alignSelf: "left"}} >
-      {competitions.map((competition) =>
-        <Button
-          onClick={() => {handleChange(competition._id)}}
-        >{competition.date}</Button>)}
-      </Box>
-
       <Box>
-        {competitions
-        .filter(competition => competition._id == value)
-        .map((competition) => (
-          <DailyCompetitionElement
-            competition={competition}
-            adminPassword={adminPassword}
-          />
+        {competitions.map((competition) => (
+          <Accordion
+            expanded={expanded === competition._id}
+            onChange={handleChange(competition._id)}
+            key={competition._id}
+          >
+            <AccordionSummary
+              aria-controls="panel1bh-conssstent"
+              id={competition._id}
+            >
+              <Typography sx={{ width: "50%", flexShrink: 0 }}>
+                {competition.date}
+              </Typography>
+              <Typography sx={{ color: "text.secondary" }}>
+                {competition.title}
+              </Typography>
+            </AccordionSummary>
+
+            <DailyCompetitionElement
+              competition={competition}
+              adminPassword={adminPassword}
+            />
+          </Accordion>
         ))}
       </Box>
     </Box>

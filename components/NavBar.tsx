@@ -72,6 +72,7 @@ const NavBar = ({ height = "7rem" }) => {
           )}
           {createTab("/timeline", "Abakus Historie")}
           {createTab("/members", "Utnevnte")}
+          {createTab("/code-competition", "Kodekonkurranse")}
         </Tabs>
         {!isVertical && displayMenu}
       </>

@@ -1,6 +1,6 @@
-import { Box, Card, Typography } from "@mui/material";
+import { Card, Typography } from "@mui/material";
 import { DailyCompetition } from "models/codeCompetitionSchema";
-import React, { useState } from "react";
+import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import styles from "styles/TimelinePage.module.css";
@@ -11,8 +11,6 @@ interface IProps {
 }
 
 const DailyCompetitionElement = ({ competition, adminPassword }: IProps) => {
-  const [open, setOpen] = useState(false);
-
   const deleteElement = async () => {
     await fetch(`/api/dailyCompeitions/${competition._id as string}`, {
       method: "DELETE",
@@ -25,9 +23,7 @@ const DailyCompetitionElement = ({ competition, adminPassword }: IProps) => {
   //TODO: Style Box:
   return (
     <Card className={styles.introCard}>
-      <Typography variant="h2">
-        {competition.title}
-      </Typography>
+      <Typography variant="h2">{competition.title}</Typography>
       <Typography>{competition.date} </Typography>
       <ReactMarkdown remarkPlugins={[remarkGfm]}>
         {competition.description}
