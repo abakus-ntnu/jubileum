@@ -30,13 +30,33 @@ const ProgramComponent = ({ program }: { program: ProgramProps }) => {
           height={isMobile ? "270" : "360"}
         />
         <CardContent>
-          <Typography className={styles.headline}>
+          <Typography
+            sx={{
+              fontSize: { xs: 25, md: 43 },
+              display: "flex",
+              justifyContent: "space-between",
+              fontFamily: "LatoRegular",
+            }}
+          >
             {program.title}
-            <Typography className={styles.leftside}>
+            <Typography
+              sx={{
+                fontSize: { xs: 22, md: 30 },
+                fontFamily: "LatoRegular",
+              }}
+            >
               {program.timestamp}
             </Typography>
           </Typography>
-          <Typography className={styles.information}>
+          <Typography
+            variant={"h5"}
+            sx={{
+              fontFamily: "LatoRegular",
+              lineHeight: 1.5,
+              inlineSize: { md: 1000 },
+              fontSize: { xs: 20, md: 24 },
+            }}
+          >
             {program.information}
           </Typography>
         </CardContent>

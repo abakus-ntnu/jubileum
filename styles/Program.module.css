@@ -13,36 +13,3 @@
   alt: "banner";
   height: 200px;
 }
-
-.headline {
-  font-size: 2.3rem;
-  display: flex;
-  justify-content: space-between;
-  font-family: LatoRegular;
-}
-
-.leftside {
-  font-size: 2rem;
-  font-family: LatoRegular;
-}
-
-.information {
-  font-size: 1.4rem;
-  line-height: 2em;
-  font-family: LatoRegular;
-  inline-size: 1000px;
-}
-
-@media (max-width: 900px) {
-  .information {
-    padding-top: 15px;
-    inline-size: 320px;
-    font-size: 1.2rem;
-  }
-  .leftside {
-    font-size: 1.5rem;
-  }
-  .headline {
-    font-size: 1.7rem;
-  }
-}
