@@ -3,7 +3,6 @@ import { DailyCompetition } from "models/codeCompetitionSchema";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import styles from "styles/TimelinePage.module.css";
 
 interface IProps {
   competition: DailyCompetition;
@@ -12,7 +11,7 @@ interface IProps {
 
 const DailyCompetitionElement = ({ competition, adminPassword }: IProps) => {
   const deleteElement = async () => {
-    await fetch(`/api/dailyCompeitions/${competition._id as string}`, {
+    await fetch(`/api/dailyCompetitions/${competition._id as string}`, {
       method: "DELETE",
       headers: {
         password: adminPassword ?? "",
@@ -20,18 +19,23 @@ const DailyCompetitionElement = ({ competition, adminPassword }: IProps) => {
       },
     });
   };
-  //TODO: Style Box:
   return (
-    <Card className={styles.introCard}>
+    <Card
+      sx={{
+        padding: "20px",
+        margin: 0,
+        maxWidth: "1200px",
+        borderTop: "3px solid #e10c16",
+      }}
+    >
+      {adminPassword && (
+        <Button variant="contained" onClick={deleteElement}>
+          Delete
+        </Button>
+      )}
       <Typography variant="h2">{competition.title}</Typography>
       <Typography>{competition.date} </Typography>
-      <Box>
-        {adminPassword && (
-          <Button variant="contained" onClick={deleteElement}>
-            Delete
-          </Button>
-        )}
-      </Box>
+      <Box></Box>
       <ReactMarkdown remarkPlugins={[remarkGfm]}>
         {competition.description}
       </ReactMarkdown>

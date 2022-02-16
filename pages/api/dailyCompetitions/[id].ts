@@ -12,7 +12,7 @@ export default async function handler(
   await mongoose.connect(url);
 
   switch (
-    method //TODO: Case when there is nothing to return/delete
+    method
   ) {
     case "DELETE":
       {
@@ -26,10 +26,6 @@ export default async function handler(
       break;
     case "GET":
       {
-        if (headers.password !== process.env.POST_PASSWORD) {
-          res.status(401).end();
-          return;
-        }
         res
           .status(200)
           .json(

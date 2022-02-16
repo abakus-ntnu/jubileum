@@ -131,7 +131,7 @@ const CodeCompetitionAdminPage: NextPage = () => {
             <DailyCompetitionElement competition={competition} />
           </Grid>
         </Grid>
-        <AllDailyCompetitions />
+        <AllDailyCompetitions adminPassword={password} />
       </Container>
     </>
   );
