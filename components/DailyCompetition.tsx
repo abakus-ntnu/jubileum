@@ -44,4 +44,3 @@ const DailyCompetitionElement = ({ competition, adminPassword }: IProps) => {
 };
 
 export default DailyCompetitionElement;
-/**/
