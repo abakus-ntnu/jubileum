@@ -216,17 +216,17 @@ const medalDescriptions = [
     filterTag: "jubileum",
   },
   {
-    medalType: "Ordenstegn Kommandør",
-    medalDesign: "Rød og Gull",
-    medalInformation: "Kommandørdalje. Oppbevares av PR, betalt av ordenen",
-    imageLink: "/Ribbons/Ordenstegn_kommandør.png",
-    filterTag: "ordenen",
-  },
-  {
     medalType: "Ordenstegn Ridder",
     medalDesign: "Rød og Gull",
     medalInformation: "Ridderdalje. Oppbevares av PR, betalt av ordenen",
     imageLink: "/Ribbons/Ordenstegn_ridder.png",
+    filterTag: "ordenen",
+  },
+  {
+    medalType: "Ordenstegn Kommandør",
+    medalDesign: "Rød og Gull",
+    medalInformation: "Kommandørdalje. Oppbevares av PR, betalt av ordenen",
+    imageLink: "/Ribbons/Ordenstegn_kommandør.png",
     filterTag: "ordenen",
   },
   {
