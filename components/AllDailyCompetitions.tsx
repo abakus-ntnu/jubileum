@@ -33,13 +33,16 @@ const AllDailyCompetitions = ({ adminPassword }: ICompetitionsProps) => {
   if (!competitions) {
     return <Typography>loading...</Typography>;
   }
-  competitions.sort((a, b) => (a.date < b.date ? 1 : -1));
+  competitions.sort((a, b) =>
+    a.date == b.date ? (a.index < b.index ? 1 : -1) : a.date < b.date ? 1 : -1
+  );
 
   return (
     <Box>
       <Box>
         {competitions.map((competition) => (
           <Accordion
+            sx={{ alignItems: "center" }}
             expanded={expanded === (competition._id as string)}
             onChange={handleChange(competition._id as string)}
             key={competition._id as string}

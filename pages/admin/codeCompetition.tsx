@@ -106,7 +106,7 @@ const CodeCompetitionAdminPage: NextPage = () => {
                 />
                 <TextField
                   error={!competition.index}
-                  label="Index"
+                  label="Index (brukes til å sortere elementer med samme dato)"
                   id="index"
                   value={competition.index}
                   onChange={(e) =>

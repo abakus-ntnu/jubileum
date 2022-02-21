@@ -11,9 +11,7 @@ export default async function handler(
 
   await mongoose.connect(url);
 
-  switch (
-    method
-  ) {
+  switch (method) {
     case "DELETE":
       {
         if (headers.password !== process.env.POST_PASSWORD) {
