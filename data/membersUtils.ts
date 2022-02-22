@@ -202,7 +202,7 @@ const members = [
 
 const info = {
   aresMedlemmer:
-    "Har noen innlagt seg særlige fortjenester for foreningen, ellerutmerket seg på annet vis, kan Hovedstyret innby vedkommende som æresmedlem av Abakus. Et æresmedlem skal ha vært, eller fortsatt være en stor ressurs for foreningen og skal ha lagt mer jobb enn det som er forventet i foreningens arbeid.",
+    "Har noen innlagt seg særlige fortjenester for foreningen, eller utmerket seg på annet vis, kan Hovedstyret innby vedkommende som æresmedlem av Abakus. Et æresmedlem skal ha vært, eller fortsatt være en stor ressurs for foreningen og skal ha lagt mer jobb enn det som er forventet i foreningens arbeid.",
   orden: `Skjult i, bak, foran og inne i kullissene har Abakus klart å etablere sin egen Orden: Ordo Abaci Aurei (lat. Den Gyldne Kulerammes Orden). Den er stiftet for å hedre og belønne særlig utmerkede fortjenester for linjeforeningen Abakus og dens medlemmer. 
 
   I likhet med andre studenterordenener, som for eksempel Studentersamfundets «Det Sorte Faars Ridderskap», har også Den Gyldne Kulerammes Orden fått sine egne sære tradisjoner; med pomp og prakt, ironi og tull, dysterhet og dårskap, og håp og savn. Opp til flere av disse vil man kunne beskue under en Ordenspromosjon. Promosjonen holdes fortrinnsvis under Abakus sin årlige Vaargalla. 

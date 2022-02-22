@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import "react-vertical-timeline-component/style.min.css";
-import React, { FormEvent } from "react";
-import NavBar from "../../components/NavBar";
-import Header from "../../components/Header";
+import React, { FormEvent, memo, useCallback } from "react";
+import NavBar from "components/NavBar";
+import Header from "components/Header";
 import TimelineEventElement from "components/TimelineEvent";
 import { TimelineEvent } from "models/schema";
 import {
@@ -15,6 +15,35 @@ import {
 } from "@mui/material";
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import Timeline from "components/Timeline";
+import { deleteTimelineEvent, putTimelineEvent } from "data/endpoints/timeline";
+
+interface IAdminTimelineProps {
+  password: string;
+  onUnauthorized: () => void;
+  onEditEvent: (event: TimelineEvent) => void;
+}
+
+const AdminTimeline = ({
+  password,
+  onUnauthorized,
+  onEditEvent,
+}: IAdminTimelineProps) => {
+  const deleteEvent = async (id: string) => {
+    const res = await deleteTimelineEvent(id, password);
+    if (res.status == 401) {
+      onUnauthorized();
+    }
+  };
+
+  return (
+    <Timeline
+      onDeleteEvent={(event) => deleteEvent(event._id as string)}
+      onEditEvent={onEditEvent}
+    />
+  );
+};
+
+const MemoizedAdminTimeline = memo(AdminTimeline);
 
 const TimelineAdminPage: NextPage = () => {
   const [password, setPassword] = React.useState<string>("");
@@ -27,20 +56,12 @@ const TimelineAdminPage: NextPage = () => {
   });
 
   const putEvent = async (event: TimelineEvent): Promise<boolean> => {
-    const res = await fetch("/api/timelineEvents", {
-      method: "PUT",
-      headers: {
-        password: password,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(event),
-    });
+    const res = await putTimelineEvent(event, password);
     if (res.ok) {
       return true;
     } else if (res.status == 401) {
-      setPasswordError(true);
+      onUnauthorized();
     }
-    console.log(res);
     return false;
   };
 
@@ -52,6 +73,17 @@ const TimelineAdminPage: NextPage = () => {
       }
     }
   };
+
+  const onUnauthorized = useCallback(() => {
+    setPasswordError(true);
+  }, [setPasswordError]);
+
+  const onEditEvent = useCallback(
+    (event: TimelineEvent) => {
+      setEvent(event);
+    },
+    [setEvent]
+  );
 
   return (
     <>
@@ -125,11 +157,10 @@ const TimelineAdminPage: NextPage = () => {
           </Grid>
         </Grid>
         <h2>Tidslinjen:</h2>
-        <Timeline
-          adminPassword={password}
-          onEditClick={(timelineEvent: TimelineEvent) =>
-            setEvent(timelineEvent)
-          }
+        <MemoizedAdminTimeline
+          password={password}
+          onUnauthorized={onUnauthorized}
+          onEditEvent={onEditEvent}
         />
       </Container>
     </>

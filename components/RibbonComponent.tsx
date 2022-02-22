@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { Box, Card, Grid, Paper, Typography } from "@mui/material";
+import { Box, Card, Paper, Typography } from "@mui/material";
 import Image from "next/image";
-import { Filter } from "@mui/icons-material";
-import { shadows } from "@mui/system";
+
+import Centered from "./Centered";
 
 export interface RibbonProps {
   medalType: string;

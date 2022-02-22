@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import "react-vertical-timeline-component/style.min.css";
 import React from "react";
 import Timeline from "components/Timeline";
-import { Box } from "@mui/material";
 import MockTimelineCard from "components/MockTimelineCard";
 import JubPage from "components/JubPage";
 

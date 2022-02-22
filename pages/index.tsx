@@ -1,19 +1,19 @@
 import type { NextPage } from "next";
 import Countdown from "components/Countdown";
 import JubPage from "components/JubPage";
-import { Grid, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import useFireworks from "hooks/useFireworks";
-import styles from "../styles/Home.module.css";
+import Centered from "../components/Centered";
 
 const Home: NextPage = () => {
   useFireworks();
 
   return (
     <JubPage title="Hjem" header="Abakus fyller 45 år! 🥳">
-      <Grid container justifyContent="center">
+      <Centered>
         <Countdown countDownDate={new Date("Mar 7, 2022 12:15:00")} />
-      </Grid>
-      <Typography className={styles.infoboks} fontSize="x-large" align="center">
+      </Centered>
+      <Typography fontSize="x-large" align="center">
         Abakus ble i 1977 stiftet av en gruppe datateknikkstudenter som brøt ut
         fra linjeforeningen Omega. I dag har denne linjeforeningen vokst seg til
         noe som man i den tid ikke kunne forestilt seg. Foreningen fungerer som
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
         være mange arrangementer og begivenheter tilknyttet jubileet, og
         konkurranser er det selvfølgelig også.
       </Typography>
-      <Grid container justifyContent="center">
+      <Centered>
         <iframe
           className="spotify-embed"
           src="https://open.spotify.com/embed/show/2ZeUiQ4pclClRbDfBvwPyC?utm_source=generator"
@@ -35,7 +35,7 @@ const Home: NextPage = () => {
           frameBorder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         />
-      </Grid>
+      </Centered>
     </JubPage>
   );
 };
