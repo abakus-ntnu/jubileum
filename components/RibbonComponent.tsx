@@ -1,6 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Box, Card, Grid, Paper, Typography } from "@mui/material";
 import Image from "next/image";
+import { Filter } from "@mui/icons-material";
+import { shadows } from "@mui/system";
 
 export interface RibbonProps {
   medalType: string;
@@ -19,55 +22,64 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
       width: "80%",
       marginLeft: "10%",
       marginRight: "10%",
-      marginTop: "2%",
+      marginTop: "5%",
       marginBottom: "1%",
+      color: "#000000",
     },
     card: {
       margin: "0",
 
       color: "#000000",
-      backgroundColor: "#eb4034",
+      backgroundColor: "#ffffff",
       textDecoration: "none",
-      borderColor: "#8a251e5b",
-      borderLeft: "10px solid #8a251e5b",
-      borderTop: "4px solid #8a251e5b",
-      borderRight: "4px solid #8a251e5b",
-      borderBottom: "10px solid #8a251e5b",
-      borderRadius: "35px",
+      borderColor: "#000000",
+      borderLeft: "0px solid #000000",
+      borderTop: "5px solid #000000",
+      borderRight: "0px solid #000000",
+      borderBottom: "0px solid #000000",
+      borderRadius: "4px",
       transition: "color 0.15s ease, border-color 0.15s ease",
-      width: "300px",
+      width: "250px",
       height: "450px",
     },
     innerCard: {
-      borderTop: "3px solid #eeeeee",
-      borderLeft: "7px solid #eeeeee",
-      borderRight: "3px solid #eeeeee",
-      borderBottom: "7px solid #eeeeee",
       borderColor: "#eaeaea",
-      borderRadius: "75px",
-      margin: "0.5rem",
-      height: "75%",
+      borderRadius: "0px",
+      margin: "0rem",
+      height: "70%",
+      marginTop: "0%",
       marginLeft: "8%",
       marginRight: "8%",
-      marginBottom: "2%",
+      marginBottom: "0%",
     },
   };
 
   return (
     <Card sx={cardStyles.card}>
       <Box sx={cardStyles.cardTitleBox}>
-        <Typography variant="h4" color="primary.contrastText" align="center">
+        <Typography color="secondary.main" align="center" fontSize={20}>
           {ribbonType.medalType}
         </Typography>
+        <Typography color="#adadad" align="center" fontSize={15}>
+          {ribbonType.medalInfo}
+        </Typography>
       </Box>
-      <Paper sx={cardStyles.innerCard}>
+      <Box sx={cardStyles.innerCard} boxShadow={0}>
         <Grid
           container
           height="100%"
           alignItems="center"
           justifyContent="center"
         >
-          <Box height="90%" width="90%" sx={{ position: "relative" }}>
+          <Box
+            height="90%"
+            width="90%"
+            boxShadow={0}
+            sx={{
+              position: "relative",
+              boxShadow: "0px 0px 0px 0px rgba(0, 0, 0, 0)",
+            }}
+          >
             <Image
               src={imgSrc}
               layout="fill"
@@ -77,7 +89,7 @@ const ribbonComponent = ({ ribbonType }: { ribbonType: RibbonProps }) => {
             />
           </Box>
         </Grid>
-      </Paper>
+      </Box>
     </Card>
   );
 };
