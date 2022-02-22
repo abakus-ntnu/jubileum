@@ -1,24 +1,6 @@
-.timelineIcon {
-  height: 100%;
-  width: 100%;
-}
-
-div.accordion {
-  background: none;
-  border: 0;
-  box-shadow: none;
-  color: black;
-  padding: 0;
-}
-
 div.accordion::before {
   height: 0;
   content: none;
-}
-
-.accordionSummary,
-.accordionDetails > p {
-  margin: 0;
 }
 
 .markdownContent > p {

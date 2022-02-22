@@ -1,17 +1,10 @@
-import {
-  AppBar,
-  Tabs,
-  Tab,
-  Typography,
-  Drawer,
-  Toolbar,
-  Grid,
-} from "@mui/material";
+import { AppBar, Tabs, Tab, Typography, Drawer, Toolbar } from "@mui/material";
 import React from "react";
 import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
 import abakus45Logo from "assets/logo_dark.png";
 import MenuIcon from "@mui/icons-material/Menu";
+import Centered from "./Centered";
 
 const NavBar = ({ height = "7rem" }) => {
   const router = useRouter();
@@ -79,6 +72,7 @@ const NavBar = ({ height = "7rem" }) => {
           )}
           {createTab("/timeline", "Abakus Historie")}
           {createTab("/members", "Utnevnte")}
+          {createTab("/code-competition", "Kodekonkurranse")}
         </Tabs>
         {!isVertical && displayMenu}
       </>
@@ -116,14 +110,7 @@ const NavBar = ({ height = "7rem" }) => {
         position="fixed"
         sx={{ height: height, backgroundColor: "background.default" }}
       >
-        <Grid
-          container
-          justifyContent="center"
-          alignItems="center"
-          height="100%"
-        >
-          {displayTabs(false)}
-        </Grid>
+        <Centered height="100%">{displayTabs(false)}</Centered>
       </AppBar>
       <Toolbar sx={{ height: height }} />
     </>

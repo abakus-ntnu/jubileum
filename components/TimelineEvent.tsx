@@ -11,32 +11,21 @@ import remarkGfm from "remark-gfm";
 interface IProps {
   event: TimelineEvent;
   defaultExpanded?: boolean;
-  adminPassword?: string;
-  onEditClick?: (event: TimelineEvent) => void;
+  onEditClick?: () => void;
+  onDeleteClick?: () => void;
 }
 
 const TimelineEventElement = ({
   event,
   defaultExpanded,
-  adminPassword,
   onEditClick,
+  onDeleteClick,
 }: IProps) => {
   const [open, setOpen] = useState(false);
-
-  const deleteElement = async () => {
-    await fetch(`/api/timelineEvents/${event._id as string}`, {
-      method: "DELETE",
-      headers: {
-        password: adminPassword ?? "",
-        "Content-Type": "application/json",
-      },
-    });
-  };
 
   return (
     <VerticalTimelineElement
       key={event.title}
-      className="vertical-timeline-element--work"
       contentStyle={{
         borderTop: "3px solid #E10C16",
         background: "#FFFFFF",
@@ -47,32 +36,24 @@ const TimelineEventElement = ({
       date={event.date}
       iconStyle={{ background: "#E20F13" }}
       icon={
-        <Image
-          src="/abakule.png"
-          className={styles.timelineIcon}
-          alt=""
-          height="100px"
-          width="100px"
-        />
+        <Image src="/abakule.png" alt="Abakule" height="100px" width="100px" />
       }
     >
       <Accordion
         defaultExpanded={defaultExpanded}
+        variant="elevation"
+        elevation={0}
         className={styles.accordion}
-        style={{ margin: 0 }}
       >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          className={styles.accordionSummary}
-        >
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <h3 className="vertical-timeline-element-title">{event.title}</h3>
-          {adminPassword && <button onClick={deleteElement}>Delete</button>}
-          {onEditClick && (
-            <button onClick={() => onEditClick(event)}>Edit</button>
+          {onDeleteClick && (
+            <button onClick={() => onDeleteClick()}>Delete</button>
           )}
-          {adminPassword && `Index: ${event.index}`}
+          {onEditClick && <button onClick={() => onEditClick()}>Edit</button>}
+          {onEditClick && `Index: ${event.index}`}
         </AccordionSummary>
-        <AccordionDetails className={styles.accordionDetails}>
+        <AccordionDetails>
           <ReactMarkdown
             className={styles.markdownContent}
             remarkPlugins={[remarkGfm]}
