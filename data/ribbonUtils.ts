@@ -11,7 +11,7 @@ const medalDescriptions = [
   },
   {
     medalType: "Komitéleder",
-    medalInfo: "Backup",
+    medalInfo: "backup",
     medalDesign: "Gullfinish av komitédalje",
     medalInformation: "Komitéleder",
     imageLink: "/Ribbons/backup_gull.png",
@@ -59,7 +59,7 @@ const medalDescriptions = [
   },
   {
     medalType: "Komitéleder",
-    medalInfo: "Readme",
+    medalInfo: "readme",
     medalDesign: "Gullfinish av komitédalje",
     medalInformation: "Komitéleder",
     imageLink: "/Ribbons/readme_gull.png",
@@ -131,7 +131,7 @@ const medalDescriptions = [
   },
   {
     medalType: "Komitémedlem",
-    medalInfo: "Readme",
+    medalInfo: "readme",
     medalDesign: "Sølvfinish",
     medalInformation: "Komiteene",
     imageLink: "/Ribbons/readme_sølv.png",
