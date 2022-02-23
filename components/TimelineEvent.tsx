@@ -1,4 +1,9 @@
-import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Chip,
+} from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
@@ -9,6 +14,15 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import abakule from "assets/timelineImages/abakule.png";
 import kronikenKule from "assets/timelineImages/krøniken.png";
+import labambaLogo from "public/abakus_labamba.png";
+import bedkomLogo from "public/abakus_bedkom.png";
+import readmeLogo from "public/abakus_readme.png";
+import webkomLogo from "public/abakus_webkom.png";
+import koskomLogo from "public/abakus_koskom.png";
+import arrkomLogo from "public/abakus_arrkom.png";
+import fagkomLogo from "public/abakus_fagkom.png";
+import backupLogo from "public/abakus_backup.png";
+import prLogo from "public/abakus_pr.png";
 
 interface IProps {
   event: TimelineEvent;
@@ -39,7 +53,29 @@ const TimelineEventElement = ({
       iconStyle={{ background: "#E20F13" }}
       icon={
         <Image
-          src={event.tags.includes("krøniken") ? kronikenKule : abakule}
+          src={
+            event.tags.includes("LaBamba")
+              ? labambaLogo
+              : event.tags.includes("readme")
+              ? readmeLogo
+              : event.tags.includes("Bedkom")
+              ? bedkomLogo
+              : event.tags.includes("Webkom")
+              ? webkomLogo
+              : event.tags.includes("Koskom")
+              ? koskomLogo
+              : event.tags.includes("Arrkom")
+              ? arrkomLogo
+              : event.tags.includes("Fagkom")
+              ? fagkomLogo
+              : event.tags.includes("backup")
+              ? backupLogo
+              : event.tags.includes("PR")
+              ? prLogo
+              : event.tags.includes("Krøniken")
+              ? kronikenKule
+              : abakule
+          }
           className={styles.timelineIcon}
           alt=""
           height="100px"
@@ -68,6 +104,10 @@ const TimelineEventElement = ({
           >
             {event.description}
           </ReactMarkdown>
+          <br />
+          {event.tags.map((tag) => (
+            <Chip sx={{ mr: 1 }} key={tag} label={tag} />
+          ))}
         </AccordionDetails>
       </Accordion>
     </VerticalTimelineElement>
