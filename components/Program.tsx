@@ -9,7 +9,6 @@ This is the components for the Jubileum program.
 */
 
 import { Card, CardContent, Typography } from "@mui/material";
-import styles from "../styles/Program.module.css";
 import Image from "next/image";
 
 export interface ProgramProps {
@@ -23,8 +22,13 @@ const ProgramComponent = ({ program }: { program: ProgramProps }) => {
   return (
     <div>
       <Card
-        sx={{ maxWidth: 1200, m: { xs: 2, md: 7 } }}
-        className={styles.card}
+        sx={{
+          maxWidth: 1200,
+          m: { xs: 2, md: 7 },
+          display: "flex",
+          flexDirection: "column",
+          background: "transparent",
+        }}
       >
         <Image src={program.banner} width={"1200"} height={"360"} />
         <CardContent>
