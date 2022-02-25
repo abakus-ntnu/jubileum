@@ -8,7 +8,7 @@ This folder is where you are to put all your components
 This is the components for the Jubileum program.
 */
 
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, Typography, Link } from "@mui/material";
 import Image from "next/image";
 
 export interface ProgramProps {
@@ -60,7 +60,6 @@ const ProgramComponent = ({ program }: { program: ProgramProps }) => {
               whiteSpace: "pre-line",
             }}
           >
-            <a></a>
             {program.information}
           </Typography>
         </CardContent>
