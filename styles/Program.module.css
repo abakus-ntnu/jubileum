@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background: transparent;
+  @media (max-width: 900px) {
+    width: 500px;
+  }
+}
+
+.banner {
+  alt: "banner";
+  height: 200px;
+}

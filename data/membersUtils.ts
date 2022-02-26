@@ -23,7 +23,7 @@ const members = [
       "Gjennom sin tid i Abakus har han rukket å være med i to komiteer, vært økonomiansvarlig for foreningen og primus motor bak Abakus’ første revy, i tillegg til deltidsjobber som studentassistent, undervisningsassistent og vitenskapelig assistent i flere fag. Han har holdt flere eksamensforelesninger, og har også vært økonomiansvarlig i itDAGENE. Vegard står bak digitaliseringen av Abakus’ regnskap, samt samarbeidsforumet Forente IT-foreninger, som kobler sammen linjeforeninger på tvers av universitetene i Norge.",
     profilePic: "/VegardHellem.png",
     appointed: "2019",
-    position: "Økonomiansvarlig for Abakus og Backup",
+    position: "Økonomiansvarlig for Abakus og backup",
     committee: ["fagkom", "backup"],
   },
   {
@@ -95,7 +95,7 @@ const members = [
       "Hege Krokås Borge ble som førsteklassing tatt opp i LaBamba, der hun et halvt år senere ble valgt inn som Kjellersjef. I løpet av sitt år som leder var hun ansvarlig for gjennomføringen av både LaBamba sitt 30 års-jubileum og oppussingen av kjelleren vår. Etter to år i LaBamba, ble Hege tatt opp i backup, hvor hun nå er inne i sin andre periode som leder. Da kjellerne ble stengt stod Hege i spissen for opprettelsen av organisasjonen Reddkjellerne. Hun har ikke bare tatt kampen for å beholde kjellerkulturen på vegne av Abakus, men alle studentene i hele Trondheim.",
     profilePic: "/default_female_avatar.png",
     appointed: "2017",
-    position: "Leder av Labamba og Backup",
+    position: "Leder av Labamba og backup",
     committee: ["labamba", "backup"],
   },
   {
@@ -104,7 +104,7 @@ const members = [
       "Ingjard har hatt veldig mange jern i ilden i løpet av sin periode som medlem av Abakus, og har gjort mange tiltak som har gjort Abakus til en bedre organisasjon. Han var svært aktiv som medlem av LaBamba og var der alltid med på å ta initiativ og dra opp stemningen. Ingjard var nestleder i Hovedstyret 2009/2010, og gjorde også her en solid innsats. Rett etter Ingjard var ferdig i Hovedstyret ble han med i backup, hvor han har gjort en god jobb som medlem og en fantastisk jobb som komitéens første leder. Som leder har Ingjard gjort tiltak og styrt komitéen til å utvikle seg til å bli mer profesjonell og effektiv organisert.",
     profilePic: "/default_male_avatar.png",
     appointed: "2012",
-    position: "Leder av Backup",
+    position: "Leder av backup",
     committee: ["labamba", "backup"],
   },
   {
@@ -132,7 +132,7 @@ const members = [
       "Marte har en unik innsikt i Abakus’ økonomi og har vært med på hele fire budsjettkvelder med Abakus. Hun har vært en utrolig stor ressurs i Hovedstyret og har bidratt enormt til erfaringsoverføringen mellom nye og gamle hovedstyrer. Etter sitt andre år i Hovedstyret ble hun medlem av backup, som hun ble leder av i 2013. Her har hun arbeidet med fadderperioden for 4. klasse, BI-prosjektet, rekruttering til backup og seniornett og hun har bidratt mye i arbeidet med stiftelsen av Abakus’ fond.",
     profilePic: "/default_female_avatar.png",
     appointed: "2013",
-    position: "Leder av Backup",
+    position: "Leder av backup",
     committee: ["labamba", "backup"],
   },
   {
@@ -195,7 +195,7 @@ const members = [
       "Denne personen har vært aktiv i Abakus i alle årene han har vært på NTNU. Han har vært leder av Arrkom og leder av Abakus. Under hans lederskap gikk Abakus’ statutter gjennom en solid opprydning, nestleder- og økonomiansvarligstillingen i Hovedstyret ble splittet og Abakus’ fond ble opprettet. Etter å ha troppet av som leder av Hovedstyret ble han leder av backup, der han fortsatte å bidra med god kunnskap til Hovedstyret.",
     profilePic: "/default_male_avatar.png",
     appointed: "2015",
-    position: "Leder av Arrkom, Abakus og Backup",
+    position: "Leder av Arrkom, Abakus og backup",
     committee: ["arrkom", "backup"],
   },
 ];
