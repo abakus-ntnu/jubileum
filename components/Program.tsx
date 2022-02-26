@@ -16,6 +16,7 @@ export interface ProgramProps {
   information: string;
   banner: string;
   timestamp: string;
+  url?: string;
 }
 
 const ProgramComponent = ({ program }: { program: ProgramProps }) => {
@@ -37,14 +38,12 @@ const ProgramComponent = ({ program }: { program: ProgramProps }) => {
               fontSize: { xs: 25, md: 43 },
               display: "flex",
               justifyContent: "space-between",
-              fontFamily: "LatoRegular",
             }}
           >
             {program.title}
             <Typography
               sx={{
                 fontSize: { xs: 22, md: 30 },
-                fontFamily: "LatoRegular",
               }}
             >
               {program.timestamp}
@@ -53,7 +52,6 @@ const ProgramComponent = ({ program }: { program: ProgramProps }) => {
           <Typography
             variant={"h5"}
             sx={{
-              fontFamily: "LatoRegular",
               lineHeight: 1.5,
               inlineSize: { md: 1000 },
               fontSize: { xs: 20, md: 24 },
@@ -62,6 +60,13 @@ const ProgramComponent = ({ program }: { program: ProgramProps }) => {
           >
             {program.information}
           </Typography>
+          <div>
+            {program.url ? (
+              <Link variant="h6" href={program.url}>
+                Påmelding her
+              </Link>
+            ) : null}
+          </div>
         </CardContent>
       </Card>
     </div>
