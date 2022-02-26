@@ -42,11 +42,7 @@ const LeaderboardPage: NextPage = () => {
                   <StyledTableCell>
                     {(index + 1).toString() + "."}
                   </StyledTableCell>
-                  <StyledTableCell
-                    component="th"
-                    scope="row"
-                    //onClick={() => navigateTo("/participant?_id="+_id)}
-                  >
+                  <StyledTableCell component="th" scope="row">
                     {name}
                   </StyledTableCell>
                   <StyledTableCell>{totalScore}</StyledTableCell>
