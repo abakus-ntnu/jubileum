@@ -37,6 +37,7 @@ export const events = [
 
     For å sitere Marvin Gaye i 1973: “Lets get it on”!`,
     timestamp: "21:30",
+    url: "https://abakus.no/events/3005",
   },
   {
     title: "Tirsdag - JubiLunsj",
@@ -97,6 +98,7 @@ export const events = [
     Sted: A4-112
     Tid: 16:15 - 20:00`,
     timestamp: "16:15",
+    url: "https://abakus.no/events/3007",
   },
   {
     title: "Torsdag - JubiLunsj",
@@ -125,6 +127,7 @@ export const events = [
     Sted: Storsalen, Samfundet
     Tid: 19:00`,
     timestamp: "19:00",
+    url: "https://abakus.no/events/3008",
   },
   {
     title: "Fredag - Jubileumsgalla",
@@ -144,6 +147,7 @@ export const events = [
     Vi ønsker å ha så mange som mulig av dere med på feiringen, og vil derfor jobbe kontinuerlig med muligheten om å utvide antall plasser. Det er derfor store muligheter for at vi åpner opp for flere av de på venteliste🤞🏾
     `,
     timestamp: "17:15",
+    url: "https://abakus.no/events/3055",
   },
   {
     title: "Lørdag - Hængdag",
@@ -174,5 +178,6 @@ export const events = [
     
     Dette vil med andre ord  bli en kveld med mimring og god stemning, og et hederlig punktum på jubileumsuken!`,
     timestamp: "19:00",
+    url: "https://abakus.no/events/3010",
   },
 ];

@@ -38,14 +38,7 @@ const Home: NextPage = () => {
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         />
         <div>
-          <Typography
-            variant="h1"
-            component="div"
-            sx={{
-              fontFamily: "LatoRegular",
-              //marginTop: 4,
-            }}
-          >
+          <Typography variant="h1" component="div">
             Program
           </Typography>
           {events.map((program) => {
