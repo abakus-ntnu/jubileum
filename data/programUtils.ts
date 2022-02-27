@@ -41,7 +41,19 @@ export const loadEvents = async (): Promise<JubEvent[]> => {
     )
   )) as ApiEvent[];
 
-  return apiEvents.map((apiEvent) => ({
+  return apiEvents.map(convertApiEvent);
+};
+
+export const loadEvent = async (id: number): Promise<JubEvent> => {
+  const apiEvent = (await (
+    await fetch(`https://lego.abakus.no/api/v1/events/${id}`)
+  ).json()) as ApiEvent;
+
+  return convertApiEvent(apiEvent);
+};
+
+const convertApiEvent = (apiEvent: ApiEvent): JubEvent => {
+  return {
     title: apiEvent.title,
     banner: apiEvent.cover,
     information: apiEvent.text,
@@ -58,5 +70,5 @@ export const loadEvents = async (): Promise<JubEvent[]> => {
           }
         : undefined,
     registrationType: apiEvent.eventStatusType,
-  }));
+  };
 };

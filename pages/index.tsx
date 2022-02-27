@@ -4,15 +4,14 @@ import JubPage from "components/JubPage";
 import { Card, CardContent, Typography } from "@mui/material";
 import useFireworks from "hooks/useFireworks";
 import Centered from "../components/Centered";
-import ProgramComponent from "components/Program";
-import { JubEvent, loadEvents } from "../data/programUtils";
-import Podcast from "../components/Podcast";
+import { loadEvents } from "../data/programUtils";
+import JubProgram, { JubDay } from "../components/JubProgram";
 
 interface IProps {
-  events: JubEvent[];
+  jubDays: JubDay[];
 }
 
-const Home: NextPage<IProps> = ({ events }) => {
+const Home: NextPage<IProps> = ({ jubDays }) => {
   useFireworks();
 
   return (
@@ -31,7 +30,7 @@ const Home: NextPage<IProps> = ({ events }) => {
             ut fra linjeforeningen Omega. I dag har denne linjeforeningen vokst
             seg til noe som man i den tid ikke kunne forestilt seg. Foreningen
             fungerer som et bindeledd mellom IT-bedrifter og studentene ved
-            disse linjene, og som et sosialt knutepunkt for sine medlemmer.{" "}
+            disse linjene, og som et sosialt knutepunkt for sine medlemmer.
             <br />
             <br /> Denne siden skal gi ett overordnet blikk over viktige
             hendelser innenfor Abakus sin historie og æresmedlemmene som har
@@ -48,16 +47,28 @@ const Home: NextPage<IProps> = ({ events }) => {
       <Typography variant="h1" component="div">
         Program
       </Typography>
-      {events.map((program) => {
-        return <ProgramComponent key={program.title} program={program} />;
-      })}
+      <JubProgram jubDays={jubDays} />
     </JubPage>
   );
 };
 
 Home.getInitialProps = async () => {
   const events = await loadEvents();
-  return { events };
+  const jubDays = [
+    { title: "Mandag", events: [events[0], events[1]] },
+    {
+      title: "Tirsdag",
+      events: [events[2], events[3]],
+    },
+    { title: "Onsdag", events: [events[4], events[5]] },
+    {
+      title: "Torsdag",
+      events: [events[6], events[7]],
+    },
+    { title: "Fredag", events: [events[8]] },
+    { title: "Lørdag", events: [events[9]] },
+  ];
+  return { jubDays };
 };
 
 export default Home;
