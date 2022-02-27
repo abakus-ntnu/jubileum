@@ -83,7 +83,10 @@ const ProgramEvent = ({ program }: { program: JubEvent }) => {
           sx={{
             whiteSpace: "pre-line",
             fontFamily: "Sora,Arial,sans-serif",
-            maxHeight: expanded ? undefined : 130,
+            maxHeight: expanded ? 1200 : 130,
+            mb: expanded ? -5 : 0,
+            transition:
+              "max-height 1s cubic-bezier(0.3, 0, 0, 1), margin-bottom .3s",
             maskImage: expanded
               ? undefined
               : "linear-gradient(180deg, #000 60%, transparent)",
@@ -93,11 +96,12 @@ const ProgramEvent = ({ program }: { program: JubEvent }) => {
             __html: sanitizeHtml(program.information),
           }}
         />
-        {expanded || (
-          <Button onClick={() => setExpanded(true)} sx={{ width: 1 }}>
-            les mer
-          </Button>
-        )}
+        <Button
+          onClick={() => setExpanded(true)}
+          sx={{ width: 1, visibility: expanded ? "hidden" : undefined }}
+        >
+          les mer
+        </Button>
       </CardContent>
       <CardActions>
         <Stack direction="row" justifyContent="space-between" width={1}>
