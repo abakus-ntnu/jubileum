@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
 import Countdown from "components/Countdown";
 import JubPage from "components/JubPage";
-import { Typography } from "@mui/material";
+import { Card, Typography } from "@mui/material";
 import useFireworks from "hooks/useFireworks";
 import Centered from "../components/Centered";
 import ProgramComponent from "components/Program";
 import { JubEvent, loadEvents } from "../data/programUtils";
+import Podcast from "../components/Podcast";
 
 interface IProps {
   events: JubEvent[];
@@ -35,25 +36,13 @@ const Home: NextPage<IProps> = ({ events }) => {
         være mange arrangementer og begivenheter tilknyttet jubileet, og
         konkurranser er det selvfølgelig også.
       </Typography>
-      <Centered>
-        <iframe
-          className="spotify-embed"
-          src="https://open.spotify.com/embed/show/2ZeUiQ4pclClRbDfBvwPyC?utm_source=generator"
-          color=""
-          width="600"
-          height="232"
-          frameBorder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        />
-        <div>
-          <Typography variant="h1" component="div">
-            Program
-          </Typography>
-          {events.map((program) => {
-            return <ProgramComponent key={program.title} program={program} />;
-          })}
-        </div>
-      </Centered>
+      <Podcast />
+      <Typography variant="h1" component="div">
+        Program
+      </Typography>
+      {events.map((program) => {
+        return <ProgramComponent key={program.title} program={program} />;
+      })}
     </JubPage>
   );
 };
