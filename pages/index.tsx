@@ -36,7 +36,10 @@ const Home: NextPage<IProps> = ({ events }) => {
         være mange arrangementer og begivenheter tilknyttet jubileet, og
         konkurranser er det selvfølgelig også.
       </Typography>
-      <Podcast />
+      {
+        //TODO: add podcast back when the jubilee episode is out
+        //<Podcast/>
+      }
       <Typography variant="h1" component="div">
         Program
       </Typography>
