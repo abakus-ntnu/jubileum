@@ -19,6 +19,7 @@ export interface JubEvent {
   url: string;
   registration?: JubEventRegistration;
   registrationType: string;
+  defaultExpanded?: boolean;
 }
 
 interface ApiEvent {

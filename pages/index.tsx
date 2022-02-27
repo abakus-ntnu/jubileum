@@ -58,12 +58,12 @@ Home.getInitialProps = async () => {
     { title: "Mandag", events: [events[0], events[1]] },
     {
       title: "Tirsdag",
-      events: [events[2], events[3]],
+      events: [{ ...events[2], defaultExpanded: true }, events[3]],
     },
     { title: "Onsdag", events: [events[4], events[5]] },
     {
       title: "Torsdag",
-      events: [events[6], events[7]],
+      events: [{ ...events[6], defaultExpanded: true }, events[7]],
     },
     { title: "Fredag", events: [events[8]] },
     { title: "Lørdag", events: [events[9]] },
