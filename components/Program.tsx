@@ -1,25 +1,49 @@
 /*
-This is a component used on the index.tsx page
-Generally speaking, you should strive to keep different parts of your code nice and separated, so components is the way to go
-This folder is where you are to put all your components
-*/
-
-/* 
 This is the components for the Jubileum program.
 */
 
-import { Card, CardContent, Typography, Link } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Link,
+  Button,
+  CardActions,
+  Stack,
+  Box,
+} from "@mui/material";
 import Image from "next/image";
+import sanitizeHtml from "sanitize-html";
+import { JubEvent, JubEventRegistration } from "../data/programUtils";
+import moment from "moment";
+import "moment/locale/nb";
 
-export interface ProgramProps {
-  title: string;
-  information: string;
-  banner: string;
-  timestamp: string;
-  url?: string;
-}
+const ProgramComponent = ({ program }: { program: JubEvent }) => {
+  moment.locale("nb");
 
-const ProgramComponent = ({ program }: { program: ProgramProps }) => {
+  const getRegitrationText = (): string => {
+    switch (program.registrationType) {
+      case "OPEN": {
+        return "Åpent arrangement";
+      }
+      case "NORMAL": {
+        const registration = program.registration as JubEventRegistration;
+
+        return `${registration.registrations}/${registration.capacity} ${
+          registration.waitingList != 0 ? `(+${registration.waitingList}) ` : ""
+        } påmeldte`;
+      }
+      case "INFINITE": {
+        const registration = program.registration as JubEventRegistration;
+
+        return `${registration.registrations} påmeldte`;
+      }
+      default: {
+        return "Påmelding TBA";
+      }
+    }
+  };
+
   return (
     <div>
       <Card
@@ -28,46 +52,61 @@ const ProgramComponent = ({ program }: { program: ProgramProps }) => {
           m: { xs: 2, md: 7 },
           display: "flex",
           flexDirection: "column",
-          background: "transparent",
         }}
       >
-        <Image src={program.banner} width={"1200"} height={"360"} />
+        <Image
+          src={program.banner}
+          alt={program.title}
+          width={"1200"}
+          height={"360"}
+        />
         <CardContent>
-          <Typography
-            sx={{
-              fontSize: { xs: 25, md: 43 },
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
-            {program.title}
+          <Stack direction="row" justifyContent="space-between">
+            <Typography
+              sx={{
+                fontSize: { xs: 25, md: 43 },
+              }}
+            >
+              {program.title
+                .replace("Jubileumsuke - ", "")
+                .replace("Jubileum - ", "")}
+            </Typography>
             <Typography
               sx={{
                 fontSize: { xs: 22, md: 30 },
+                flexShrink: 0,
               }}
             >
-              {program.timestamp}
+              {moment(program.startTime).format("dddd HH:mm") +
+                " - " +
+                moment(program.endTime).format("HH:mm")}
             </Typography>
-          </Typography>
-          <Typography
-            variant={"h5"}
+          </Stack>
+
+          <Box
             sx={{
-              lineHeight: 1.5,
-              inlineSize: { md: 1000 },
-              fontSize: { xs: 20, md: 24 },
               whiteSpace: "pre-line",
+              fontFamily: "Sora,Arial,sans-serif",
             }}
-          >
-            {program.information}
-          </Typography>
-          <div>
-            {program.url ? (
-              <Link variant="h6" href={program.url}>
-                Påmelding her
-              </Link>
-            ) : null}
-          </div>
+            dangerouslySetInnerHTML={{
+              __html: sanitizeHtml(program.information),
+            }}
+          />
         </CardContent>
+        <CardActions>
+          <Stack direction="row" justifyContent="space-between" width={1}>
+            <Link
+              component={Button}
+              href={program.url}
+              target="_blank"
+              rel="noopener"
+              sx={{ textDecoration: "none" }}
+            >
+              Abakus.no
+            </Link>
+            <Typography>{getRegitrationText()}</Typography>
+          </Stack>
+        </CardActions>
       </Card>
     </div>
   );

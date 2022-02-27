@@ -5,9 +5,13 @@ import { Typography } from "@mui/material";
 import useFireworks from "hooks/useFireworks";
 import Centered from "../components/Centered";
 import ProgramComponent from "components/Program";
-import { events } from "../data/programUtils";
+import { JubEvent, loadEvents } from "../data/programUtils";
 
-const Home: NextPage = () => {
+interface IProps {
+  events: JubEvent[];
+}
+
+const Home: NextPage<IProps> = ({ events }) => {
   useFireworks();
 
   return (
@@ -48,6 +52,11 @@ const Home: NextPage = () => {
       </Centered>
     </JubPage>
   );
+};
+
+Home.getInitialProps = async () => {
+  const events = await loadEvents();
+  return { events };
 };
 
 export default Home;

@@ -22,7 +22,7 @@ let jubileum_theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "SoraRegular",
+    fontFamily: "Sora",
     fontSize: 14,
     h1: {
       fontSize: "4rem",
