@@ -15,7 +15,11 @@ const Home: NextPage<IProps> = ({ events }) => {
   useFireworks();
 
   return (
-    <JubPage title="Hjem" header="Abakus fyller 45 år! 🥳">
+    <JubPage
+      title="Hjem"
+      header="Abakus fyller 45 år! 🥳"
+      sx={{ maxWidth: 1200, m: "auto" }}
+    >
       <Centered>
         <Countdown countDownDate={new Date("Mar 7, 2022 12:15:00")} />
       </Centered>
