@@ -1,4 +1,4 @@
-import { AppBar, Tabs, Tab, Typography, Drawer, Toolbar } from "@mui/material";
+import { AppBar, Tabs, Tab, Drawer, Toolbar } from "@mui/material";
 import React from "react";
 import { useRouter } from "next/dist/client/router";
 import Image from "next/image";
@@ -25,19 +25,33 @@ const NavBar = ({ height = "7rem" }) => {
       setOpenMenu(open);
     };
 
-  const displayTabs = (isVertical: boolean) => {
+  const NavTabs = ({ drawer }: { drawer?: boolean }) => {
     const createTab = (value: string, label: string) => (
       <Tab
         component="a"
         sx={{
-          padding: isVertical ? 3 : 2,
-          display: isVertical
-            ? "inline-flex"
-            : { xs: "none", md: "inline-flex" },
+          padding: drawer ? 3 : 2,
+          display: drawer ? "inline-flex" : { xs: "none", md: "inline-flex" },
           color: "secondary.main",
         }}
         label={label}
         value={value}
+      />
+    );
+
+    const homeTab = (
+      <Tab
+        value="/"
+        component="a"
+        sx={{ display: "block", m: drawer ? "1rem 0" : 0 }}
+        icon={
+          <Image
+            src={abakus45Logo}
+            layout="fill"
+            objectFit="contain"
+            alt={"Jubileumslogo"}
+          />
+        }
       />
     );
 
@@ -46,35 +60,22 @@ const NavBar = ({ height = "7rem" }) => {
         <Tabs
           value={router.pathname}
           scrollButtons={false}
-          orientation={isVertical ? "vertical" : "horizontal"}
+          orientation={drawer ? "vertical" : "horizontal"}
           indicatorColor="secondary"
-          color="secondary.main"
+          textColor="secondary"
           sx={{ opacity: 1 }}
           variant="scrollable"
           onChange={(evt, newValue: string) => handleChange(newValue)}
         >
+          {drawer && homeTab}
           {createTab("/ribbons", "Daljer og Pins")}
           {createTab("/leaderboard", "Scoreboard")}
-          {!isVertical && (
-            <Tab
-              value="/"
-              component="a"
-              style={{ display: "block" }}
-              icon={
-                <Image
-                  src={abakus45Logo}
-                  layout="fill"
-                  objectFit="contain"
-                  alt={"Jubileumslogo"}
-                />
-              }
-            />
-          )}
+          {drawer || homeTab}
           {createTab("/timeline", "Abakus Historie")}
           {createTab("/members", "Utnevnte")}
           {/* createTab("/code-competition", "Kodekonkurranse") */}
         </Tabs>
-        {!isVertical && displayMenu}
+        {drawer || displayMenu}
       </>
     );
   };
@@ -83,6 +84,7 @@ const NavBar = ({ height = "7rem" }) => {
     <>
       <MenuIcon
         fontSize="large"
+        color="secondary"
         sx={{
           position: "absolute",
           right: 40,
@@ -98,7 +100,7 @@ const NavBar = ({ height = "7rem" }) => {
           sx: { backgroundColor: "background" },
         }}
       >
-        <Typography color="secondary">{displayTabs(true)}</Typography>
+        <NavTabs drawer />
       </Drawer>
     </>
   );
@@ -110,7 +112,9 @@ const NavBar = ({ height = "7rem" }) => {
         position="fixed"
         sx={{ height: height, backgroundColor: "background.default" }}
       >
-        <Centered height="100%">{displayTabs(false)}</Centered>
+        <Centered height="100%">
+          <NavTabs />
+        </Centered>
       </AppBar>
       <Toolbar sx={{ height: height }} />
     </>
