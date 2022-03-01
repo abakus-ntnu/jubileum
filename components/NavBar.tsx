@@ -69,7 +69,7 @@ const NavBar = ({ height = "7rem" }) => {
         >
           {drawer && homeTab}
           {createTab("/ribbons", "Daljer og Pins")}
-          {createTab("/leaderboard", "Scoreboard")}
+          {createTab("/competitions", "Konkurranser")}
           {drawer || homeTab}
           {createTab("/timeline", "Abakus Historie")}
           {createTab("/members", "Utnevnte")}
