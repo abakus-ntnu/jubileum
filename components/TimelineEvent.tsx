@@ -22,6 +22,8 @@ import koskomLogo from "public/abakus_koskom.png";
 import arrkomLogo from "public/abakus_arrkom.png";
 import fagkomLogo from "public/abakus_fagkom.png";
 import backupLogo from "public/abakus_backup.png";
+import bankkomLogo from "public/abakus_bankkom.png";
+import fondstyretLogo from "public/abakus_fondstyret.png";
 import prLogo from "public/abakus_pr.png";
 
 interface IProps {
@@ -72,6 +74,10 @@ const TimelineEventElement = ({
               ? backupLogo
               : event.tags.includes("PR")
               ? prLogo
+              : event.tags.includes("Bankkom")
+              ? bankkomLogo
+              : event.tags.includes("Fondstyret")
+              ? fondstyretLogo
               : event.tags.includes("Krøniken")
               ? kronikenKule
               : abakule
