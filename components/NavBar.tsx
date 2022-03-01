@@ -43,7 +43,7 @@ const NavBar = ({ height = "7rem" }) => {
       <Tab
         value="/"
         component="a"
-        style={{ display: "block" }}
+        sx={{ display: "block", m: drawer ? "1rem 0" : 0 }}
         icon={
           <Image
             src={abakus45Logo}
@@ -67,6 +67,7 @@ const NavBar = ({ height = "7rem" }) => {
           variant="scrollable"
           onChange={(evt, newValue: string) => handleChange(newValue)}
         >
+          {drawer && homeTab}
           {createTab("/ribbons", "Daljer og Pins")}
           {createTab("/leaderboard", "Scoreboard")}
           {drawer || homeTab}
