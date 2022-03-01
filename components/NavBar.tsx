@@ -48,7 +48,7 @@ const NavBar = ({ height = "7rem" }) => {
           scrollButtons={false}
           orientation={isVertical ? "vertical" : "horizontal"}
           indicatorColor="secondary"
-          color="secondary.main"
+          textColor="secondary"
           sx={{ opacity: 1 }}
           variant="scrollable"
           onChange={(evt, newValue: string) => handleChange(newValue)}
