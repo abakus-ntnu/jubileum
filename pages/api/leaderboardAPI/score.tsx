@@ -64,8 +64,9 @@ export default async function handler(
           const user = await ParticipantModel.findOne({ name: i }).select({
             _id: 1,
           });
-          if (user && typeof user !== "undefined"){
-            userIDs.push(user._id.toString());
+          if (user){
+            const userid: string = user._id ?? "";
+            userIDs.push(userid.toString());
           }
         }
 
