@@ -10,19 +10,36 @@ const TimelinePage: NextPage = () => {
     <JubPage title="Tidslinje" header="Abakus' historie">
       <MockTimelineCard header={"Tidslinje"}>
         <p>
-          Her ønsker vi å fremheve historien til Abakus. I anledning
-          40-årsjubileet i 2017 skrev readme spalten «Krøniken», som tok for seg
-          linjeforeningens historie fra 1977 frem til 2016. Denne spalten blir
-          også oppdatert av readme i anledning dette jubileet, med de viktigste
-          hendelsene fra de siste fem årene. Her har vi organisert disse
+          Her ønsker vi å fremheve historien til Abakus. Vi har derfor samlet
+          informasjon om linjeforeningens historie fra flere ulike kilder.
+          readme skrev spalten «Krøniken» i anledning 40-årsjubileet i 2014, og
+          oppdaterer denne til jubileet i år. I tillegg har vi hentet masse
+          informasjon fra Arven, som er et prosjekt med mål om å sikre
+          Abakus&apos; arv ved å ta vare på det som finnes av arkiv og verdier,
+          samt å arkivere nåvarende hendelser. Her har vi organisert disse
           hendelsene i en tidslinje slik at det skal være lett å finne frem til
           hendleser i ulike perioder av Abakus&apos; historie.
         </p>
-        <p>Først publisert i readme utgave 04, 05 og 06, 2016</p>
         <p>
-          Opprinnelig tekst av Hans Gyldenhet Det Er Bare Å Gjøre Det –
-          Stein-Otto Svorstøl og Hans Nynorskhet Kongen av Gløsløken – Mats
-          Byrkjeland
+          «Krøniken» ble først publisert i readme utgave 04, 05 og 06, 2016 og
+          01 og 02, 2017 med opprinnelig tekst av Hans Gyldenhet Det Er Bare Å
+          Gjøre Det – Stein-Otto Svorstøl og Hans Nynorskhet Kongen av Gløsløken
+          – Mats Byrkjeland
+        </p>
+        <p>
+          Arven er et prosjekt som per februar 2021 består av Peder Smith, Åsne
+          Stige, Hedda Mathilde Sæther Langvik, Fredrik Aakredalen og Jenny Yu.
+          Med tidligere medlemmer Stein-Otto Svorstøl, Martin Hallén, Mats
+          Byrkjeland, Ingrid Sørdal Volden, Thea Svenkerud Rydjord, Karoline
+          Bonnerud og Sandra Kvaløy. Prosjektet kan finnes på{" "}
+          <a
+            href="https://wiki.abakus.no/display/historie/Arven"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Abakus&apos; wiki
+          </a>
+          .
         </p>
       </MockTimelineCard>
       <Timeline />

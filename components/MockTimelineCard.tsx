@@ -16,7 +16,7 @@ const MockTimelineCard: FunctionComponent<{ header: string }> = ({
       }}
     >
       <Typography
-        variant="h2"
+        variant="h4"
         mt={0}
         mb={2}
         textAlign="center"
