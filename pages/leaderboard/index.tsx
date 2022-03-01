@@ -8,18 +8,18 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import {
-  FormControl,
-  Select,
-  MenuItem,
-  SelectChangeEvent,
-  InputLabel,
-} from "@mui/material";
+// import {
+//   FormControl,
+//   Select,
+//   MenuItem,
+//   SelectChangeEvent,
+//   InputLabel,
+// } from "@mui/material";
 import useSWR from "swr";
 import { Participant, Competition, Score } from "models/leaderboardSchema";
 import { Box } from "@mui/material";
 import JubPage from "components/JubPage";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -56,7 +56,7 @@ const LeaderboardPage: NextPage = () => {
   return (
     <JubPage title="Leaderboard" header="Leaderboard">
       <Box maxWidth="fit-content" margin="auto">
-      {/* <FormControl sx={{ m: 1, minWidth: 150 }}>
+        {/* <FormControl sx={{ m: 1, minWidth: 150 }}>
           <InputLabel id="comp-label">Konkurranse</InputLabel>
           <Select
             labelId="comp-label"

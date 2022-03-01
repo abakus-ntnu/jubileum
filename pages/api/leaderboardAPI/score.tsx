@@ -14,7 +14,7 @@ interface PutScoreRequest {
   score: {
     score: number;
   };
-  participant: { name: string}[];
+  participant: { name: string }[];
 }
 
 export default async function handler(
@@ -64,7 +64,7 @@ export default async function handler(
           const user = await ParticipantModel.findOne({ name: i }).select({
             _id: 1,
           });
-          if (user){
+          if (user) {
             const userid: string = user._id ?? "";
             userIDs.push(userid.toString());
           }
