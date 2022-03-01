@@ -7,6 +7,16 @@ import {
 } from "models/leaderboardSchema";
 import { url } from "pages/api/_db";
 
+interface PutScoreRequest {
+  competition: {
+    name: string;
+  };
+  score: {
+    score: number;
+  };
+  participant: { name: string}[];
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -21,9 +31,12 @@ export default async function handler(
           res.status(401).end();
           return;
         }
-        const competitionID: string = req.body.competition.name;
-        const score: number = req.body.score.score;
-        const participantNames = req.body.participant.map(
+
+        const requestBody = req.body as PutScoreRequest;
+
+        const competitionID: string = requestBody.competition.name ?? "";
+        const score: number = requestBody.score.score;
+        const participantNames = requestBody.participant.map(
           (participant: { name: string }) => participant.name
         );
         const oldParticipants = await ParticipantModel.find({
@@ -51,7 +64,9 @@ export default async function handler(
           const user = await ParticipantModel.findOne({ name: i }).select({
             _id: 1,
           });
-          userIDs.push(user._id.toString());
+          if (user && typeof user !== "undefined"){
+            userIDs.push(user._id.toString());
+          }
         }
 
         const newScore = new ScoreModel({

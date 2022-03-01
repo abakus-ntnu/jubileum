@@ -192,7 +192,7 @@ const LeaderboardAdmin: NextPage = () => {
               <em>Velg konkurranse</em>
             </MenuItem>
             {competitions?.map(({ name, _id }) => (
-              <MenuItem value={_id} key={_id}>
+              <MenuItem value={_id as string} key={_id as string}>
                 {name}
               </MenuItem>
             ))}

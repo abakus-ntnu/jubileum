@@ -1,4 +1,4 @@
-import mongoose, { model, Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 delete mongoose.connection.models["participant"];
 
@@ -16,7 +16,7 @@ const ParticipantSchema = new Schema({
   },
   totalScore: Number,
 });
-export const ParticipantModel = mongoose.model(
+export const ParticipantModel = mongoose.model<Participant>(
   "participant",
   ParticipantSchema
 );
@@ -31,7 +31,7 @@ const CompetitionSchema = new Schema({
     type: String,
   },
 });
-export const CompetitionModel = mongoose.model(
+export const CompetitionModel = mongoose.model<Competition>(
   "competition",
   CompetitionSchema
 );
@@ -55,4 +55,4 @@ const ScoreSchema = new Schema({
     type: Number,
   },
 });
-export const ScoreModel = mongoose.model("score", ScoreSchema);
+export const ScoreModel = mongoose.model<Score>("score", ScoreSchema);
