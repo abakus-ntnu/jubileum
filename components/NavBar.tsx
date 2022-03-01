@@ -84,6 +84,7 @@ const NavBar = ({ height = "7rem" }) => {
     <>
       <MenuIcon
         fontSize="large"
+        color="secondary"
         sx={{
           position: "absolute",
           right: 40,
