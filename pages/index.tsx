@@ -6,7 +6,6 @@ import useFireworks from "hooks/useFireworks";
 import Centered from "../components/Centered";
 import { loadEvents } from "../data/programUtils";
 import JubProgram, { JubDay } from "../components/JubProgram";
-import Podcast from "components/Podcast";
 
 interface IProps {
   jubDays: JubDay[];

@@ -87,7 +87,7 @@ const orderMembers = [
       "MEEEEEEN",
       "Hvor voksen er hun EGENTLIG?",
       "Det ryktes at på Maris første ordentlige fest med Bedkom etter utveksling, ble engasjementet litt for høyt. For å vise Bedkoms nyeste medlemmer (på I/O) hvordan man skal danse til Bedkom-sangen “Don’t Stop Believin” ute på byen, tok Mari seg litt kunstnerisk frihet til å ikke bry seg om smitteverntiltakene satt av The Mint, noe som resulterte, vel, i en dominoeffekt av utkastelse for de fleste komiteer.. Dette stoppet ikke Mari som SKULLE videre til nach, for så å ikke klare å holde seg før hun kom dit. Etter å ta en voksen stopp for å tisse utenfor nidarosdomen på veien, kom hun seg omsider til nach, hvor hun kunne fortsette festen inn i de sene nattetimer sammen med de nye førsteklassingene. Og da mener jeg KUN med de nye førsteklassingene.",
-      "Mari har også fått mye skryt for sin rolle i forrige HSP-prosess, og var der med på å lage en helt ny avtale hvor et stort poeng var at avtalen ikke lenger skulle være hemmelig. Det vil si at endelig kan enhver Abakule lese kontrakten, som såklart alle syns er nøyaktig like spennende som hun selv syns når prisen er SENSURERT. Det er bra du er kritisk i diskusjoner, Mari, men det er også viktig å være kritisk når du skal vurdere hva folk synes er interessant, og hva kun du synes er interessant. Så gratulerer til de null personene som benyttet seg av muligheten til å lese den. Det kan dere takke Mari for!"
+      "Mari har også fått mye skryt for sin rolle i forrige HSP-prosess, og var der med på å lage en helt ny avtale hvor et stort poeng var at avtalen ikke lenger skulle være hemmelig. Det vil si at endelig kan enhver Abakule lese kontrakten, som såklart alle syns er nøyaktig like spennende som hun selv syns når prisen er SENSURERT. Det er bra du er kritisk i diskusjoner, Mari, men det er også viktig å være kritisk når du skal vurdere hva folk synes er interessant, og hva kun du synes er interessant. Så gratulerer til de null personene som benyttet seg av muligheten til å lese den. Det kan dere takke Mari for!",
     ],
   },
   {
@@ -103,7 +103,7 @@ const orderMembers = [
       "MEEEEEEEN",
       "Eivind er egentlig ikke så voksen og ansvarlig som han tror selv. Dette viser seg i at han mens han var på utveksling ringte hjem til en labambianer utelukkende for å høre siste sladder han hadde gått glipp av. ",
       "Eivind hadde heller nesten ikke drukket før han startet på komtek fordi han satset på toppidrett. Dette gikk ikke som håpet og nå til dags er han en selvutnevnt øl-chugger som du sjelden ser uten minst én bong innen rekkevidde. “Hvordan kom dette mennesket inn på komtek?” ble det overhørt om Eivind under fadderperioden i 2017. ",
-      "Dette er også en person som er utrolig lite ydmyk, og ubevisst sier han ofte “det der er faktisk helt feil”, og andre mindre ydmyke utsagn som vil være bevart for evigheten gjennom hans utnevnelse til ridder."
+      "Dette er også en person som er utrolig lite ydmyk, og ubevisst sier han ofte “det der er faktisk helt feil”, og andre mindre ydmyke utsagn som vil være bevart for evigheten gjennom hans utnevnelse til ridder.",
     ],
   },
   {
