@@ -1,14 +1,14 @@
 @font-face {
-  font-family: "SoraRegular";
+  font-family: "Sora";
   font-style: normal;
-  font-weight: 200;
+  font-weight: normal;
   src: url("../fonts/SoraRegular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "SoraBold";
+  font-family: "Sora";
   font-style: normal;
-  font-weight: 200;
+  font-weight: bold;
   src: url("../fonts/SoraBold.ttf") format("truetype");
 }
 
