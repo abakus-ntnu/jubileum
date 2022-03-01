@@ -178,7 +178,8 @@ const LeaderboardAdmin: NextPage = () => {
           <Button onClick={submitCompetition}>Legg til konkurranse</Button>
         </FormControl>
 
-        <h2>Legg til deltaker</h2>
+        <h2>Legg til deltaker eller gruppe</h2>
+        <p>NB! Ikke legg til flere deltakere samtidig med mindre de er på samme gruppe i samme konkurranse! Husk fullt navn på hver person :)</p>
         <FormControl sx={{ m: 1, minWidth: 150 }}>
           <InputLabel id="comp-label">Konkurranse</InputLabel>
           <Select
@@ -206,7 +207,7 @@ const LeaderboardAdmin: NextPage = () => {
               <div key={index}>
                 <TextField
                   name="navn"
-                  label="Fullt navn på deltaker"
+                  label="FULLT NAVN PÅ DELTAKER"
                   value={participant.name}
                   onChange={(e) => handleChangeInput(e, index)}
                 />
