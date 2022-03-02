@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Stack, Paper, Typography } from "@mui/material";
+import { fireworks } from "hooks/useFireworks";
 
 const adjustDate = (date: number) => {
   return date < 10 ? `0${date}` : date;
@@ -71,8 +72,18 @@ const Countdown = ({ countDownDate }: CountdownProps) => {
     return () => clearInterval(interval);
   }, [countDownDate]);
 
+  function isCountDownDone() {
+    if (days == 0 && hours == 0 && minutes == 0 && seconds == 0) fireworks;
+    if (seconds < 0) return true;
+    return false;
+  }
+
   return (
-    <Stack direction="row" spacing={2}>
+    <Stack
+      direction="row"
+      spacing={2}
+      sx={{ display: isCountDownDone() ? "none" : "" }}
+    >
       <CountdownBox number={days} text="DAGER" />
       <CountdownBox number={hours} text="TIMER" />
       <CountdownBox number={minutes} text="MINUTTER" />
