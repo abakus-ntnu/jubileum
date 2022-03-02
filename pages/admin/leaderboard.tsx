@@ -179,7 +179,10 @@ const LeaderboardAdmin: NextPage = () => {
         </FormControl>
 
         <h2>Legg til deltaker eller gruppe</h2>
-        <p>NB! Ikke legg til flere deltakere samtidig med mindre de er på samme gruppe i samme konkurranse! Husk fullt navn på hver person :)</p>
+        <p>
+          NB! Ikke legg til flere deltakere samtidig med mindre de er på samme
+          gruppe i samme konkurranse! Husk fullt navn på hver person :)
+        </p>
         <FormControl sx={{ m: 1, minWidth: 150 }}>
           <InputLabel id="comp-label">Konkurranse</InputLabel>
           <Select
