@@ -146,6 +146,24 @@ const medalDescriptions = [
     filterTag: "abakom",
   },
   {
+    medalType: "45-års jubileum",
+    medalInfo: "Abakus - Jubileumsstyret",
+    medalDesign: " ",
+    medalInformation:
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    imageLink: "/Ribbons/45jub_gull.png",
+    filterTag: "unlisted",
+  },
+  {
+    medalType: "45-års jubileum",
+    medalInfo: "Abakus",
+    medalDesign: " ",
+    medalInformation:
+      "Jubileumsdaljer (Abakus, readme eller LaBamba har jubileum)",
+    imageLink: "/Ribbons/45jub_sølv.png",
+    filterTag: "unlisted",
+  },
+  {
     medalType: "40-års jubileum",
     medalInfo: "Abakus",
     medalDesign: " ",
