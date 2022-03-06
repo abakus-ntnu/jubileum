@@ -4,6 +4,8 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
+// This is no longer part of the jubliee-page, but is left here as potential reference for later projects:)
+
 interface IProps {
   competition: DailyCompetition;
   adminPassword?: string;

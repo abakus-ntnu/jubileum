@@ -1,5 +1,7 @@
 import mongoose, { model, Schema } from "mongoose";
 
+// This is no longer part of the jubliee-page, but is left here as potential reference for later projects:)
+
 delete mongoose.connection.models["DailyCompetition"];
 
 export interface DailyCompetition extends Partial<mongoose.Document> {

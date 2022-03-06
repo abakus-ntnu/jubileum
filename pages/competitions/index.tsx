@@ -13,13 +13,13 @@ import { Participant } from "models/leaderboardSchema";
 import { Box, Stack, ToggleButton } from "@mui/material";
 import JubPage from "components/JubPage";
 import { useRouter } from "next/router";
-import CodeCompetitionPage from "pages/code-competition";
+import CompetitionInfo from "components/CompetitionInfo";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const LeaderboardPage: NextPage = () => {
   const router = useRouter();
-  const isCodeCompetition = router.query.view === "code-competition";
+  const isLeaderboard = router.query.view === "leaderboard";
 
   const { data: participants } = useSWR<Participant[], unknown>(
     "/api/leaderboardAPI/leaderboardMain",
@@ -55,7 +55,18 @@ const LeaderboardPage: NextPage = () => {
       <Stack direction="row" spacing={2} justifyContent="center" sx={{ p: 2 }}>
         <ToggleButton
           value="check"
-          selected={!isCodeCompetition}
+          selected={!isLeaderboard}
+          onChange={async () => {
+            await router.replace("/competitions?view=competition-info");
+          }}
+          size="large"
+          color="error"
+        >
+          Info om konkurranser
+        </ToggleButton>
+        <ToggleButton
+          value="check"
+          selected={isLeaderboard}
           onChange={async () => {
             await router.replace("/competitions?view=leaderboard");
           }}
@@ -64,21 +75,11 @@ const LeaderboardPage: NextPage = () => {
         >
           Poengtavle
         </ToggleButton>
-        <ToggleButton
-          value="check"
-          selected={isCodeCompetition}
-          onChange={async () => {
-            await router.replace("/competitions?view=code-competition");
-          }}
-          size="large"
-          color="error"
-        >
-          Dagens kodekonkurranse
-        </ToggleButton>
       </Stack>
+
       <Box maxWidth="fit-content" margin="auto">
-        {isCodeCompetition ? (
-          <CodeCompetitionPage />
+        {!isLeaderboard ? (
+          <CompetitionInfo />
         ) : (
           <Box maxWidth="fit-content" margin="auto">
             {/* <FormControl sx={{ m: 1, minWidth: 150 }}>
