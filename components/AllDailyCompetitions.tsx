@@ -5,6 +5,8 @@ import useSWR from "swr";
 import DailyCompetitionElement from "./DailyCompetition";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
+// This is no longer part of the jubliee-page, but is left here as potential reference for later projects:)
+
 interface ICompetitionsProps {
   adminPassword?: string;
 }
