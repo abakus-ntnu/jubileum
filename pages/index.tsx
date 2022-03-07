@@ -40,6 +40,32 @@ const Home: NextPage<IProps> = ({ jubDays }) => {
           </Typography>
         </CardContent>
       </Card>
+      <Card sx={{ mt: 7, borderTop: "3px solid", borderColor: "primary.main" }}>
+        <CardContent>
+          <Typography align="center" variant="h4" mb={2}>
+            {" "}
+            Best of readme{" "}
+          </Typography>
+          <Typography align="center">
+            Under jubileumsuka blir det holdt avstemning for beste midtsidebilde
+            og ryktesnap! Stem på dine favoritter fra de 5 siste årene!
+            <br />
+            Vinnerne vil bli annonsert under Jubileumsgallaen, så avstemmingen
+            stenger fredag 11.mars kl. 16:00.
+            <br />
+            <br />
+            Formet for avstemningen finner du{" "}
+            <a
+              href="https://forms.gle/tJM7KGmycpd2QH8G6"
+              target="_blank"
+              rel="noreferrer"
+            >
+              her
+            </a>
+            .
+          </Typography>
+        </CardContent>
+      </Card>
       {
         //TODO: add podcast back when the jubilee episode is out
         //<Podcast/>
