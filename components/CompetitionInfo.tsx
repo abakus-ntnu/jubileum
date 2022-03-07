@@ -3,7 +3,14 @@ import React from "react";
 
 const CompetitionInfo = () => {
   return (
-    <Card sx={{ mt: 7, borderTop: "3px solid", borderColor: "primary.main" }}>
+    <Card
+      sx={{
+        mt: 7,
+        borderTop: "3px solid",
+        borderColor: "primary.main",
+        maxWidth: "1200px",
+      }}
+    >
       <CardContent>
         <Typography align="center" mb={4}>
           Det er ikke bare dansefoten som skal vekkes under jubileumsuken, men
