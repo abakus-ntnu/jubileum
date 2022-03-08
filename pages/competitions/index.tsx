@@ -102,13 +102,17 @@ const LeaderboardPage: NextPage = () => {
                             </Select>
                           </FormControl> */}
             <br></br>
-            <TableContainer component={Paper} elevation={2}>
+            <TableContainer
+              component={Paper}
+              elevation={2}
+              sx={{ width: { xs: 1, sm: 600 } }}
+            >
               <Table aria-label="customized table">
                 <TableHead>
                   <TableRow>
-                    <StyledTableCell />
-                    <StyledTableCell width="500px">Navn</StyledTableCell>
-                    <StyledTableCell>Poeng</StyledTableCell>
+                    <StyledTableCell sx={{ width: 50 }} />
+                    <StyledTableCell>Navn</StyledTableCell>
+                    <StyledTableCell sx={{ width: 50 }}>Poeng</StyledTableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
